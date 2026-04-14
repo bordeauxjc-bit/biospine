@@ -27,7 +27,7 @@ const conditions: Condition[] = [
     slug: 'low-back-pain',
     name: 'Low Back Pain',
     summary:
-      'Low back pain is one of the most common reasons adults visit a chiropractor. Most episodes are mechanical in nature — meaning they respond well to conservative care.',
+      'Low back pain is one of the most common reasons adults visit a chiropractor. Most episodes are mechanical in nature, meaning they respond well to conservative care.',
     symptoms: [
       'Aching or sharp pain in the lower back',
       'Pain that worsens with bending, lifting, or sitting',
@@ -41,7 +41,7 @@ const conditions: Condition[] = [
     slug: 'neck-pain',
     name: 'Neck Pain',
     summary:
-      'Neck pain from poor posture, screen time, or sleeping positions is increasingly common — and it responds well to chiropractic care.',
+      'Neck pain from poor posture, screen time, or sleeping positions is increasingly common, and it responds well to chiropractic care.',
     symptoms: [
       'Stiffness and reduced range of motion',
       'Pain radiating to the shoulders or upper back',
@@ -125,7 +125,7 @@ const conditions: Condition[] = [
     slug: 'postural-problems',
     name: 'Postural Problems',
     summary:
-      'Modern work and screen habits contribute to forward-head posture, rounded shoulders, and low-back tension — all of which can be corrected.',
+      'Modern work and screen habits contribute to forward-head posture, rounded shoulders, and low-back tension, all of which can be corrected.',
     symptoms: [
       'Neck and upper back tension by midday',
       'Forward-head posture',
@@ -151,7 +151,7 @@ const faqs = [
   {
     question: 'Is chiropractic safe for older adults with arthritis?',
     answer:
-      'Yes — when performed by a licensed chiropractor who tailors the technique to the patient. Gentle, low-force adjustments are often well-tolerated and can help maintain joint mobility.',
+      'Yes, when performed by a licensed chiropractor who tailors the technique to the patient. Gentle, low-force adjustments are often well-tolerated and can help maintain joint mobility.',
   },
 ];
 

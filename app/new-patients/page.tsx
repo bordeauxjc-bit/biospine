@@ -17,7 +17,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'New Patients',
   description:
-    'Everything new patients need to know about their first chiropractic visit at BioSpine Health and Wellness in Lake City, SC — what to bring, what to expect, and insurance details.',
+    'Everything new patients need to know about their first chiropractic visit at BioSpine Health and Wellness in Lake City, SC, what to bring, what to expect, and insurance details.',
   path: '/new-patients',
 });
 
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'Will I get an adjustment on my first visit?',
     answer:
-      "Usually, yes — but not always. We only adjust after a thorough exam confirms it's appropriate for your case. If imaging or a referral is needed first, we'll tell you.",
+      "Usually, yes, but not always. We only adjust after a thorough exam confirms it's appropriate for your case. If imaging or a referral is needed first, we'll tell you.",
   },
   {
     question: 'How long will the first appointment take?',
@@ -67,7 +67,7 @@ const faqs = [
   {
     question: 'Do I need a referral from my primary care doctor?',
     answer:
-      'In South Carolina, you do not need a referral to see a chiropractor. Some insurance plans require one for coverage — call us and we can help you confirm.',
+      'In South Carolina, you do not need a referral to see a chiropractor. Some insurance plans require one for coverage, call us and we can help you confirm.',
   },
   {
     question: 'What should I wear?',
@@ -82,7 +82,7 @@ export default function NewPatientsPage() {
       <PageHeader
         eyebrow="New patients"
         title="Your first visit, step by step"
-        description="No surprises — here's exactly what to expect when you walk through our door."
+        description="No surprises, here's exactly what to expect when you walk through our door."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'New Patients', href: '/new-patients' },

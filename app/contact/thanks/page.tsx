@@ -17,7 +17,7 @@ export default function ThanksPage() {
         <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark">
           <CheckCircle2 className="h-8 w-8" aria-hidden />
         </span>
-        <h1 className="mt-6">Thanks — we&rsquo;ll be in touch</h1>
+        <h1 className="mt-6">Thanks, we&rsquo;ll be in touch</h1>
         <p className="mt-4 text-lg text-slate-600">
           We&rsquo;ve received your message and will follow up as soon as we
           can during office hours. If it&rsquo;s urgent, please call us

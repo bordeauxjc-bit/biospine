@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/home/Hero';
 import { TrustBar } from '@/components/home/TrustBar';
+import { Mission } from '@/components/home/Mission';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
 import { ConditionsList } from '@/components/home/ConditionsList';
 import { AboutPreview } from '@/components/home/AboutPreview';
@@ -55,6 +56,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustBar />
+      <Mission />
       <ServicesGrid />
       <ConditionsList />
       <AboutPreview />

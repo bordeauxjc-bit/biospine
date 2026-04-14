@@ -4,6 +4,7 @@ import { Clock, BadgeCheck, MapPin, Heart, Users } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
+import { Mission } from '@/components/home/Mission';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { doctorSchema, breadcrumbSchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
@@ -11,7 +12,7 @@ import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
   title: `About ${siteConfig.doctor.name}`,
-  description: `Meet ${siteConfig.doctor.fullName}, ${siteConfig.doctor.credential} — providing chiropractic care in Lake City, SC with over a decade of clinical experience.`,
+  description: `Meet ${siteConfig.doctor.fullName}, ${siteConfig.doctor.credential}, providing chiropractic care in Lake City, SC with over a decade of clinical experience.`,
   path: '/about',
 });
 
@@ -27,6 +28,8 @@ export default function AboutPage() {
           { label: 'About', href: '/about' },
         ]}
       />
+
+      <Mission />
 
       <Section tone="white">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
@@ -63,7 +66,7 @@ export default function AboutPage() {
             <p>
               His approach is built on three commitments: a thorough evaluation
               before any adjustment, clear explanations of your diagnosis and
-              treatment plan, and realistic expectations — so you always know
+              treatment plan, and realistic expectations, so you always know
               what to expect and why. Patients appreciate his direct
               communication style and his willingness to spend the time
               required to get the diagnosis right.
@@ -71,7 +74,7 @@ export default function AboutPage() {
 
             <h3>A note on our approach</h3>
             <p>
-              Chiropractic care works best when it fits into your life — not the
+              Chiropractic care works best when it fits into your life, not the
               other way around. We schedule so you&rsquo;re seen on time. We
               recommend imaging only when it will change your treatment plan.
               And we set clear milestones so you know if the care is working.
@@ -107,7 +110,7 @@ export default function AboutPage() {
             {
               icon: Heart,
               title: 'Patient-first',
-              text: 'Your goals — not a template — drive your care plan. We listen first, adjust second.',
+              text: 'Your goals, not a template, drive your care plan. We listen first, adjust second.',
             },
             {
               icon: BadgeCheck,

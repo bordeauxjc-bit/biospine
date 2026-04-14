@@ -11,7 +11,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'Blog & Patient Resources',
   description:
-    'Articles on chiropractic care, back pain relief, headache management, and wellness — written by Dr. Chucky S. Jordan, D.C. for patients in Lake City, SC and beyond.',
+    'Articles on chiropractic care, back pain relief, headache management, and wellness, written by Dr. Chucky S. Jordan, D.C. for patients in Lake City, SC and beyond.',
   path: '/blog',
 });
 

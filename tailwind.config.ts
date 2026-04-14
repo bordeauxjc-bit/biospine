@@ -42,9 +42,9 @@ const config: Config = {
           'linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%)',
       },
       fontFamily: {
-        // Display / headings — Plus Jakarta Sans (bold, modern)
+        // Display / headings. Plus Jakarta Sans (bold, modern)
         display: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
-        // Body — DM Sans (highly readable)
+        // Body. DM Sans (highly readable)
         sans: ['var(--font-dm-sans)', 'var(--font-jakarta)', 'system-ui', 'sans-serif'],
         // Keep 'serif' alias pointing to display so existing classes don't break
         serif: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],

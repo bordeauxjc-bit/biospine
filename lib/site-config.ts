@@ -33,13 +33,13 @@ export const siteConfig = {
     full: '263 Kelley St, Ste 100, Lake City, SC 29560',
   },
 
-  // Geo (approximate centroid for Lake City, SC — refine with Google Place ID if available)
+  // Geo (approximate centroid for Lake City, SC, refine with Google Place ID if available)
   geo: {
     latitude: 33.8718,
     longitude: -79.7548,
   },
 
-  // Hours — TODO: confirm with client
+  // Hours. TODO: confirm with client
   hours: [
     { day: 'Monday', open: '08:00', close: '17:00' },
     { day: 'Tuesday', open: '08:00', close: '17:00' },
@@ -50,7 +50,7 @@ export const siteConfig = {
     { day: 'Sunday', open: null, close: null },
   ] as const,
 
-  // Doctor — sourced from CMS NPPES registry + Logan College public records
+  // Doctor, sourced from CMS NPPES registry + Logan College public records
   doctor: {
     name: 'Dr. Chucky S. Jordan',
     fullName: 'Dr. Chucky Sentell Jordan',
@@ -70,7 +70,7 @@ export const siteConfig = {
       'https://www.ratemds.com/clinic/us-sc-lake-city-biospine-health-and-wellness/',
   },
 
-  // Services offered — used for Services page and MedicalProcedure schema
+  // Services offered, used for Services page and MedicalProcedure schema
   services: [
     {
       slug: 'chiropractic-adjustments',
@@ -94,7 +94,7 @@ export const siteConfig = {
       slug: 'sports-injury-care',
       name: 'Sports Injury Rehabilitation',
       summary:
-        'Return-to-play care for athletes of every level — from weekend warriors to student athletes in the Pee Dee region.',
+        'Return-to-play care for athletes of every level, from weekend warriors to student athletes in the Pee Dee region.',
     },
     {
       slug: 'arthritis-relief',
@@ -106,11 +106,11 @@ export const siteConfig = {
       slug: 'wellness-and-weight-loss',
       name: 'Wellness & Weight Loss Consultations',
       summary:
-        'Lifestyle and wellness guidance — including weight-loss consultations — to help you feel and move better every day.',
+        'Lifestyle and wellness guidance, including weight-loss consultations, to help you feel and move better every day.',
     },
   ],
 
-  // Conditions treated — used on /conditions for long-tail SEO
+  // Conditions treated, used on /conditions for long-tail SEO
   conditions: [
     'Low back pain',
     'Neck pain',
@@ -126,7 +126,7 @@ export const siteConfig = {
     'Work-related injuries',
   ],
 
-  // Accepted insurance — TODO: confirm additional insurers with client
+  // Accepted insurance. TODO: confirm additional insurers with client
   insurance: {
     confirmed: ['Medicare'],
     note: 'Contact our office to confirm coverage for your specific plan.',
@@ -143,7 +143,7 @@ export const siteConfig = {
     { href: '/contact', label: 'Contact' },
   ],
 
-  // Area served — for LocalBusiness schema
+  // Area served, for LocalBusiness schema
   areaServed: [
     'Lake City, SC',
     'Florence, SC',
@@ -169,7 +169,7 @@ export const directionsUrl = () =>
     siteConfig.address.full,
   )}`;
 
-// Helper: Google Maps embed URL (keyless — uses standard embed)
+// Helper: Google Maps embed URL (keyless, uses standard embed)
 export const mapEmbedUrl = () =>
   `https://www.google.com/maps?q=${encodeURIComponent(
     siteConfig.address.full,

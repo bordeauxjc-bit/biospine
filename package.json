@@ -2,7 +2,7 @@
   "name": "biospine-website",
   "version": "1.0.0",
   "private": true,
-  "description": "BioSpine Health and Wellness, LLC — Lake City, SC chiropractic website",
+  "description": "BioSpine Health and Wellness, LLC. Lake City, SC chiropractic website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

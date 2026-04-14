@@ -1,6 +1,6 @@
 /**
  * MDX is compiled at build time from `content/blog/*.mdx` using
- * `next-mdx-remote/rsc` inside the blog post server component — there's no
+ * `next-mdx-remote/rsc` inside the blog post server component, there's no
  * need for the `@next/mdx` webpack plugin.
  */
 /** @type {import('next').NextConfig} */

@@ -1,4 +1,4 @@
-# BioSpine Health and Wellness — Website
+# BioSpine Health and Wellness Website
 
 Modern, SEO-compliant Next.js website for **BioSpine Health and Wellness, LLC**
 (Dr. Chucky S. Jordan, D.C.) in Lake City, South Carolina.
@@ -117,7 +117,7 @@ PNG (ideally square or 4:3, on black) at the same path.
 
 ## Deployment
 
-### Option A — Netlify (recommended)
+### Option A. Netlify (recommended)
 
 1. Push this repo to GitHub
 2. Go to [Netlify](https://app.netlify.com) → **Add new site → Import from Git**
@@ -129,7 +129,7 @@ PNG (ideally square or 4:3, on black) at the same path.
 **Contact form:** Netlify Forms are auto-enabled. Submissions appear in
 **Site → Forms → biospine-contact**. Set up email notifications there.
 
-### Option B — Vercel
+### Option B. Vercel
 
 1. Push to GitHub.
 2. Go to [Vercel](https://vercel.com) → **Import Project**.
@@ -153,7 +153,7 @@ When launching, verify the following:
 - [ ] Submit `https://yoursite.com/sitemap.xml` to [Google Search Console](https://search.google.com/search-console)
 - [ ] Claim the [Google Business Profile](https://business.google.com) and link the website
 - [ ] Add real clinic photos to `public/images/` and reference in pages (replace SVG placeholders)
-- [ ] Run [PageSpeed Insights](https://pagespeed.web.dev/) — target 90+ Performance, 100 SEO/Accessibility/Best Practices
+- [ ] Run [PageSpeed Insights](https://pagespeed.web.dev/), target 90+ Performance, 100 SEO/Accessibility/Best Practices
 - [ ] Verify all pages have unique titles and meta descriptions
 
 ---
@@ -163,7 +163,7 @@ When launching, verify the following:
 Search the codebase for `TODO` comments to find spots where client-specific
 info is needed:
 
-- **Office hours** — currently Mon–Fri 8–5 from directory listing
+- **Office hours**, currently Mon–Fri 8–5 from directory listing
 - **Techniques offered** (Diversified, Gonstead, Activator, decompression, etc.)
 - **Accepted insurance** beyond Medicare
 - **Practice philosophy / mission statement**

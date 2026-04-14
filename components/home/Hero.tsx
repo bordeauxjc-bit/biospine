@@ -18,7 +18,7 @@ export function Hero() {
         aria-hidden
       />
 
-      {/* Radial accent glow — brand green, top-right */}
+      {/* Radial accent glow, brand green, top-right */}
       <div
         className="absolute -top-40 -right-40 h-[640px] w-[640px] rounded-full blur-[140px] opacity-30 pointer-events-none"
         style={{
@@ -27,7 +27,7 @@ export function Hero() {
         }}
         aria-hidden
       />
-      {/* Secondary glow — bottom-left, subtle */}
+      {/* Secondary glow, bottom-left, subtle */}
       <div
         className="absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full blur-[120px] opacity-20 pointer-events-none"
         style={{
@@ -79,7 +79,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 text-xl sm:text-2xl text-slate-300 text-pretty max-w-2xl leading-relaxed">
-            Personalized chiropractic care from {siteConfig.doctor.name} —
+            Personalized chiropractic care from {siteConfig.doctor.name}, 
             helping families across the Pee Dee region feel better, move
             better, and live better.
           </p>

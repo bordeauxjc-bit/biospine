@@ -61,7 +61,7 @@ export function AboutPreview() {
           <p className="mt-6 text-lg text-slate-600 leading-relaxed">
             {siteConfig.doctor.name} has spent over a decade serving patients
             across the Pee Dee region. His approach combines evidence-informed
-            chiropractic techniques with clear, straightforward communication —
+            chiropractic techniques with clear, straightforward communication, 
             so you always understand your diagnosis, your care plan, and your
             progress.
           </p>

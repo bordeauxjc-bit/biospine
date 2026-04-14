@@ -27,7 +27,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="We're here to help"
-        description={`Call, email, or send a message — we'll get back to you as soon as we can during office hours.`}
+        description={`Call, email, or send a message, we'll get back to you as soon as we can during office hours.`}
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Contact', href: '/contact' },

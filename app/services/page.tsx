@@ -173,7 +173,7 @@ export default function ServicesPage() {
           <h2 className="!text-white">Not sure which service you need?</h2>
           <p className="mt-4 text-lg text-slate-300">
             Give us a call. We&rsquo;ll listen to what&rsquo;s going on and help
-            you figure out the right next step — even if it isn&rsquo;t us.
+            you figure out the right next step, even if it isn&rsquo;t us.
           </p>
           <div className="mt-8">
             <LinkButton

@@ -4,7 +4,7 @@
  * If deployed to Netlify, the form submission is automatically captured and
  * emailed to the configured notification address. The `data-netlify="true"`
  * attribute + hidden `form-name` field are what Netlify's build plugin looks
- * for. No JavaScript required — graceful degradation to standard HTML POST.
+ * for. No JavaScript required, graceful degradation to standard HTML POST.
  *
  * If deployed elsewhere (Vercel), this form will POST to /contact which will
  * 405. See README for Vercel-compatible API route alternative.

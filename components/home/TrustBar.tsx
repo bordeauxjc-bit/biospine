@@ -14,7 +14,7 @@ export function TrustBar() {
     {
       icon: FileText,
       label: 'No referral needed',
-      sub: 'Come direct — we handle the rest',
+      sub: 'Come direct, we handle the rest',
     },
     {
       icon: ShieldCheck,

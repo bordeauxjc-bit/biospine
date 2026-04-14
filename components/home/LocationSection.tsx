@@ -16,7 +16,7 @@ export function LocationSection() {
       <SectionHeading
         eyebrow="Plan your visit"
         title="Conveniently located in downtown Lake City"
-        description="Easy to find, easy to park, and ready to help — six days a week by appointment."
+        description="Easy to find, easy to park, and ready to help, six days a week by appointment."
       />
 
       <div className="grid lg:grid-cols-5 gap-6 lg:gap-10">

@@ -23,32 +23,39 @@ export const siteConfig = {
   phoneE164: '+18437130669',
   email: 'Biospinehealthandwellness@gmail.com',
 
-  // Address
+  // Address (confirmed by client)
   address: {
-    street: '263 Kelley St, Ste 100',
+    street: '111 N Matthews Rd',
     city: 'Lake City',
     state: 'SC',
     zip: '29560',
     country: 'US',
-    full: '263 Kelley St, Ste 100, Lake City, SC 29560',
+    full: '111 N Matthews Rd, Lake City, SC 29560',
   },
 
-  // Geo (approximate centroid for Lake City, SC, refine with Google Place ID if available)
+  // Geo (approximate for 111 N Matthews Rd, Lake City, SC)
   geo: {
-    latitude: 33.8718,
-    longitude: -79.7548,
+    latitude: 33.8799,
+    longitude: -79.7604,
   },
 
-  // Hours. TODO: confirm with client
+  // Hours (confirmed: usually 9 AM to 5 PM)
   hours: [
-    { day: 'Monday', open: '08:00', close: '17:00' },
-    { day: 'Tuesday', open: '08:00', close: '17:00' },
-    { day: 'Wednesday', open: '08:00', close: '17:00' },
-    { day: 'Thursday', open: '08:00', close: '17:00' },
-    { day: 'Friday', open: '08:00', close: '17:00' },
+    { day: 'Monday', open: '09:00', close: '17:00' },
+    { day: 'Tuesday', open: '09:00', close: '17:00' },
+    { day: 'Wednesday', open: '09:00', close: '17:00' },
+    { day: 'Thursday', open: '09:00', close: '17:00' },
+    { day: 'Friday', open: '09:00', close: '17:00' },
     { day: 'Saturday', open: null, close: null },
     { day: 'Sunday', open: null, close: null },
   ] as const,
+
+  // Accessibility features (confirmed by client)
+  accessibility: {
+    wheelchairEntrance: true,
+    wheelchairParking: true,
+    wheelchairRestroom: true,
+  },
 
   // Doctor, sourced from CMS NPPES registry + Logan College public records
   doctor: {

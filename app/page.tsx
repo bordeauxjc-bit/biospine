@@ -5,6 +5,7 @@ import { Mission } from '@/components/home/Mission';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
 import { ConditionsList } from '@/components/home/ConditionsList';
 import { AboutPreview } from '@/components/home/AboutPreview';
+import { OfficeGallery } from '@/components/home/OfficeGallery';
 import { Reviews } from '@/components/home/Reviews';
 import { LocationSection } from '@/components/home/LocationSection';
 import { BlogPreview } from '@/components/home/BlogPreview';
@@ -60,6 +61,7 @@ export default function HomePage() {
       <ServicesGrid />
       <ConditionsList />
       <AboutPreview />
+      <OfficeGallery />
       <Reviews />
 
       <Section tone="white">

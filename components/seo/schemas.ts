@@ -69,6 +69,25 @@ export function localBusinessSchema() {
       description: s.summary,
       url: `${siteConfig.url}/services#${s.slug}`,
     })),
+    // Accessibility features (https://schema.org/Accommodation#amenityFeature)
+    amenityFeature: [
+      siteConfig.accessibility.wheelchairEntrance && {
+        '@type': 'LocationFeatureSpecification',
+        name: 'Wheelchair accessible entrance',
+        value: true,
+      },
+      siteConfig.accessibility.wheelchairParking && {
+        '@type': 'LocationFeatureSpecification',
+        name: 'Wheelchair accessible parking',
+        value: true,
+      },
+      siteConfig.accessibility.wheelchairRestroom && {
+        '@type': 'LocationFeatureSpecification',
+        name: 'Wheelchair accessible restroom',
+        value: true,
+      },
+    ].filter(Boolean),
+    isAccessibleForFree: false,
   };
 }
 

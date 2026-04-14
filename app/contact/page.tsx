@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, AlertTriangle, Accessibility } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { ContactForm } from '@/components/ContactForm';
@@ -129,6 +129,37 @@ export default function ContactPage() {
                       </div>
                     ))}
                   </dl>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 p-6">
+              <div className="flex items-start gap-3">
+                <Accessibility
+                  className="h-5 w-5 text-brand-green shrink-0 mt-0.5"
+                  aria-hidden
+                />
+                <div>
+                  <h3 className="font-serif text-base font-semibold text-brand-ink">
+                    Accessibility
+                  </h3>
+                  <ul
+                    role="list"
+                    className="mt-3 space-y-1.5 text-sm text-slate-700"
+                  >
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" aria-hidden />
+                      <span>Wheelchair accessible entrance</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" aria-hidden />
+                      <span>Wheelchair accessible parking</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" aria-hidden />
+                      <span>Wheelchair accessible restroom</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

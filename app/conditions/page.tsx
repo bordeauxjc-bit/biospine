@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/ui/PageHeader';
-import { Section, SectionHeading } from '@/components/ui/Section';
+import { Section } from '@/components/ui/Section';
+import { FaqList } from '@/components/ui/FaqList';
 import { LinkButton } from '@/components/ui/Button';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { faqSchema, breadcrumbSchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Conditions We Treat',
@@ -141,7 +143,7 @@ const faqs = [
   {
     question: 'How do I know if chiropractic care is right for my condition?',
     answer:
-      "Call our office for a short conversation about your symptoms. If chiropractic is a good fit, we'll schedule an exam. If not, Dr. Jordan will refer you to the right kind of provider.",
+      "Call our office for a short conversation about your symptoms. If chiropractic is a good fit, we’ll schedule an exam. If not, Dr. Jordan will refer you to the right kind of provider.",
   },
   {
     question: 'What if my condition isn’t on this list?',
@@ -206,31 +208,32 @@ export default function ConditionsPage() {
                 </p>
               </div>
               <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4 sm:gap-6">
-                <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6">
-                  <h3 className="font-serif text-base font-semibold text-brand-ink">
-                    Common symptoms
-                  </h3>
-                  <ul role="list" className="mt-3 space-y-2 text-slate-700 text-sm">
+                <div className="border-t-2 border-brand-ink pt-5">
+                  <h3 className="label-muted">Common symptoms</h3>
+                  <ul
+                    role="list"
+                    className="mt-4 text-[0.9375rem] leading-relaxed text-slate-700"
+                  >
                     {c.symptoms.map((s) => (
-                      <li key={s} className="flex gap-2">
-                        <span className="text-brand-green mt-0.5">•</span>
-                        <span>{s}</span>
+                      <li
+                        key={s}
+                        className="border-t border-brand-ink/12 py-2.5 first:border-t-0 first:pt-0"
+                      >
+                        {s}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-2xl bg-brand-ink text-white p-5 sm:p-6">
-                  <h3 className="font-serif text-base font-semibold">
-                    How we help
-                  </h3>
-                  <p className="mt-3 text-slate-300 leading-relaxed text-sm">
+                <div className="rounded-sm bg-brand-ink p-6 text-white sm:p-7">
+                  <h3 className="label-light">How we help</h3>
+                  <p className="mt-4 text-[0.9375rem] leading-relaxed text-slate-300">
                     {c.howWeHelp}
                   </p>
                   <a
                     href={`tel:${siteConfig.phoneE164}`}
-                    className="mt-5 inline-flex items-center gap-2 text-brand-green-light font-semibold text-sm hover:text-white"
+                    className="mt-6 inline-block text-[0.9375rem] font-medium text-brand-leaf underline decoration-brand-leaf/40 underline-offset-4 hover:decoration-brand-leaf"
                   >
-                    Call to discuss your case →
+                    Call to discuss your case
                   </a>
                 </div>
               </div>
@@ -240,36 +243,21 @@ export default function ConditionsPage() {
       </Section>
 
       <Section tone="white">
-        <SectionHeading
-          eyebrow="FAQs"
-          title="Common questions about conditions we treat"
-          center
-        />
-        <dl className="mx-auto max-w-3xl space-y-4">
-          {faqs.map((f) => (
-            <details
-              key={f.question}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 open:border-brand-green transition-colors"
-            >
-              <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-brand-ink">
-                <dt className="text-lg">{f.question}</dt>
-                <span
-                  aria-hidden
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark group-open:rotate-45 transition-transform"
-                >
-                  +
-                </span>
-              </summary>
-              <dd className="mt-4 text-slate-600 leading-relaxed">
-                {f.answer}
-              </dd>
-            </details>
-          ))}
-        </dl>
-        <div className="mt-10 text-center">
-          <LinkButton href="/contact" variant="primary">
-            Still have questions? Contact us
-          </LinkButton>
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">
+          <div className="lg:col-span-4">
+            <SectionLabel className="mb-5">Questions</SectionLabel>
+            <h2 className="text-balance">
+              Common questions about what we treat
+            </h2>
+            <div className="mt-8">
+              <LinkButton href="/contact" variant="outline">
+                Still have questions?
+              </LinkButton>
+            </div>
+          </div>
+          <div className="lg:col-span-8">
+            <FaqList faqs={faqs} />
+          </div>
         </div>
       </Section>
 

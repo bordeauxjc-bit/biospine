@@ -1,55 +1,49 @@
 import Link from 'next/link';
-import { ArrowRight, Activity, Bone, Brain, Dumbbell, Flame, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { siteConfig } from '@/lib/site-config';
 
-const iconMap = {
-  'chiropractic-adjustments': Bone,
-  'back-and-neck-pain': Activity,
-  'headache-migraine-care': Brain,
-  'sports-injury-care': Dumbbell,
-  'arthritis-relief': Flame,
-  'wellness-and-weight-loss': Sparkles,
-} as const;
-
+/**
+ * Services as a numbered editorial index rather than a grid of bordered
+ * cards with icon tiles. Hairlines carry the structure.
+ */
 export function ServicesGrid() {
   return (
-    <Section tone="white" id="services">
+    <Section tone="cream" id="services">
       <SectionHeading
         eyebrow="What we treat"
-        title="Comprehensive chiropractic care for every stage of life"
-        description="From acute pain relief to long-term wellness, our care plans are tailored to your goals and the demands of daily life."
+        title="Care for the things that keep you from moving well"
+        description="From acute pain to long-term maintenance, treatment is planned around your goals and what your days actually demand of you."
       />
 
-      <ul
-        role="list"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-      >
-        {siteConfig.services.map((service) => {
-          const Icon = iconMap[service.slug as keyof typeof iconMap] ?? Bone;
-          return (
-            <li key={service.slug}>
-              <Link
-                href={`/services#${service.slug}`}
-                className="group block h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 transition-all hover:border-brand-green hover:shadow-lg focus-visible:border-brand-green"
+      <ul role="list" className="grid sm:grid-cols-2 gap-x-12 lg:gap-x-20">
+        {siteConfig.services.map((service, i) => (
+          <li key={service.slug}>
+            <Link
+              href={`/services#${service.slug}`}
+              className="group flex gap-5 sm:gap-6 border-t border-brand-ink/12 py-7 sm:py-8 transition-colors hover:border-brand-green"
+            >
+              <span
+                aria-hidden
+                className="font-display text-sm text-slate-400 pt-1.5 tabular-nums group-hover:text-brand-green transition-colors"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green-dark group-hover:bg-brand-green group-hover:text-white transition-colors">
-                  <Icon className="h-6 w-6" aria-hidden />
-                </span>
-                <h3 className="mt-5 text-xl font-serif font-semibold text-brand-ink">
-                  {service.name}
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div className="min-w-0 flex-1">
+                <h3 className="flex items-start justify-between gap-3 font-display text-xl sm:text-[1.375rem] font-semibold text-brand-ink group-hover:text-brand-green-dark transition-colors">
+                  <span className="text-balance">{service.name}</span>
+                  <ArrowUpRight
+                    className="h-4 w-4 mt-1.5 shrink-0 text-slate-300 group-hover:text-brand-green transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    aria-hidden
+                  />
                 </h3>
-                <p className="mt-2 text-slate-600 leading-relaxed">
+                <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-slate-600">
                   {service.summary}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-dark">
-                  Learn more
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
-                </span>
-              </Link>
-            </li>
-          );
-        })}
+              </div>
+            </Link>
+          </li>
+        ))}
       </ul>
     </Section>
   );

@@ -1,87 +1,79 @@
 import Image from 'next/image';
-import { Clock, Heart, Handshake } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
 import { Section } from '@/components/ui/Section';
 import { siteConfig } from '@/lib/site-config';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export function AboutPreview() {
   const points = [
     {
-      icon: Clock,
-      title: '10+ years experience',
-      text: 'A decade of helping patients across the Pee Dee region feel and move better.',
+      title: 'Over ten years in practice',
+      text: 'A decade of treating patients across Lake City and the wider Pee Dee.',
     },
     {
-      icon: Heart,
-      title: 'Patient-first care',
-      text: 'Personalized treatment plans built around your goals, your health, and your everyday life.',
+      title: 'Care planned around you',
+      text: 'Treatment built for your goals, your health history, and what your week actually looks like.',
     },
     {
-      icon: Handshake,
-      title: 'Clear, honest communication',
-      text: 'You\u2019ll always know the diagnosis, the plan, and the expected timeline \u2014 no guesswork.',
+      title: 'Plain, honest answers',
+      text: 'You will always know the diagnosis, the plan, and roughly how long it should take.',
     },
   ];
 
   return (
     <Section tone="white">
-      <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-        <div className="lg:col-span-2">
-          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5">
-            <Image
-              src="/images/dr-jordan.jpg"
-              alt={`${siteConfig.doctor.name} at BioSpine Health and Wellness in Lake City, SC`}
-              fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover"
-            />
-            {/* Subtle gradient overlay for caption contrast */}
-            <div
-              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-ink/80 via-brand-ink/40 to-transparent"
-              aria-hidden
-            />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <p className="font-display text-xl font-semibold text-white">
-                {siteConfig.doctor.name}
-              </p>
-              <p className="text-sm text-white/80">
-                {siteConfig.doctor.title}
-              </p>
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="lg:col-span-6">
+          <figure>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-brand-sand ring-1 ring-brand-ink/10">
+              <Image
+                src="/images/office/doctor-in-action.jpg"
+                alt={`${siteConfig.doctor.name} explaining spinal anatomy with a model at BioSpine Health and Wellness`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
-          </div>
+            <figcaption className="mt-3.5 border-t border-brand-ink/12 pt-3 text-sm text-slate-500">
+              Every visit includes an explanation of what is actually going on
+              in your spine.
+            </figcaption>
+          </figure>
         </div>
 
-        <div className="lg:col-span-3">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-green mb-3">
-            Meet your chiropractor
-          </p>
+        <div className="lg:col-span-6">
+          <SectionLabel className="mb-5">Meet your chiropractor</SectionLabel>
+
           <h2 className="text-balance">
-            A doctor who listens, explains, and builds care plans that fit your life
+            A doctor who listens first and explains as he goes
           </h2>
+
           <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-            {siteConfig.doctor.name} has spent over a decade serving patients
-            across the Pee Dee region. His approach combines evidence-informed
-            chiropractic techniques with clear, straightforward communication, 
-            so you always understand your diagnosis, your care plan, and your
-            progress.
+            {siteConfig.doctor.name} trained at{' '}
+            {siteConfig.doctor.education} and has spent more than ten years
+            treating patients in this part of South Carolina. He pairs
+            evidence-informed technique with straightforward talk, so you leave
+            knowing where you stand.
           </p>
 
-          <ul role="list" className="mt-8 space-y-4">
+          <ul role="list" className="mt-9">
             {points.map((point) => (
-              <li key={point.title} className="flex items-start gap-4">
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark">
-                  <point.icon className="h-5 w-5" aria-hidden />
-                </span>
-                <div>
-                  <p className="font-semibold text-brand-ink">{point.title}</p>
-                  <p className="text-slate-600">{point.text}</p>
-                </div>
+              <li
+                key={point.title}
+                className="border-t border-brand-ink/12 py-5 first:border-t-0 first:pt-0"
+              >
+                <p className="font-display text-lg font-semibold text-brand-ink">
+                  {point.title}
+                </p>
+                <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-slate-600">
+                  {point.text}
+                </p>
               </li>
             ))}
           </ul>
 
-          <div className="mt-8">
-            <LinkButton href="/about" variant="secondary">
+          <div className="mt-9">
+            <LinkButton href="/about" variant="outline">
               More about Dr. Jordan
             </LinkButton>
           </div>

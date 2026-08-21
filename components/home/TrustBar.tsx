@@ -1,54 +1,42 @@
-import { UserCheck, ShieldCheck, FileText, MapPin } from 'lucide-react';
-
 /**
- * Wellness-style trust signals emphasizing accessibility and patient
- * experience rather than institutional credentials.
+ * Slim masthead band under the hero.
+ *
+ * No icon tiles: four facts, divided by hairlines, set like a printed
+ * standfirst. The dark ground gives the light hero something to sit on.
  */
 export function TrustBar() {
   const items = [
     {
-      icon: UserCheck,
-      label: 'New patients welcome',
-      sub: 'Same-week appointments often available',
+      label: 'New patients',
+      text: 'Same-week appointments are usually available.',
     },
     {
-      icon: FileText,
-      label: 'No referral needed',
-      sub: 'Come direct, we handle the rest',
+      label: 'No referral',
+      text: 'South Carolina lets you come straight to us.',
     },
     {
-      icon: ShieldCheck,
-      label: 'Medicare accepted',
-      sub: 'Plus many commercial plans',
+      label: 'Insurance',
+      text: 'Medicare accepted, plus many commercial plans.',
     },
     {
-      icon: MapPin,
-      label: 'Serving the Pee Dee',
-      sub: 'Lake City, Florence, Kingstree & more',
+      label: 'Where we serve',
+      text: 'Lake City, Florence, Kingstree and the Pee Dee.',
     },
   ];
 
   return (
-    <div className="relative border-b border-slate-200 bg-white">
-      <div
-        className="absolute inset-0 bg-speckle opacity-50 pointer-events-none"
-        aria-hidden
-      />
-      <div className="container relative py-10 sm:py-14">
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
+    <div className="bg-brand-ink text-white">
+      <div className="container py-10 sm:py-12">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 sm:gap-y-10 sm:gap-x-10 lg:gap-x-0">
           {items.map((item) => (
-            <li key={item.label} className="flex items-start gap-4">
-              <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green-dark ring-1 ring-brand-green/20">
-                <item.icon className="h-5 w-5" aria-hidden />
-              </span>
-              <div className="min-w-0">
-                <p className="font-display font-semibold text-brand-ink leading-tight">
-                  {item.label}
-                </p>
-                <p className="text-sm text-slate-500 mt-1 leading-snug">
-                  {item.sub}
-                </p>
-              </div>
+            <li
+              key={item.label}
+              className="border-t border-white/15 pt-5 first:border-t-0 first:pt-0 sm:border-t-0 sm:pt-0 lg:border-l lg:border-white/15 lg:pl-10 lg:first:border-l-0 lg:first:pl-0"
+            >
+              <p className="label-light">{item.label}</p>
+              <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-slate-300">
+                {item.text}
+              </p>
             </li>
           ))}
         </ul>

@@ -43,7 +43,7 @@ export function Logo({
   // the footer), no plate is needed.
   const plate =
     variant === 'dark'
-      ? 'rounded-lg bg-brand-ink p-1.5'
+      ? 'rounded-sm bg-brand-ink px-2 py-1.5'
       : '';
 
   return (

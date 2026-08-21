@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --color-brand-green: 16 185 129;
-    --color-brand-ink: 11 18 32;
-  }
-
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -15,27 +10,30 @@
 
   body {
     @apply bg-white text-brand-ink antialiased;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
+  /* Serif headlines, set tight. Optical sizing keeps Newsreader from
+     looking spindly at display sizes. */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight;
+    @apply font-display text-brand-ink;
+    font-optical-sizing: auto;
+    letter-spacing: -0.012em;
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05];
+    @apply text-[2.5rem] sm:text-5xl lg:text-[3.75rem] font-normal leading-[1.06];
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1];
+    @apply text-[2rem] sm:text-[2.5rem] lg:text-[2.875rem] font-normal leading-[1.12];
   }
 
   h3 {
-    @apply text-2xl sm:text-3xl font-bold;
+    @apply text-xl sm:text-2xl font-semibold leading-snug;
   }
 
   h4 {
-    @apply text-xl sm:text-2xl font-semibold;
+    @apply text-lg sm:text-xl font-semibold leading-snug;
   }
 
   p {
@@ -43,10 +41,9 @@
   }
 
   ::selection {
-    @apply bg-brand-green/20 text-brand-ink;
+    @apply bg-brand-green/15 text-brand-ink;
   }
 
-  /* Respect prefers-reduced-motion */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -56,66 +53,73 @@
     }
   }
 
-  /* Focus ring */
   *:focus-visible {
     @apply outline-none ring-2 ring-brand-green ring-offset-2 ring-offset-white;
   }
 }
 
 @layer utilities {
-  /* Gradient text for hero/section headlines */
-  .text-gradient-brand {
-    background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+  /* Small-caps section label. Used instead of colored "eyebrow" pills. */
+  .label {
+    @apply text-[0.6875rem] font-semibold uppercase tracking-label text-brand-green-dark;
   }
 
-  /* Subtle speckle/dust background texture (like awellnesschiropractic) */
-  .bg-speckle {
-    background-image: radial-gradient(
-      rgba(16, 185, 129, 0.08) 1px,
-      transparent 1px
-    );
-    background-size: 28px 28px;
+  .label-muted {
+    @apply text-[0.6875rem] font-semibold uppercase tracking-label text-slate-500;
   }
 
-  .bg-speckle-light {
-    background-image: radial-gradient(
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px
-    );
-    background-size: 32px 32px;
+  .label-light {
+    @apply text-[0.6875rem] font-semibold uppercase tracking-label text-brand-leaf;
+  }
+
+  /* Barely-there paper grain. Replaces the dotted "speckle" pattern. */
+  .bg-paper {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+
+  /* Hanging serif quote glyph for pull quotes. */
+  .quote-hang::before {
+    content: '\201C';
+    @apply font-display text-brand-green/30;
+    font-size: 2.5em;
+    line-height: 0;
+    position: absolute;
+    left: -0.55em;
+    top: 0.42em;
+  }
+
+  .rule {
+    @apply border-t border-slate-200;
   }
 }
 
 @layer components {
+  /* Long-form article typography, used by /about, /new-patients, etc. */
   .prose-biospine {
-    @apply max-w-prose text-slate-700;
+    @apply max-w-measure text-slate-700;
   }
   .prose-biospine h2 {
-    @apply mt-10 mb-4 text-3xl font-display;
+    @apply mt-12 mb-4;
   }
   .prose-biospine h3 {
-    @apply mt-8 mb-3 text-2xl font-display;
+    @apply mt-9 mb-3;
   }
   .prose-biospine p {
-    @apply mb-5 text-lg leading-8;
+    @apply mb-5 text-[1.0625rem] leading-8;
   }
   .prose-biospine ul {
-    @apply mb-5 list-disc pl-6 space-y-2 text-lg;
+    @apply mb-5 list-disc pl-5 space-y-2 text-[1.0625rem] marker:text-brand-green;
   }
   .prose-biospine ol {
-    @apply mb-5 list-decimal pl-6 space-y-2 text-lg;
+    @apply mb-5 list-decimal pl-5 space-y-2 text-[1.0625rem] marker:text-brand-green;
   }
   .prose-biospine a {
-    @apply text-brand-green-dark underline underline-offset-2 hover:text-brand-ink;
+    @apply text-brand-green-dark underline underline-offset-[3px] decoration-brand-green/40 hover:decoration-brand-green;
   }
   .prose-biospine blockquote {
-    @apply my-6 border-l-4 border-brand-green pl-5 italic text-slate-600;
+    @apply my-7 border-l-2 border-brand-green pl-5 font-display text-xl italic text-slate-700;
   }
   .prose-biospine strong {
-    @apply text-brand-ink;
+    @apply font-semibold text-brand-ink;
   }
 }

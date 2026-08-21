@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { MapPin, Phone, Mail, Clock, AlertTriangle, Accessibility } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { ContactForm } from '@/components/ContactForm';
@@ -26,8 +26,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="We're here to help"
-        description={`Call, email, or send a message, we'll get back to you as soon as we can during office hours.`}
+        title="We’re here to help"
+        description={`Call, email, or send a message, we’ll get back to you as soon as we can during office hours.`}
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Contact', href: '/contact' },
@@ -46,49 +46,36 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <aside className="lg:col-span-2 space-y-5">
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-brand-green shrink-0 mt-0.5" aria-hidden />
-                <div>
-                  <h3 className="font-serif text-base font-semibold text-brand-ink">
-                    Phone
-                  </h3>
+          <aside className="lg:col-span-2">
+            <dl className="rounded-sm border border-brand-ink/12 bg-brand-cream px-6 py-2">
+              <div className="border-t border-brand-ink/12 py-5 first:border-t-0">
+                <dt className="label-muted">Phone</dt>
+                <dd className="mt-2">
                   <a
                     href={`tel:${siteConfig.phoneE164}`}
-                    className="mt-1 block text-xl font-serif font-semibold text-brand-green-dark hover:text-brand-green"
+                    className="font-display text-xl text-brand-ink hover:text-brand-green-dark transition-colors"
                   >
                     {siteConfig.phone}
                   </a>
-                </div>
+                </dd>
               </div>
-            </div>
 
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-brand-green shrink-0 mt-0.5" aria-hidden />
-                <div className="min-w-0">
-                  <h3 className="font-serif text-base font-semibold text-brand-ink">
-                    Email
-                  </h3>
+              <div className="border-t border-brand-ink/12 py-5">
+                <dt className="label-muted">Email</dt>
+                <dd className="mt-2">
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="mt-1 block text-sm text-slate-700 hover:text-brand-green-dark break-all"
+                    className="break-all text-[0.9375rem] text-slate-700 hover:text-brand-green-dark transition-colors"
                   >
                     {siteConfig.email}
                   </a>
-                </div>
+                </dd>
               </div>
-            </div>
 
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-brand-green shrink-0 mt-0.5" aria-hidden />
-                <div>
-                  <h3 className="font-serif text-base font-semibold text-brand-ink">
-                    Office
-                  </h3>
-                  <address className="mt-1 not-italic text-sm text-slate-700 leading-relaxed">
+              <div className="border-t border-brand-ink/12 py-5">
+                <dt className="label-muted">Office</dt>
+                <dd className="mt-2">
+                  <address className="not-italic text-[0.9375rem] leading-relaxed text-slate-700">
                     {siteConfig.address.street}
                     <br />
                     {siteConfig.address.city}, {siteConfig.address.state}{' '}
@@ -98,96 +85,67 @@ export default function ContactPage() {
                     href={directionsUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-block text-sm font-semibold text-brand-green-dark hover:text-brand-ink"
+                    className="mt-2.5 inline-block text-[0.9375rem] font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
                   >
-                    Get directions →
+                    Get directions
                   </a>
-                </div>
+                </dd>
               </div>
-            </div>
 
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="flex items-start gap-3">
-                <Clock className="h-5 w-5 text-brand-green shrink-0 mt-0.5" aria-hidden />
-                <div className="flex-1">
-                  <h3 className="font-serif text-base font-semibold text-brand-ink">
-                    Hours
-                  </h3>
-                  <dl className="mt-3 space-y-1 text-sm">
+              <div className="border-t border-brand-ink/12 py-5">
+                <dt className="label-muted">Hours</dt>
+                <dd className="mt-3">
+                  <ul className="space-y-2 text-[0.9375rem]">
                     {hours.map((h) => (
-                      <div key={h.day} className="flex justify-between gap-4">
-                        <dt className="text-slate-600">{h.day}</dt>
-                        <dd
+                      <li
+                        key={h.day}
+                        className="flex items-baseline justify-between gap-4"
+                      >
+                        <span className="text-slate-600">{h.day}</span>
+                        <span
+                          aria-hidden
+                          className="flex-1 translate-y-[-0.2em] border-b border-dotted border-slate-300"
+                        />
+                        <span
                           className={
                             h.isClosed
                               ? 'text-slate-400'
-                              : 'text-brand-ink font-medium'
+                              : 'font-medium tabular-nums text-brand-ink'
                           }
                         >
                           {h.display}
-                        </dd>
-                      </div>
+                        </span>
+                      </li>
                     ))}
-                  </dl>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="flex items-start gap-3">
-                <Accessibility
-                  className="h-5 w-5 text-brand-green shrink-0 mt-0.5"
-                  aria-hidden
-                />
-                <div>
-                  <h3 className="font-serif text-base font-semibold text-brand-ink">
-                    Accessibility
-                  </h3>
-                  <ul
-                    role="list"
-                    className="mt-3 space-y-1.5 text-sm text-slate-700"
-                  >
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" aria-hidden />
-                      <span>Wheelchair accessible entrance</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" aria-hidden />
-                      <span>Wheelchair accessible parking</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" aria-hidden />
-                      <span>Wheelchair accessible restroom</span>
-                    </li>
                   </ul>
-                </div>
+                </dd>
               </div>
-            </div>
 
-            <div className="rounded-2xl bg-amber-50 border border-amber-200 p-6">
-              <div className="flex items-start gap-3">
-                <AlertTriangle
-                  className="h-5 w-5 text-amber-600 shrink-0 mt-0.5"
-                  aria-hidden
-                />
-                <div>
-                  <h3 className="font-serif text-base font-semibold text-amber-900">
-                    In an emergency
-                  </h3>
-                  <p className="mt-1 text-sm text-amber-900 leading-relaxed">
-                    Chiropractic care is not emergency care. If you&rsquo;re
-                    having a medical emergency, call <strong>911</strong> or go
-                    to your nearest emergency room.
-                  </p>
-                </div>
+              <div className="border-t border-brand-ink/12 py-5">
+                <dt className="label-muted">Accessibility</dt>
+                <dd className="mt-2 text-[0.9375rem] leading-relaxed text-slate-700">
+                  Wheelchair accessible entrance, parking, and restroom.
+                </dd>
               </div>
+            </dl>
+
+            <div className="mt-6 flex items-start gap-3 border-l-2 border-brand-gold pl-4">
+              <AlertTriangle
+                className="mt-0.5 h-[1.05rem] w-[1.05rem] shrink-0 text-brand-gold"
+                aria-hidden
+              />
+              <p className="text-sm leading-relaxed text-slate-600">
+                Chiropractic care is not emergency care. If you&rsquo;re having
+                a medical emergency, call <strong>911</strong> or go to your
+                nearest emergency room.
+              </p>
             </div>
           </aside>
         </div>
       </Section>
 
       <Section tone="cream">
-        <div className="rounded-2xl overflow-hidden border border-slate-200 aspect-[16/9]">
+        <div className="aspect-[16/9] overflow-hidden rounded-sm ring-1 ring-brand-ink/10">
           <iframe
             src={mapEmbedUrl()}
             loading="lazy"

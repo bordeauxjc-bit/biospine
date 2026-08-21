@@ -4,15 +4,16 @@ import {
   Clock,
   FileText,
   ShieldCheck,
-  HelpCircle,
 } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { FaqList } from '@/components/ui/FaqList';
 import { LinkButton } from '@/components/ui/Button';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { faqSchema, breadcrumbSchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = buildMetadata({
   title: 'New Patients',
@@ -25,7 +26,7 @@ const steps = [
   {
     icon: FileText,
     title: 'Book your first visit',
-    text: `Call us at ${siteConfig.phone} or stop by the office. We'll find a time that works for you.`,
+    text: `Call us at ${siteConfig.phone} or stop by the office. We’ll find a time that works for you.`,
   },
   {
     icon: ClipboardCheck,
@@ -40,7 +41,7 @@ const steps = [
   {
     icon: ShieldCheck,
     title: 'Your care plan',
-    text: "If appropriate, you'll receive your first adjustment the same day. You'll leave with a clear plan for next steps.",
+    text: "If appropriate, you’ll receive your first adjustment the same day. You’ll leave with a clear plan for next steps.",
   },
 ];
 
@@ -52,12 +53,12 @@ const faqs = [
   },
   {
     question: 'Do you accept my insurance?',
-    answer: `We accept Medicare and work with a number of commercial insurance plans. Call us at ${siteConfig.phone} and we'll verify your specific coverage before your visit.`,
+    answer: `We accept Medicare and work with a number of commercial insurance plans. Call us at ${siteConfig.phone} and we’ll verify your specific coverage before your visit.`,
   },
   {
     question: 'Will I get an adjustment on my first visit?',
     answer:
-      "Usually, yes, but not always. We only adjust after a thorough exam confirms it's appropriate for your case. If imaging or a referral is needed first, we'll tell you.",
+      "Usually, yes, but not always. We only adjust after a thorough exam confirms it’s appropriate for your case. If imaging or a referral is needed first, we’ll tell you.",
   },
   {
     question: 'How long will the first appointment take?',
@@ -82,7 +83,7 @@ export default function NewPatientsPage() {
       <PageHeader
         eyebrow="New patients"
         title="Your first visit, step by step"
-        description="No surprises, here's exactly what to expect when you walk through our door."
+        description="No surprises, here’s exactly what to expect when you walk through our door."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'New Patients', href: '/new-patients' },
@@ -97,26 +98,25 @@ export default function NewPatientsPage() {
 
         <ol
           role="list"
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8"
         >
           {steps.map((step, idx) => (
-            <li key={step.title} className="relative">
-              <div className="h-full rounded-2xl border border-slate-200 p-6 bg-white">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="font-serif text-3xl font-semibold text-brand-green">
-                    0{idx + 1}
-                  </span>
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark">
-                    <step.icon className="h-5 w-5" aria-hidden />
-                  </span>
-                </div>
-                <h3 className="font-serif text-lg font-semibold text-brand-ink">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-slate-600 text-sm leading-relaxed">
-                  {step.text}
-                </p>
+            <li key={step.title} className="border-t border-brand-ink/15 pt-6">
+              <div className="flex items-baseline gap-3">
+                <span className="font-display text-sm tabular-nums text-brand-green">
+                  0{idx + 1}
+                </span>
+                <step.icon
+                  className="h-[1.05rem] w-[1.05rem] self-center text-slate-400"
+                  aria-hidden
+                />
               </div>
+              <h3 className="mt-4 font-display text-lg font-semibold text-brand-ink">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-[0.9375rem] leading-relaxed text-slate-600">
+                {step.text}
+              </p>
             </li>
           ))}
         </ol>
@@ -129,7 +129,7 @@ export default function NewPatientsPage() {
               eyebrow="Paperwork"
               title="What to bring"
             />
-            <ul role="list" className="space-y-3 text-slate-700">
+            <ul role="list" className="text-[0.9375rem] leading-relaxed text-slate-700">
               {[
                 'Photo ID (driver’s license or other government-issued ID)',
                 'Insurance card, if applicable',
@@ -137,9 +137,11 @@ export default function NewPatientsPage() {
                 'A list of current medications and supplements',
                 'A list of previous diagnoses, surgeries, or major injuries',
               ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-green shrink-0" aria-hidden />
-                  <span>{item}</span>
+                <li
+                  key={item}
+                  className="border-t border-brand-ink/12 py-3 first:border-t-0 first:pt-0"
+                >
+                  {item}
                 </li>
               ))}
             </ul>
@@ -172,35 +174,15 @@ export default function NewPatientsPage() {
       </Section>
 
       <Section tone="white">
-        <SectionHeading
-          eyebrow="FAQs"
-          title="New patient questions, answered"
-          center
-        />
-        <dl className="mx-auto max-w-3xl space-y-4">
-          {faqs.map((f) => (
-            <details
-              key={f.question}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 open:border-brand-green transition-colors"
-            >
-              <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-brand-ink">
-                <dt className="text-lg flex items-center gap-3">
-                  <HelpCircle className="h-5 w-5 text-brand-green shrink-0" aria-hidden />
-                  {f.question}
-                </dt>
-                <span
-                  aria-hidden
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark group-open:rotate-45 transition-transform"
-                >
-                  +
-                </span>
-              </summary>
-              <dd className="mt-4 pl-8 text-slate-600 leading-relaxed">
-                {f.answer}
-              </dd>
-            </details>
-          ))}
-        </dl>
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">
+          <div className="lg:col-span-4">
+            <SectionLabel className="mb-5">Questions</SectionLabel>
+            <h2 className="text-balance">New patient questions, answered</h2>
+          </div>
+          <div className="lg:col-span-8">
+            <FaqList faqs={faqs} />
+          </div>
+        </div>
       </Section>
 
       <JsonLd id="ld-new-patients-faq" data={faqSchema(faqs)} />

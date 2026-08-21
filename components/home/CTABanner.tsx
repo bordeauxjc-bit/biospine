@@ -1,31 +1,35 @@
-import { Phone, MapPin } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
 import { siteConfig, directionsUrl } from '@/lib/site-config';
 
 export function CTABanner() {
   return (
     <section
-      className="bg-brand-green text-white"
-      aria-label="Ready to get started"
+      className="bg-brand-green-dark text-white"
+      aria-label="Book an appointment"
     >
-      <div className="container py-14 sm:py-20">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <div className="container py-16 sm:py-20">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
           <div className="max-w-2xl">
-            <h2 className="!text-white">
-              Ready to feel better?
+            <p className="text-[0.6875rem] font-semibold uppercase tracking-label text-white/60">
+              Ready when you are
+            </p>
+            <h2 className="mt-5 !text-white text-balance">
+              Call and we will find you a time this week.
             </h2>
-            <p className="mt-3 text-lg text-white/90">
-              Call today to schedule your first visit with {siteConfig.doctor.name}.
+            <p className="mt-5 text-lg text-white/80 leading-relaxed">
+              Most new patients are seen within a few days. Bring your insurance
+              card and anything a previous provider sent you.
             </p>
           </div>
+
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <LinkButton
               href={`tel:${siteConfig.phoneE164}`}
-              variant="secondary"
               size="lg"
-              className="!bg-brand-ink hover:!bg-black"
+              className="!bg-white !text-brand-green-dark hover:!bg-brand-cream focus-visible:!ring-white"
             >
-              <Phone className="h-5 w-5" aria-hidden />
+              <Phone className="h-[1.05rem] w-[1.05rem]" aria-hidden />
               {siteConfig.phone}
             </LinkButton>
             <LinkButton
@@ -33,10 +37,9 @@ export function CTABanner() {
               external
               variant="outline"
               size="lg"
-              className="!border-white !text-white hover:!bg-white hover:!text-brand-green-dark"
+              className="!border-white/40 !text-white hover:!bg-white/10 hover:!border-white focus-visible:!ring-white"
             >
-              <MapPin className="h-5 w-5" aria-hidden />
-              Visit us
+              Directions
             </LinkButton>
           </div>
         </div>

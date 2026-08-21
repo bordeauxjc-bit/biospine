@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-2">
             <div className="sticky top-24">
-              <div className="relative rounded-3xl overflow-hidden aspect-square shadow-xl ring-1 ring-black/5">
+              <div className="relative aspect-square overflow-hidden rounded-sm bg-brand-sand ring-1 ring-brand-ink/10">
                 <Image
                   src="/images/dr-jordan.jpg"
                   alt={`${siteConfig.doctor.name}, ${siteConfig.doctor.credential} at BioSpine Health and Wellness in Lake City, SC`}
@@ -94,12 +94,11 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Our values"
           title="What you can expect every visit"
-          center
         />
 
         <ul
           role="list"
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8"
         >
           {[
             {
@@ -125,15 +124,18 @@ export default function AboutPage() {
           ].map((v) => (
             <li
               key={v.title}
-              className="rounded-2xl bg-white p-6 border border-slate-200"
+              className="border-t border-brand-ink/15 pt-6"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green-dark">
-                <v.icon className="h-5 w-5" aria-hidden />
-              </span>
-              <h3 className="mt-4 font-serif text-lg font-semibold text-brand-ink">
+              <v.icon
+                className="h-[1.15rem] w-[1.15rem] text-brand-green"
+                aria-hidden
+              />
+              <h3 className="mt-4 font-display text-lg font-semibold text-brand-ink">
                 {v.title}
               </h3>
-              <p className="mt-2 text-slate-600">{v.text}</p>
+              <p className="mt-2 text-[0.9375rem] leading-relaxed text-slate-600">
+                {v.text}
+              </p>
             </li>
           ))}
         </ul>
@@ -149,7 +151,7 @@ export default function AboutPage() {
           {siteConfig.areaServed.map((area) => (
             <span
               key={area}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-green/10 px-4 py-2 text-sm font-medium text-brand-green-dark"
+              className="inline-flex items-center gap-2 rounded border border-brand-green/25 bg-brand-green-pale px-3.5 py-2 text-sm font-medium text-brand-green-dark"
             >
               <MapPin className="h-3.5 w-3.5" aria-hidden />
               {area}

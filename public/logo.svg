@@ -2,10 +2,10 @@
   <rect width="400" height="400" fill="#000000"/>
   <!-- Spine S mark -->
   <g transform="translate(150, 60)">
-    <g fill="none" stroke="#10B981" stroke-width="9" stroke-linecap="round">
+    <g fill="none" stroke="#34A738" stroke-width="9" stroke-linecap="round">
       <path d="M 70 18 C 38 22, 30 44, 50 58 C 70 72, 62 94, 30 102"/>
     </g>
-    <g stroke="#10B981" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <g stroke="#34A738" stroke-width="2.5" stroke-linecap="round" fill="none">
       <line x1="62" y1="14" x2="78" y2="22"/>
       <line x1="55" y1="17" x2="73" y2="28"/>
       <line x1="48" y1="22" x2="66" y2="34"/>
@@ -23,9 +23,9 @@
     </g>
   </g>
   <!-- BioSpine wordmark -->
-  <text x="200" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-weight="300" fill="#BCE3EB" letter-spacing="2">BioSpine</text>
+  <text x="200" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-weight="300" fill="#93B2CB" letter-spacing="2">BioSpine</text>
   <!-- Underline accent -->
-  <line x1="120" y1="275" x2="280" y2="275" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="275" x2="280" y2="275" stroke="#34A738" stroke-width="2" stroke-linecap="round"/>
   <!-- RECOVERY tag -->
-  <text x="200" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="500" fill="#10B981" letter-spacing="10">RECOVERY</text>
+  <text x="200" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="500" fill="#34A738" letter-spacing="10">RECOVERY</text>
 </svg>

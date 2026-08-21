@@ -1,131 +1,92 @@
-import { Phone, MapPin, Star } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, MapPin } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
 import { siteConfig, directionsUrl } from '@/lib/site-config';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
+/**
+ * Editorial, photograph-led hero on warm paper.
+ *
+ * Deliberately not a dark gradient slab: the strongest credibility signal a
+ * small practice has is the doctor's actual face and the actual building,
+ * so the real photography carries the section and the type stays quiet.
+ */
 export function Hero() {
   return (
     <section
-      className="relative overflow-hidden bg-brand-ink text-white isolate"
+      className="relative overflow-hidden bg-brand-cream"
       aria-labelledby="hero-heading"
     >
-      {/* Layered background: gradient glow + speckle */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-brand-ink via-brand-ink-soft to-brand-ink pointer-events-none"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-speckle-light opacity-60 pointer-events-none"
+        className="absolute inset-0 bg-paper pointer-events-none"
         aria-hidden
       />
 
-      {/* Radial accent glow, brand green, top-right */}
-      <div
-        className="absolute -top-40 -right-40 h-[640px] w-[640px] rounded-full blur-[140px] opacity-30 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(16,185,129,0.45) 0%, rgba(16,185,129,0) 70%)',
-        }}
-        aria-hidden
-      />
-      {/* Secondary glow, bottom-left, subtle */}
-      <div
-        className="absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full blur-[120px] opacity-20 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(52,211,153,0.5) 0%, rgba(52,211,153,0) 70%)',
-        }}
-        aria-hidden
-      />
+      <div className="container relative pt-14 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-28">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-7">
+            <SectionLabel>Chiropractic care · Lake City, South Carolina</SectionLabel>
 
-      {/* Animated decorative spine silhouette */}
-      <div
-        className="absolute inset-y-0 right-0 w-[40%] opacity-10 pointer-events-none hidden lg:block"
-        aria-hidden
-      >
-        <svg
-          className="h-full w-full"
-          viewBox="0 0 400 800"
-          preserveAspectRatio="xMidYMid meet"
-          fill="none"
-        >
-          <path
-            d="M250 60 C 130 180, 130 320, 250 400 C 370 480, 370 620, 250 740"
-            stroke="#10B981"
-            strokeWidth="14"
-            strokeLinecap="round"
-          />
-          {Array.from({ length: 30 }).map((_, i) => {
-            const t = i / 29;
-            const cy = 60 + t * 680;
-            const cx = 250 - Math.sin(t * Math.PI * 2) * 50;
-            return <circle key={i} cx={cx} cy={cy} r={6} fill="#10B981" />;
-          })}
-        </svg>
-      </div>
+            <h1 id="hero-heading" className="mt-7 text-balance">
+              Hands-on care for backs, necks, and the days they&rsquo;re
+              ruining.
+            </h1>
 
-      <div className="container relative py-24 sm:py-32 lg:py-40">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-brand-green/10 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-brand-green-light border border-brand-green/20">
-            <Star className="h-4 w-4 fill-current" aria-hidden />
-            <span>Now accepting new patients in Lake City, SC</span>
+            <p className="mt-7 max-w-xl text-lg sm:text-xl text-slate-700 text-pretty leading-relaxed">
+              {siteConfig.doctor.name} has practiced in Lake City for over a
+              decade. You&rsquo;ll get a real exam, a straight explanation of
+              what&rsquo;s wrong, and a plan you can actually follow.
+            </p>
+
+            <div className="mt-9 flex flex-col sm:flex-row gap-3">
+              <LinkButton
+                href={`tel:${siteConfig.phoneE164}`}
+                variant="primary"
+                size="lg"
+                aria-label={`Call ${siteConfig.phone}`}
+              >
+                <Phone className="h-[1.05rem] w-[1.05rem]" aria-hidden />
+                Call {siteConfig.phone}
+              </LinkButton>
+              <LinkButton
+                href={directionsUrl()}
+                external
+                variant="outline"
+                size="lg"
+              >
+                <MapPin className="h-[1.05rem] w-[1.05rem]" aria-hidden />
+                Get directions
+              </LinkButton>
+            </div>
+
+            <p className="mt-8 text-sm text-slate-500 leading-relaxed">
+              Walk-ins and new patients welcome. No referral needed in South
+              Carolina.
+            </p>
           </div>
 
-          <h1
-            id="hero-heading"
-            className="mt-8 text-balance text-white font-display tracking-tight"
-          >
-            Get back to what you love.{' '}
-            <span className="text-gradient-brand">Pain-free.</span>
-          </h1>
-
-          <p className="mt-7 text-xl sm:text-2xl text-slate-300 text-pretty max-w-2xl leading-relaxed">
-            Personalized chiropractic care from {siteConfig.doctor.name}, 
-            helping families across the Pee Dee region feel better, move
-            better, and live better.
-          </p>
-
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <LinkButton
-              href={`tel:${siteConfig.phoneE164}`}
-              variant="primary"
-              size="lg"
-              className="shadow-glow hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-200"
-              aria-label={`Call ${siteConfig.phone}`}
-            >
-              <Phone className="h-5 w-5" aria-hidden />
-              Call {siteConfig.phone}
-            </LinkButton>
-            <LinkButton
-              href={directionsUrl()}
-              external
-              variant="outline"
-              size="lg"
-              className="!border-white/30 !text-white hover:!bg-white hover:!text-brand-ink backdrop-blur-sm"
-            >
-              <MapPin className="h-5 w-5" aria-hidden />
-              Get Directions
-            </LinkButton>
+          <div className="lg:col-span-5">
+            <figure className="relative">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-brand-sand ring-1 ring-brand-ink/10">
+                <Image
+                  src="/images/dr-jordan.jpg"
+                  alt={`${siteConfig.doctor.name}, ${siteConfig.doctor.title}, at BioSpine Health and Wellness in Lake City, SC`}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <figcaption className="mt-4 flex items-baseline gap-3 border-t border-brand-ink/12 pt-3">
+                <span className="font-display text-lg text-brand-ink">
+                  {siteConfig.doctor.name}
+                </span>
+                <span className="text-sm text-slate-500">
+                  {siteConfig.doctor.credential} · {siteConfig.doctor.license}
+                </span>
+              </figcaption>
+            </figure>
           </div>
-
-          <dl className="mt-16 grid grid-cols-2 gap-6 sm:gap-14 max-w-lg">
-            <div className="border-l-2 border-brand-green/50 pl-5">
-              <dd className="text-4xl sm:text-5xl font-display font-bold text-white">
-                10<span className="text-brand-green-light">+</span>
-              </dd>
-              <dt className="mt-1 text-sm text-slate-400">
-                Years of experience
-              </dt>
-            </div>
-            <div className="border-l-2 border-brand-green/50 pl-5">
-              <dd className="text-4xl sm:text-5xl font-display font-bold text-white inline-flex items-baseline gap-1">
-                5.0
-                <Star className="h-6 w-6 fill-brand-green-light text-brand-green-light" aria-hidden />
-              </dd>
-              <dt className="mt-1 text-sm text-slate-400">
-                Patient rating
-              </dt>
-            </div>
-          </dl>
         </div>
       </div>
     </section>

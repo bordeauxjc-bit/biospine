@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google';
+import { Newsreader, Karla } from 'next/font/google';
 import { Header } from '@/components/site/Header';
 import { Footer } from '@/components/site/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -11,15 +11,25 @@ import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 import './globals.css';
 
-const jakarta = Plus_Jakarta_Sans({
+// Editorial serif for headlines. Optical sizing is what keeps it from
+// looking thin at display sizes.
+const newsreader = Newsreader({
   subsets: ['latin'],
-  variable: '--font-jakarta',
+  variable: '--font-newsreader',
   display: 'swap',
+  style: ['normal', 'italic'],
+  weight: ['300', '400', '500', '600'],
+  // Next 14 has no fallback metrics for Newsreader, which makes it log a
+  // font-override error on every render. We declare Georgia explicitly
+  // instead, which is a close enough serif to keep layout shift small.
+  adjustFontFallback: false,
+  fallback: ['Georgia', 'Times New Roman', 'serif'],
 });
 
-const dmSans = DM_Sans({
+// Body grotesque with a little drawn character.
+const karla = Karla({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  variable: '--font-karla',
   display: 'swap',
 });
 
@@ -58,7 +68,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0B1220' },
+    { media: '(prefers-color-scheme: dark)', color: '#101614' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -70,11 +80,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${newsreader.variable} ${karla.variable}`}>
       <body className="flex min-h-screen flex-col font-sans">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-brand-ink focus:px-4 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-brand-ink focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to main content
         </a>

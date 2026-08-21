@@ -66,14 +66,14 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="reason"
-          className="block text-sm font-medium text-brand-ink mb-1.5"
+          className="mb-2 block text-sm font-medium text-brand-ink"
         >
           Reason for visit
         </label>
         <select
           id="reason"
           name="reason"
-          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-brand-ink focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+          className="w-full rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
           defaultValue=""
         >
           <option value="" disabled>
@@ -92,7 +92,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-brand-ink mb-1.5"
+          className="mb-2 block text-sm font-medium text-brand-ink"
         >
           How can we help? <span className="text-slate-400">(optional)</span>
         </label>
@@ -100,8 +100,8 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={5}
-          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-brand-ink focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20 resize-y"
-          placeholder="Briefly describe what's going on…"
+          className="w-full rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20 resize-y"
+          placeholder="Briefly describe what’s going on…"
         />
       </div>
 
@@ -113,7 +113,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-8 py-4 font-semibold text-white hover:bg-brand-green-dark transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-green min-h-[56px]"
+        className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded bg-brand-green px-7 py-3.5 font-medium text-white transition-colors hover:bg-brand-green-dark focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2"
       >
         Send message
       </button>
@@ -138,7 +138,7 @@ function Field({
     <div>
       <label
         htmlFor={name}
-        className="block text-sm font-medium text-brand-ink mb-1.5"
+        className="mb-2 block text-sm font-medium text-brand-ink"
       >
         {label}
         {required && <span className="text-brand-green ml-0.5">*</span>}
@@ -149,7 +149,7 @@ function Field({
         type={type}
         required={required}
         autoComplete={autoComplete}
-        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-brand-ink focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+        className="w-full rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
       />
     </div>
   );

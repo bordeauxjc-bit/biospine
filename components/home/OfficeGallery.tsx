@@ -3,44 +3,52 @@ import { Section, SectionHeading } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
 
 /**
- * Office gallery section showcasing the BioSpine clinic in Lake City, SC.
- * Photos sourced from the business's Google Business Profile with permission.
+ * Office gallery. Photos are from the practice's own Google Business Profile.
+ *
+ * The grid is built around each photo's real orientation: the two landscape
+ * shots and the one portrait shot get frames that match, so nothing is
+ * badly cropped and the two rows land at roughly equal heights.
+ *
+ * Captions sit under each frame rather than appearing on hover, which keeps
+ * them readable on touch devices where there is no hover state at all.
  */
 
 type Photo = {
   src: string;
   alt: string;
   caption: string;
-  span?: 'wide' | 'tall';
+  span: string;
+  aspect: string;
 };
 
 const photos: Photo[] = [
   {
     src: '/images/office/exam-room.jpg',
     alt: 'Chiropractic exam room with adjustment table at BioSpine Health and Wellness',
-    caption: 'Exam & treatment room',
-    span: 'wide',
-  },
-  {
-    src: '/images/office/waiting-room.jpg',
-    alt: 'Welcoming waiting area at BioSpine Health and Wellness in Lake City, SC',
-    caption: 'Welcoming waiting area',
-  },
-  {
-    src: '/images/office/doctor-in-action.jpg',
-    alt: 'Dr. Chucky S. Jordan with a spine model at BioSpine Health and Wellness',
-    caption: 'Patient education, every visit',
+    caption: 'Exam and treatment room',
+    span: 'lg:col-span-8',
+    aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/office/rehab-equipment.jpg',
-    alt: 'Rehabilitation bands and equipment at BioSpine Health and Wellness',
-    caption: 'Rehab & recovery tools',
+    alt: 'Resistance bands and rehabilitation equipment at BioSpine Health and Wellness',
+    caption: 'Rehab and recovery tools',
+    span: 'lg:col-span-4',
+    aspect: 'aspect-[2/3]',
+  },
+  {
+    src: '/images/office/waiting-room.jpg',
+    alt: 'Waiting area at BioSpine Health and Wellness in Lake City, SC',
+    caption: 'The waiting area',
+    span: 'lg:col-span-6',
+    aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/office/outdoor-sign.jpg',
-    alt: 'BioSpine Health and Wellness outdoor sign at 111 N Matthews Rd, Lake City, SC',
-    caption: 'Easy to find off N Matthews Rd',
-    span: 'wide',
+    alt: 'BioSpine Health and Wellness sign at 111 N Matthews Rd, Lake City, SC',
+    caption: 'Off N Matthews Rd, easy to find',
+    span: 'lg:col-span-6',
+    aspect: 'aspect-[4/3]',
   },
 ];
 
@@ -49,42 +57,33 @@ export function OfficeGallery() {
     <Section tone="cream">
       <SectionHeading
         eyebrow="Inside the office"
-        title="A welcoming space built for healing"
-        description="Clean, comfortable, and equipped for everything from spinal adjustments to rehab and recovery."
-        center
+        title="A small practice, kept the way you would want it"
+        description="Clean, comfortable, and set up for everything from adjustments to rehab."
       />
 
-      <ul
-        role="list"
-        className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[180px] sm:auto-rows-[220px] lg:auto-rows-[260px]"
-      >
-        {photos.map((photo, idx) => (
-          <li
-            key={photo.src}
-            className={`group relative overflow-hidden rounded-2xl ring-1 ring-black/5 ${
-              photo.span === 'wide' ? 'col-span-2 row-span-1' : ''
-            } ${idx === 0 ? 'lg:row-span-2 lg:col-span-2' : ''}`}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
+        {photos.map((photo) => (
+          <figure key={photo.src} className={photo.span}>
             <div
-              aria-hidden
-              className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-ink/80 via-brand-ink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-            <p className="absolute bottom-3 left-4 right-4 text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              className={`relative ${photo.aspect} overflow-hidden rounded-sm bg-brand-sand ring-1 ring-brand-ink/10`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 border-t border-brand-ink/12 pt-2.5 text-sm text-slate-500">
               {photo.caption}
-            </p>
-          </li>
+            </figcaption>
+          </figure>
         ))}
-      </ul>
+      </div>
 
-      <div className="mt-10 text-center">
-        <LinkButton href="/contact" variant="primary">
+      <div className="mt-12">
+        <LinkButton href="/contact" variant="secondary">
           Plan your visit
         </LinkButton>
       </div>

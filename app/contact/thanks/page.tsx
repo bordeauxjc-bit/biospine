@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Thank You',
-  description: "We've received your message and will get back to you soon.",
+  description: "We’ve received your message and will get back to you soon.",
   path: '/contact/thanks',
   noindex: true,
 });
@@ -14,7 +14,7 @@ export default function ThanksPage() {
   return (
     <section className="py-24 sm:py-32">
       <div className="container max-w-2xl text-center">
-        <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark">
+        <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-green/30 bg-brand-green-pale text-brand-green-dark">
           <CheckCircle2 className="h-8 w-8" aria-hidden />
         </span>
         <h1 className="mt-6">Thanks, we&rsquo;ll be in touch</h1>

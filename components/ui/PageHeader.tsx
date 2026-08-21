@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 type Crumb = {
   label: string;
@@ -13,42 +13,35 @@ type Props = {
   crumbs?: Crumb[];
 };
 
+/**
+ * Inner-page masthead. Light and typographic rather than a dark gradient
+ * slab, so it reads as the top of a document instead of a hero banner.
+ */
 export function PageHeader({ eyebrow, title, description, crumbs }: Props) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-ink via-brand-slate to-brand-ink text-white">
+    <section className="relative overflow-hidden border-b border-brand-ink/10 bg-brand-cream">
       <div
-        className="absolute inset-0 opacity-[0.08] pointer-events-none"
-        aria-hidden="true"
-      >
-        <svg
-          className="absolute -right-20 top-1/2 -translate-y-1/2 h-[200%] w-auto"
-          viewBox="0 0 400 600"
-          fill="none"
-        >
-          <path
-            d="M250 40 C 130 120, 130 240, 250 300 C 370 360, 370 480, 250 560"
-            stroke="#10B981"
-            strokeWidth="12"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
+        className="absolute inset-0 bg-paper pointer-events-none"
+        aria-hidden
+      />
 
-      <div className="container relative py-16 sm:py-20 lg:py-24">
+      <div className="container relative py-14 sm:py-20 lg:py-24">
         {crumbs && crumbs.length > 0 && (
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-1 text-sm text-slate-400">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.8125rem] text-slate-500">
               {crumbs.map((crumb, idx) => (
-                <li key={crumb.href} className="flex items-center gap-1">
+                <li key={crumb.href} className="flex items-center gap-2.5">
                   {idx > 0 && (
-                    <ChevronRight className="h-3.5 w-3.5" aria-hidden />
+                    <span aria-hidden className="text-slate-300">
+                      /
+                    </span>
                   )}
                   {idx === crumbs.length - 1 ? (
-                    <span className="text-slate-300">{crumb.label}</span>
+                    <span className="text-slate-600">{crumb.label}</span>
                   ) : (
                     <Link
                       href={crumb.href}
-                      className="hover:text-brand-green-light"
+                      className="hover:text-brand-green-dark transition-colors"
                     >
                       {crumb.label}
                     </Link>
@@ -60,13 +53,13 @@ export function PageHeader({ eyebrow, title, description, crumbs }: Props) {
         )}
 
         {eyebrow && (
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-green-light mb-3">
-            {eyebrow}
-          </p>
+          <SectionLabel className="mb-5">{eyebrow}</SectionLabel>
         )}
+
         <h1 className="max-w-3xl text-balance">{title}</h1>
+
         {description && (
-          <p className="mt-5 max-w-2xl text-lg sm:text-xl text-slate-200 text-pretty leading-relaxed">
+          <p className="mt-6 max-w-2xl text-lg sm:text-xl text-slate-600 text-pretty leading-relaxed">
             {description}
           </p>
         )}

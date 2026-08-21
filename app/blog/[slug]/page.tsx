@@ -55,8 +55,8 @@ export default function BlogPostPage({ params }: { params: Params }) {
   return (
     <>
       <article>
-        <header className="bg-brand-cream border-b border-slate-200">
-          <div className="container py-16 sm:py-20 lg:py-24 max-w-4xl">
+        <header className="border-b border-brand-ink/10 bg-brand-cream">
+          <div className="container max-w-3xl py-16 sm:py-20 lg:py-24">
             <Link
               href="/blog"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-green-dark hover:text-brand-ink mb-8"
@@ -66,11 +66,11 @@ export default function BlogPostPage({ params }: { params: Params }) {
             </Link>
 
             {post.tags && post.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-5">
+              <div className="mb-5 flex flex-wrap gap-x-3 gap-y-1.5">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-semibold uppercase tracking-wider text-brand-green-dark bg-brand-green/10 px-3 py-1 rounded-full"
+                    className="label"
                   >
                     {tag}
                   </span>
@@ -79,7 +79,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             )}
 
             <h1 className="text-balance">{post.title}</h1>
-            <p className="mt-5 text-xl text-slate-600 max-w-3xl leading-relaxed text-pretty">
+            <p className="mt-5 text-xl leading-relaxed text-slate-600 text-pretty">
               {post.description}
             </p>
 
@@ -112,7 +112,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
         </div>
       </article>
 
-      <Section tone="gradient">
+      <Section tone="ink">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-green-light mb-3">
             Ready to feel better?
@@ -153,7 +153,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               <li key={p.slug}>
                 <Link
                   href={`/blog/${p.slug}`}
-                  className="group block p-6 rounded-2xl border border-slate-200 hover:border-brand-green hover:shadow-sm transition-all"
+                  className="group block border-t border-brand-ink/15 pt-6 transition-colors hover:border-brand-green"
                 >
                   <h3 className="font-serif text-xl font-semibold text-brand-ink group-hover:text-brand-green-dark transition-colors">
                     {p.title}

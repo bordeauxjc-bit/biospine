@@ -1,5 +1,3 @@
-import { MapPin, Phone, Clock } from 'lucide-react';
-import { LinkButton } from '@/components/ui/Button';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import {
   siteConfig,
@@ -15,96 +13,90 @@ export function LocationSection() {
     <Section tone="white" id="visit">
       <SectionHeading
         eyebrow="Plan your visit"
-        title="Conveniently located in downtown Lake City"
-        description="Easy to find, easy to park, and ready to help, six days a week by appointment."
+        title="Find us on N Matthews Road"
+        description="Easy to reach, easy to park, and open weekdays by appointment."
       />
 
-      <div className="grid lg:grid-cols-5 gap-6 lg:gap-10">
-        <div className="lg:col-span-3 rounded-2xl overflow-hidden border border-slate-200 aspect-[16/10] lg:aspect-auto min-h-[360px]">
-          <iframe
-            src={mapEmbedUrl()}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title={`Map to ${siteConfig.name}`}
-            className="w-full h-full border-0"
-            allowFullScreen
-          />
+      <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">
+        <div className="lg:col-span-7">
+          <div className="overflow-hidden rounded-sm ring-1 ring-brand-ink/10 aspect-[16/11]">
+            <iframe
+              src={mapEmbedUrl()}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={`Map to ${siteConfig.name}`}
+              className="w-full h-full border-0"
+              allowFullScreen
+            />
+          </div>
         </div>
 
-        <div className="lg:col-span-2 space-y-6">
-          <div className="rounded-2xl border border-slate-200 p-6">
-            <div className="flex items-start gap-3">
-              <MapPin className="h-6 w-6 text-brand-green shrink-0 mt-0.5" aria-hidden />
-              <div>
-                <h3 className="font-serif text-lg font-semibold text-brand-ink">
-                  Address
-                </h3>
-                <address className="mt-2 not-italic text-slate-600 leading-relaxed">
+        <div className="lg:col-span-5">
+          <dl>
+            <div className="border-t border-brand-ink/12 pt-5 pb-6">
+              <dt className="label-muted">Address</dt>
+              <dd className="mt-3">
+                <address className="not-italic font-display text-xl text-brand-ink leading-relaxed">
                   {siteConfig.address.street}
                   <br />
                   {siteConfig.address.city}, {siteConfig.address.state}{' '}
                   {siteConfig.address.zip}
                 </address>
-                <LinkButton
+                <a
                   href={directionsUrl()}
-                  external
-                  variant="ghost"
-                  size="sm"
-                  className="mt-3 !px-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-[0.9375rem] font-medium text-brand-green-dark underline underline-offset-4 decoration-brand-green/35 hover:decoration-brand-green"
                 >
-                  Get directions →
-                </LinkButton>
-              </div>
+                  Get directions
+                </a>
+              </dd>
             </div>
-          </div>
 
-          <div className="rounded-2xl border border-slate-200 p-6">
-            <div className="flex items-start gap-3">
-              <Phone className="h-6 w-6 text-brand-green shrink-0 mt-0.5" aria-hidden />
-              <div className="flex-1">
-                <h3 className="font-serif text-lg font-semibold text-brand-ink">
-                  Call us
-                </h3>
+            <div className="border-t border-brand-ink/12 pt-5 pb-6">
+              <dt className="label-muted">Call</dt>
+              <dd className="mt-3">
                 <a
                   href={`tel:${siteConfig.phoneE164}`}
-                  className="mt-2 block text-2xl font-serif font-semibold text-brand-green-dark hover:text-brand-green transition-colors"
+                  className="font-display text-2xl text-brand-ink hover:text-brand-green-dark transition-colors"
                 >
                   {siteConfig.phone}
                 </a>
-                <p className="mt-1 text-sm text-slate-500">
-                  Se habla inglés. Call to book or ask about insurance.
+                <p className="mt-2 text-sm text-slate-500 leading-relaxed">
+                  Call to book or to check whether we take your plan.
                 </p>
-              </div>
+              </dd>
             </div>
-          </div>
 
-          <div className="rounded-2xl border border-slate-200 p-6">
-            <div className="flex items-start gap-3">
-              <Clock className="h-6 w-6 text-brand-green shrink-0 mt-0.5" aria-hidden />
-              <div className="flex-1">
-                <h3 className="font-serif text-lg font-semibold text-brand-ink">
-                  Hours
-                </h3>
-                <dl className="mt-2 space-y-1 text-sm">
+            <div className="border-t border-brand-ink/12 pt-5">
+              <dt className="label-muted">Hours</dt>
+              <dd className="mt-3">
+                <ul className="space-y-2 text-[0.9375rem]">
                   {hours.map((h) => (
-                    <div
+                    <li
                       key={h.day}
-                      className="flex justify-between gap-4"
+                      className="flex items-baseline justify-between gap-4"
                     >
-                      <dt className="text-slate-600">{h.day}</dt>
-                      <dd
+                      <span className="text-slate-600">{h.day}</span>
+                      <span
+                        aria-hidden
+                        className="flex-1 border-b border-dotted border-slate-300 translate-y-[-0.2em]"
+                      />
+                      <span
                         className={
-                          h.isClosed ? 'text-slate-400' : 'text-brand-ink font-medium'
+                          h.isClosed
+                            ? 'text-slate-400'
+                            : 'text-brand-ink font-medium tabular-nums'
                         }
                       >
                         {h.display}
-                      </dd>
-                    </div>
+                      </span>
+                    </li>
                   ))}
-                </dl>
-              </div>
+                </ul>
+              </dd>
             </div>
-          </div>
+          </dl>
         </div>
       </div>
     </Section>

@@ -17,8 +17,7 @@ export default async function OGImage() {
           flexDirection: 'column',
           justifyContent: 'center',
           padding: '80px',
-          background:
-            'linear-gradient(135deg, #0B1220 0%, #1E293B 60%, #0B1220 100%)',
+          background: '#101614',
           color: 'white',
         }}
       >
@@ -27,7 +26,7 @@ export default async function OGImage() {
           <svg width="96" height="96" viewBox="0 0 100 120" fill="none">
             <path
               d="M 70 18 C 38 22, 30 44, 50 58 C 70 72, 62 94, 30 102"
-              stroke="#10B981"
+              stroke="#34A738"
               strokeWidth="9"
               strokeLinecap="round"
               fill="none"
@@ -37,7 +36,7 @@ export default async function OGImage() {
             style={{
               fontSize: '40px',
               fontWeight: 600,
-              color: '#BCE3EB',
+              color: '#93B2CB',
               display: 'flex',
             }}
           >
@@ -57,13 +56,13 @@ export default async function OGImage() {
           }}
         >
           <span>Chiropractic Care</span>
-          <span style={{ color: '#34D399' }}>in Lake City, SC</span>
+          <span style={{ color: '#6BBF6E' }}>in Lake City, SC</span>
         </div>
 
         <div
           style={{
             fontSize: '28px',
-            color: '#CBD5E1',
+            color: '#CBC7BD',
             marginTop: '32px',
             display: 'flex',
           }}
@@ -74,7 +73,7 @@ export default async function OGImage() {
         <div
           style={{
             fontSize: '22px',
-            color: '#94A3B8',
+            color: '#A19C90',
             marginTop: '48px',
             display: 'flex',
             gap: '32px',

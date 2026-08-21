@@ -4,7 +4,7 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Page Not Found',
-  description: "The page you're looking for doesn't exist.",
+  description: "The page you’re looking for doesn’t exist.",
   path: '/404',
   noindex: true,
 });

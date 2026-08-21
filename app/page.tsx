@@ -12,9 +12,12 @@ import { BlogPreview } from '@/components/home/BlogPreview';
 import { CTABanner } from '@/components/home/CTABanner';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { faqSchema } from '@/components/seo/schemas';
-import { Section, SectionHeading } from '@/components/ui/Section';
+import { Section } from '@/components/ui/Section';
+import { LinkButton } from '@/components/ui/Button';
+import { FaqList } from '@/components/ui/FaqList';
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = buildMetadata({
   title: `${siteConfig.tagline} | ${siteConfig.doctor.name}`,
@@ -33,7 +36,7 @@ const faqs = [
   {
     question: 'What should I expect at my first appointment?',
     answer:
-      "At your first visit, Dr. Jordan will review your health history, perform a thorough exam, and discuss your goals. If appropriate, you'll receive your first adjustment the same day. Plan on about 45–60 minutes for your initial appointment.",
+      "At your first visit, Dr. Jordan will review your health history, perform a thorough exam, and discuss your goals. If appropriate, you’ll receive your first adjustment the same day. Plan on about 45–60 minutes for your initial appointment.",
   },
   {
     question: 'Do you accept insurance?',
@@ -65,32 +68,27 @@ export default function HomePage() {
       <Reviews />
 
       <Section tone="white">
-        <SectionHeading
-          eyebrow="Frequently asked"
-          title="Common questions about chiropractic care"
-          center
-        />
-        <dl className="mx-auto max-w-3xl space-y-4">
-          {faqs.map((faq) => (
-            <details
-              key={faq.question}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 open:border-brand-green transition-colors"
-            >
-              <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-brand-ink">
-                <dt className="text-lg">{faq.question}</dt>
-                <span
-                  aria-hidden
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark group-open:rotate-45 transition-transform"
-                >
-                  +
-                </span>
-              </summary>
-              <dd className="mt-4 text-slate-600 leading-relaxed">
-                {faq.answer}
-              </dd>
-            </details>
-          ))}
-        </dl>
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">
+          <div className="lg:col-span-4">
+            <SectionLabel className="mb-5">Common questions</SectionLabel>
+            <h2 className="text-balance">
+              Things people ask before booking
+            </h2>
+            <p className="mt-5 text-slate-600 leading-relaxed">
+              If yours is not here, call the office and we will answer it
+              straight.
+            </p>
+            <div className="mt-8">
+              <LinkButton href="/contact" variant="outline">
+                Ask us a question
+              </LinkButton>
+            </div>
+          </div>
+
+          <div className="lg:col-span-8">
+            <FaqList faqs={faqs} />
+          </div>
+        </div>
       </Section>
 
       <LocationSection />

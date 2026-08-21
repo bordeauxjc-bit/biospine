@@ -96,7 +96,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Chiropractic care designed around your goals"
-        description="Whether you're recovering from an injury, managing chronic pain, or investing in long-term wellness, we have a care path for you."
+        description="Whether you’re recovering from an injury, managing chronic pain, or investing in long-term wellness, we have a care path for you."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -124,28 +124,24 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
-                  <div className="rounded-2xl bg-brand-cream p-6 sm:p-7">
-                    <h3 className="font-serif text-lg font-semibold text-brand-ink">
-                      What you can expect
-                    </h3>
+                  <div className="rounded-sm bg-brand-cream p-6 sm:p-7">
+                    <h3 className="label-muted">What you can expect</h3>
                     <ul role="list" className="mt-4 space-y-3">
                       {details.benefits.map((b) => (
-                        <li key={b} className="flex items-start gap-3 text-slate-700">
-                          <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-green mt-0.5" aria-hidden />
+                        <li key={b} className="flex items-start gap-3 text-[0.9375rem] leading-relaxed text-slate-700">
+                          <CheckCircle2 className="mt-0.5 h-[1.05rem] w-[1.05rem] shrink-0 text-brand-green" aria-hidden />
                           <span>{b}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-2xl border border-slate-200 p-6 sm:p-7">
-                    <h3 className="font-serif text-lg font-semibold text-brand-ink">
-                      Common conditions we address
-                    </h3>
+                  <div className="rounded-sm border border-brand-ink/12 p-6 sm:p-7">
+                    <h3 className="label-muted">Common conditions we address</h3>
                     <ul role="list" className="mt-4 flex flex-wrap gap-2">
                       {details.commonFor.map((c) => (
                         <li
                           key={c}
-                          className="rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm text-slate-700"
+                          className="rounded border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700"
                         >
                           {c}
                         </li>
@@ -154,7 +150,7 @@ export default function ServicesPage() {
                     <div className="mt-6">
                       <LinkButton
                         href={`tel:${siteConfig.phoneE164}`}
-                        variant="primary"
+                        variant="outline"
                         size="sm"
                       >
                         Call to schedule
@@ -168,7 +164,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section tone="gradient">
+      <Section tone="ink">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="!text-white">Not sure which service you need?</h2>
           <p className="mt-4 text-lg text-slate-300">

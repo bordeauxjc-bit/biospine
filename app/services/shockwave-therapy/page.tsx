@@ -14,16 +14,16 @@ import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Shockwave Therapy (ESWT) in Lake City, SC',
+  title: 'Focused Shockwave Therapy (ESWT) in Lake City, SC',
   description:
-    'Extracorporeal shockwave therapy (ESWT) at BioSpine Health and Wellness in Lake City, SC. A non-surgical option for plantar fasciitis, tennis elbow, Achilles and rotator cuff pain that has not settled with rest.',
+    'Focused extracorporeal shockwave therapy (ESWT) at BioSpine Health and Wellness in Lake City, SC, for plantar fasciitis, tennis elbow, Achilles pain, and calcific shoulder tendinitis that has not settled with rest.',
   path: '/services/shockwave-therapy',
 });
 
 const steps = [
   {
     title: 'We find the exact spot',
-    text: 'Before anything is switched on, Dr. Jordan examines the area and presses around it to locate the tissue that is actually generating your pain. Treating the wrong inch of tendon wastes the session.',
+    text: 'A focused unit concentrates its energy at a set depth rather than spreading it across the surface, so where the head sits genuinely matters. Dr. Jordan examines the area and presses around it to find the tissue actually generating your pain before anything is switched on.',
   },
   {
     title: 'Gel goes on',
@@ -50,13 +50,15 @@ const treats = [
       'Tennis elbow',
       'Golfer’s elbow',
       'Rotator cuff tendinopathy',
-      'Calcific tendinitis',
+      'Calcific tendinitis of the shoulder',
     ],
   },
   {
     region: 'Hip and knee',
     items: [
       'Trochanteric bursitis',
+      'Gluteal tendinopathy',
+      'Proximal hamstring tendinopathy',
       'Patellar tendinitis',
       'IT band syndrome',
     ],
@@ -102,6 +104,11 @@ const faqs = [
       'Usually not. Most plans still treat shockwave as elective, so it is typically a cash-pay service. Call the office at ' +
       siteConfig.phone +
       ' and we will tell you the cost up front before you book anything.',
+  },
+  {
+    question: 'Is this the same as the shockwave I was offered somewhere else?',
+    answer:
+      'Possibly not. Most clinics use a radial unit, which spreads a pressure wave outward from the head and works best on tissue near the surface. We use a focused unit, which concentrates its energy at a set depth so it reaches deeper targets like a calcified shoulder or a gluteal tendon. Both are legitimate treatments and radial does well on plantar fasciitis and tennis elbow. If you had a course elsewhere that did nothing, ask which type it was, because that alone can be the reason.',
   },
   {
     question: 'Are there side effects?',
@@ -160,6 +167,22 @@ export default function ShockwaveTherapyPage() {
               rest.
             </p>
             <p>
+              There are two kinds of machine, and the difference is worth
+              knowing before you book anywhere. Radial units, the more common
+              type, send a pressure wave that spreads outward from the head and
+              loses strength quickly, which suits problems sitting close to the
+              surface. Focused units converge their energy at a set depth
+              instead, so it arrives concentrated where the trouble actually
+              is. We use a focused unit.
+            </p>
+            <p>
+              That matters for anything deep. A calcium deposit in the
+              shoulder, a gluteal tendon under a layer of muscle, a high
+              hamstring attachment: these sit below where a radial wave has
+              much left to give. If you have already tried shockwave elsewhere
+              without much change, it is worth asking which type you had.
+            </p>
+            <p>
               It is not a first resort. If your problem is a fresh strain, we
               will usually treat it more conventionally and let it heal. Where
               shockwave earns its place is the case that has already failed the
@@ -204,8 +227,9 @@ export default function ShockwaveTherapyPage() {
             <h2 className="text-balance">Where it tends to help most</h2>
             <p className="mt-5 text-slate-600 leading-relaxed">
               The evidence is strongest for plantar fasciitis, tennis elbow, and
-              calcific shoulder tendinitis. If your problem is not on this list,
-              call and ask.
+              calcific shoulder tendinitis. The deeper hip and shoulder targets
+              on this list are the ones a focused unit is chosen for. If your
+              problem is not here, call and ask.
             </p>
           </div>
           <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10">
@@ -272,10 +296,10 @@ export default function ShockwaveTherapyPage() {
       <JsonLd
         id="ld-shockwave-therapy"
         data={medicalTherapySchema({
-          name: 'Shockwave Therapy',
-          alternateName: 'Extracorporeal Shockwave Therapy (ESWT)',
+          name: 'Focused Shockwave Therapy',
+          alternateName: 'Focused Extracorporeal Shockwave Therapy (fESWT)',
           description:
-            'Non-surgical acoustic pressure wave treatment for chronic tendon and soft-tissue injuries, performed at BioSpine Health and Wellness in Lake City, South Carolina.',
+            'Focused extracorporeal shockwave therapy for chronic tendon and soft-tissue injuries, including deeper targets such as calcific shoulder tendinitis and gluteal tendinopathy, performed at BioSpine Health and Wellness in Lake City, South Carolina.',
           url: `${siteConfig.url}/services/shockwave-therapy`,
           indications: treats.flatMap((group) => group.items),
           contraindication:

@@ -90,7 +90,7 @@ export const siteConfig = {
       slug: 'shockwave-therapy',
       name: 'Shockwave Therapy',
       summary:
-        'Acoustic pulse therapy for stubborn tendon and soft-tissue pain that has not settled with rest or standard care.',
+        'Focused acoustic pulse therapy for stubborn tendon and soft-tissue pain that has not settled with rest or standard care.',
       href: '/services/shockwave-therapy',
     },
     {

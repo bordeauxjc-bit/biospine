@@ -76,7 +76,7 @@ const serviceDetails: Record<
   },
   'shockwave-therapy': {
     benefits: [
-      'Targets tendon and soft-tissue pain that has stalled',
+      'A focused unit, so it reaches deep targets too',
       'No needles, no medication, no downtime',
       'Sessions run about fifteen minutes',
       'Combines with adjustments in the same visit',
@@ -85,7 +85,7 @@ const serviceDetails: Record<
       'Plantar fasciitis',
       'Tennis and golfer’s elbow',
       'Achilles tendinitis',
-      'Rotator cuff pain',
+      'Calcific shoulder tendinitis',
     ],
   },
   'auto-accident-injury': {

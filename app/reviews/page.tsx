@@ -5,13 +5,17 @@ import { Section, SectionHeading } from '@/components/ui/Section';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
-import { publishedReviews, reviewSources } from '@/lib/reviews';
+import {
+  googlePublicReviews,
+  publishedReviews,
+  reviewSources,
+} from '@/lib/reviews';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Patient Reviews',
+  title: 'BioSpine Reviews',
   description:
-    'Read attributable BioSpine patient feedback and open the original Google and verified Zocdoc review profiles for the Lake City practice.',
+    'Read all 12 public Google ratings and verified Zocdoc patient feedback for BioSpine Health and Wellness in Lake City, SC.',
   path: '/reviews',
 });
 
@@ -19,7 +23,7 @@ export default function ReviewsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Patient feedback"
+        eyebrow="Public feedback"
         title="BioSpine reviews you can check at the source"
         description="We publish short, attributable excerpts and clearly distinguish verified Zocdoc patients from public Google reviewers."
         crumbs={[
@@ -63,13 +67,13 @@ export default function ReviewsPage() {
 
       <Section tone="sand">
         <SectionHeading
-          eyebrow="Review excerpts"
-          title="What reviewers chose to share"
-          description="Individual experiences do not predict another patient’s outcome. Use the source links to read the surrounding review context."
+          eyebrow="12 public Google ratings"
+          title="Every rating currently shown on BioSpine’s Google profile"
+          description="Ten reviewers left written comments and two left a five-star rating without text. Written comments are summarized below; open Google to read the original wording and context."
         />
-        <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
-          {publishedReviews.map((review) => (
-            <figure key={`${review.platform}-${review.author}`} className="border-t border-brand-ink/15 pt-7">
+        <div className="grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
+          {googlePublicReviews.map((review) => (
+            <article key={review.author} className="border-t border-brand-ink/15 pt-6">
               <div className="mb-5 flex gap-0.5" role="img" aria-label="Rated 5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star
@@ -79,21 +83,67 @@ export default function ReviewsPage() {
                   />
                 ))}
               </div>
-              <blockquote className="font-display text-xl font-light leading-[1.4] text-brand-ink text-pretty sm:text-[1.375rem]">
-                “{review.text}”
-              </blockquote>
-              <figcaption className="mt-5">
-                <span className="block text-sm font-semibold text-brand-ink">{review.author}</span>
-                <span className="mt-1 block text-xs uppercase tracking-[0.12em] text-slate-600">
-                  {review.detail}
-                </span>
-              </figcaption>
-            </figure>
+              <h2 className="!text-xl">{review.author}</h2>
+              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-slate-600">
+                Public Google {review.summary ? 'review' : 'rating'} · 5 stars
+              </p>
+              <p className="mt-4 leading-relaxed text-slate-700">
+                {review.summary ?? 'Five-star rating; no written comment was posted.'}
+              </p>
+              {review.context && (
+                <p className="mt-3 text-xs leading-relaxed text-slate-600">
+                  {review.context}
+                </p>
+              )}
+            </article>
           ))}
         </div>
+        <a
+          href={reviewSources.google.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
+        >
+          Read the original Google reviews
+          <ExternalLink className="h-4 w-4" aria-hidden />
+        </a>
       </Section>
 
       <Section tone="white">
+        <SectionHeading
+          eyebrow="Verified Zocdoc feedback"
+          title="Short excerpts from verified patient reviews"
+          description="Zocdoc labels these reviewers as verified patients. Individual experiences do not predict another patient’s outcome."
+        />
+        <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
+          {publishedReviews
+            .filter((review) => review.platform === 'Zocdoc')
+            .map((review) => (
+              <figure key={`${review.platform}-${review.author}`} className="border-t border-brand-ink/15 pt-7">
+                <div className="mb-5 flex gap-0.5" role="img" aria-label="Rated 5 out of 5 stars">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star
+                      key={index}
+                      className="h-3.5 w-3.5 fill-brand-green text-brand-green"
+                      aria-hidden
+                    />
+                  ))}
+                </div>
+                <blockquote className="font-display text-xl font-light leading-[1.4] text-brand-ink text-pretty sm:text-[1.375rem]">
+                  “{review.text}”
+                </blockquote>
+                <figcaption className="mt-5">
+                  <span className="block text-sm font-semibold text-brand-ink">{review.author}</span>
+                  <span className="mt-1 block text-xs uppercase tracking-[0.12em] text-slate-600">
+                    {review.detail}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+        </div>
+      </Section>
+
+      <Section tone="cream">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <ShieldCheck className="h-8 w-8 text-brand-green" aria-hidden />

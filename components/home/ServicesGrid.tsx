@@ -11,9 +11,9 @@ export function ServicesGrid() {
   return (
     <Section tone="cream" id="services">
       <SectionHeading
-        eyebrow="What we treat"
-        title="Care for the things that keep you from moving well"
-        description="From acute pain to long-term maintenance, treatment is planned around your goals and what your days actually demand of you."
+        eyebrow="Services"
+        title="Care and driver health services built around real needs"
+        description="From acute pain and long-term mobility to DOT medical certification, each visit follows the findings and the work your day demands."
       />
 
       <ul role="list" className="grid sm:grid-cols-2 gap-x-12 lg:gap-x-20">

@@ -51,6 +51,9 @@ export const metadata: Metadata = {
     'spinal adjustment Lake City',
     'Florence SC chiropractor',
     'Kingstree chiropractor',
+    'DOT physical Lake City SC',
+    'CDL medical exam South Carolina',
+    'certified medical examiner Lake City SC',
   ],
   referrer: 'origin-when-cross-origin',
   icons: {

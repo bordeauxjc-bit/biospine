@@ -118,12 +118,44 @@ export function doctorSchema() {
         credentialCategory: 'certification',
         name: siteConfig.doctor.boardCertified,
       },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'certification',
+        name: 'FMCSA National Registry of Certified Medical Examiners',
+        identifier: siteConfig.doctor.fmcsaNationalRegistryNumber,
+        dateCreated: siteConfig.doctor.fmcsaCertificationDate,
+      },
     ],
     identifier: {
       '@type': 'PropertyValue',
       propertyID: 'NPI',
       value: siteConfig.doctor.npi,
     },
+  };
+}
+
+/** Service markup for an offered service that is not a therapy. */
+export function serviceSchema(opts: {
+  name: string;
+  serviceType: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${opts.url}#service`,
+    name: opts.name,
+    serviceType: opts.serviceType,
+    description: opts.description,
+    url: opts.url,
+    provider: {
+      '@id': `${siteConfig.url}/#business`,
+    },
+    areaServed: siteConfig.areaServed.map((name) => ({
+      '@type': 'AdministrativeArea',
+      name,
+    })),
   };
 }
 

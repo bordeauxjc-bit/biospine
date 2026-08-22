@@ -21,8 +21,8 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Logo variant="light" />
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-relaxed text-slate-400">
-              Chiropractic care for back pain, headaches, sports injuries, and
-              arthritis in Lake City, South Carolina.
+              Chiropractic care and DOT physicals for Lake City, Florence
+              County, and South Carolina&rsquo;s Pee Dee region.
             </p>
             <a
               href={siteConfig.social.facebook}

@@ -63,7 +63,7 @@ export function Reviews() {
           href="/reviews"
           className="inline-flex min-h-11 items-center text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
         >
-          See review sources and verification details
+          See all 12 public Google ratings and verification details
         </Link>
       </div>
     </Section>

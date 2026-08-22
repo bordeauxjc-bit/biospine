@@ -12,7 +12,7 @@ export const siteConfig = {
   shortName: 'BioSpine',
   tagline: 'Chiropractic Care in Lake City, SC',
   description:
-    'Dr. Chucky S. Jordan, D.C. provides chiropractic care for back pain, headaches, sports injuries, arthritis, and overall wellness in Lake City, South Carolina.',
+    'Dr. Chucky S. Jordan, D.C. provides chiropractic care and DOT physicals for Lake City, Florence County, and South Carolina’s Pee Dee region.',
 
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
@@ -68,6 +68,8 @@ export const siteConfig = {
     education: 'Logan College of Chiropractic',
     graduationYear: 2015,
     boardCertified: 'National Board of Chiropractic Examiners',
+    fmcsaNationalRegistryNumber: '8852422617',
+    fmcsaCertificationDate: '2021-11-22',
   },
 
   // Social & external profiles
@@ -92,6 +94,13 @@ export const siteConfig = {
       summary:
         'Individualized joint care intended to improve comfortable movement and support day-to-day function.',
       href: '/services/chiropractic-adjustments',
+    },
+    {
+      slug: 'dot-physicals',
+      name: 'DOT Physicals',
+      summary:
+        'FMCSA physical qualification exams for commercial drivers, performed by a certified Medical Examiner listed on the National Registry.',
+      href: '/services/dot-physicals',
     },
     {
       slug: 'shockwave-therapy',

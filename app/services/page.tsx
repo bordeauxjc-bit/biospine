@@ -11,13 +11,13 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'Chiropractic Services',
   description:
-    'Chiropractic adjustments, shockwave therapy, back and neck pain care, headache relief, sports injury rehab, auto accident care, and arthritis treatment in Lake City, SC.',
+    'Chiropractic care, shockwave therapy, injury treatment, and DOT physicals from an FMCSA-listed certified Medical Examiner in Lake City, SC.',
   path: '/services',
 });
 
 const serviceDetails: Record<
   string,
-  { benefits: string[]; commonFor: string[] }
+  { benefits: string[]; commonFor: string[]; commonForHeading?: string }
 > = {
   'chiropractic-adjustments': {
     benefits: [
@@ -27,6 +27,21 @@ const serviceDetails: Record<
       'Progress reassessed instead of assumed',
     ],
     commonFor: ['Back stiffness', 'Neck pain', 'Postural problems', 'Tension headaches'],
+  },
+  'dot-physicals': {
+    benefits: [
+      'Exam by an FMCSA-listed certified Medical Examiner',
+      'Vision, hearing, blood pressure, pulse, and urinalysis checks',
+      'Medical qualification decision based on current federal standards',
+      'Required examination results reported electronically to FMCSA',
+    ],
+    commonForHeading: 'Common appointment needs',
+    commonFor: [
+      'CDL medical certification',
+      'Commercial driver recertification',
+      'New-hire physical qualification exam',
+      'Employer-requested DOT physical',
+    ],
   },
   'back-and-neck-pain': {
     benefits: [
@@ -152,7 +167,9 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                   <div className="rounded-sm border border-brand-ink/12 p-6 sm:p-7">
-                    <h3 className="label-muted">Common conditions we address</h3>
+                    <h3 className="label-muted">
+                      {details.commonForHeading ?? 'Common conditions we address'}
+                    </h3>
                     <ul role="list" className="mt-4 flex flex-wrap gap-2">
                       {details.commonFor.map((c) => (
                         <li

@@ -16,7 +16,7 @@ export const siteConfig = {
 
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
-    'https://biospinehealth.com',
+    'https://biospine.vercel.app',
 
   // Contact
   phone: '843-713-0669',
@@ -73,9 +73,15 @@ export const siteConfig = {
   // Social & external profiles
   social: {
     facebook: 'https://www.facebook.com/BiospineHealth/',
-    rateMDs:
-      'https://www.ratemds.com/clinic/us-sc-lake-city-biospine-health-and-wellness/',
   },
+  reviews: {
+    zocdoc:
+      'https://www.zocdoc.com/practice/biospine-health-and-wellness-75878',
+  },
+
+  // Public scheduling profile. Keep this separate from social profiles so it
+  // can be used consistently by every appointment CTA.
+  appointmentUrl: '/contact#appointment-form',
 
   // Services offered, used for Services page and MedicalProcedure schema
   services: [
@@ -98,7 +104,7 @@ export const siteConfig = {
       name: 'Back & Neck Pain Treatment',
       summary:
         'Targeted care for acute and chronic low back pain, neck pain, and sciatica using evidence-informed chiropractic techniques.',
-      href: '/services#back-and-neck-pain',
+      href: '/services/back-neck-pain',
     },
     {
       slug: 'headache-migraine-care',
@@ -119,7 +125,7 @@ export const siteConfig = {
       name: 'Auto Accident Injury Care',
       summary:
         'Evaluation and treatment for whiplash, back, neck, and shoulder pain after a collision, with documentation for your claim.',
-      href: '/services#auto-accident-injury',
+      href: '/services/auto-accident-injury',
     },
     {
       slug: 'arthritis-relief',

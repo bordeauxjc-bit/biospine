@@ -34,12 +34,13 @@ export default function ContactPage() {
         ]}
       />
 
-      <Section tone="white">
+      <Section tone="white" id="appointment-form">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
           <div className="lg:col-span-3">
-            <h2 className="!text-3xl !mt-0">Send us a message</h2>
+            <h2 className="!text-3xl !mt-0">Request an appointment</h2>
             <p className="mt-3 text-slate-600">
-              Fill out the form and we&rsquo;ll follow up by phone or email.
+              Share your contact details and preferred reason for visiting. We&rsquo;ll
+              follow up by phone or email during office hours.
             </p>
             <div className="mt-8">
               <ContactForm />

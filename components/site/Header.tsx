@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { CalendarDays, Menu, X, Phone } from 'lucide-react';
 import { Logo } from './Logo';
 import { siteConfig } from '@/lib/site-config';
 
@@ -45,7 +45,7 @@ export function Header() {
         </Link>
 
         <nav
-          className="hidden lg:flex items-center gap-9"
+          className="hidden lg:flex items-center gap-7"
           aria-label="Primary navigation"
         >
           {siteConfig.nav.map((item) => {
@@ -77,14 +77,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <a
-            href={`tel:${siteConfig.phoneE164}`}
-            className="hidden sm:inline-flex items-center gap-2 rounded bg-brand-green px-5 py-2.5 text-[0.9375rem] font-medium text-white hover:bg-brand-green-dark transition-colors focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2"
-            aria-label={`Call ${siteConfig.phone}`}
+          <Link
+            href={siteConfig.appointmentUrl}
+            className="hidden items-center gap-2 rounded bg-brand-green px-5 py-2.5 text-[0.9375rem] font-medium text-white transition-colors hover:bg-brand-green-dark focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 sm:inline-flex"
           >
-            <Phone className="h-4 w-4" aria-hidden />
-            <span>{siteConfig.phone}</span>
-          </a>
+            <CalendarDays className="h-4 w-4" aria-hidden />
+            <span>Request appointment</span>
+          </Link>
 
           <a
             href={`tel:${siteConfig.phoneE164}`}
@@ -134,10 +133,18 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href={siteConfig.appointmentUrl}
+            tabIndex={isOpen ? undefined : -1}
+            className="mt-8 inline-flex items-center justify-center gap-2.5 rounded bg-brand-green px-6 py-4 font-medium text-white"
+          >
+            <CalendarDays className="h-5 w-5" aria-hidden />
+            Request an appointment
+          </Link>
           <a
             href={`tel:${siteConfig.phoneE164}`}
             tabIndex={isOpen ? undefined : -1}
-            className="mt-8 inline-flex items-center justify-center gap-2.5 rounded bg-brand-green px-6 py-4 font-medium text-white"
+            className="mt-3 inline-flex items-center justify-center gap-2.5 rounded border border-brand-ink/20 px-6 py-4 font-medium text-brand-ink"
           >
             <Phone className="h-5 w-5" aria-hidden />
             Call {siteConfig.phone}

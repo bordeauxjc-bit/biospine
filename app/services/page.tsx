@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
@@ -69,7 +69,7 @@ const serviceDetails: Record<
     benefits: [
       'Conservative, non-surgical management',
       'Joint mobilization to maintain motion',
-      'Reduced reliance on pain medication',
+      'Movement and home-care guidance tailored to your needs',
       'Home care and mobility guidance',
     ],
     commonFor: ['Spinal arthritis', 'Osteoarthritis', 'Degenerative joint disease', 'Stiffness'],
@@ -132,6 +132,11 @@ export default function ServicesPage() {
                   <p className="mt-4 text-lg text-slate-600 leading-relaxed">
                     {service.summary}
                   </p>
+                  {!service.href.includes('#') && (
+                    <LinkButton href={service.href} variant="quiet" size="sm" className="mt-5">
+                      Full service guide <ArrowUpRight className="h-4 w-4" aria-hidden />
+                    </LinkButton>
+                  )}
                 </div>
 
                 <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
@@ -160,11 +165,11 @@ export default function ServicesPage() {
                     </ul>
                     <div className="mt-6">
                       <LinkButton
-                        href={`tel:${siteConfig.phoneE164}`}
+                        href="/contact#appointment-form"
                         variant="outline"
                         size="sm"
                       >
-                        Call to schedule
+                        Request an appointment
                       </LinkButton>
                     </div>
                   </div>
@@ -184,11 +189,11 @@ export default function ServicesPage() {
           </p>
           <div className="mt-8">
             <LinkButton
-              href={`tel:${siteConfig.phoneE164}`}
+              href="/contact#appointment-form"
               variant="primary"
               size="lg"
             >
-              Call {siteConfig.phone}
+              Send a request
             </LinkButton>
           </div>
         </div>

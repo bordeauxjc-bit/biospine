@@ -123,7 +123,7 @@ const faqs = [
   {
     question: 'What should I do afterward?',
     answer:
-      'Drink water, keep moving normally, and avoid hard loading of the treated area for about forty-eight hours. Skip anti-inflammatories like ibuprofen if you can, since the treatment works partly by provoking a healing response and NSAIDs blunt it. Use ice only if you are genuinely uncomfortable.',
+      'Dr. Jordan will give you instructions based on the area treated and your health history. Do not stop or change prescribed or over-the-counter medication without checking with the clinician who manages it.',
   },
 ];
 
@@ -282,8 +282,8 @@ export default function ShockwaveTherapyPage() {
             <SectionLabel className="mb-5">Questions</SectionLabel>
             <h2 className="text-balance">Before you book</h2>
             <div className="mt-8">
-              <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline">
-                Call {siteConfig.phone}
+              <LinkButton href="/contact#appointment-form" variant="outline">
+                Request an appointment
               </LinkButton>
             </div>
           </div>

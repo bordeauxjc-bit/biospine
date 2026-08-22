@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { Phone, MapPin } from 'lucide-react';
+import { CalendarDays, Phone } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
-import { siteConfig, directionsUrl } from '@/lib/site-config';
+import { siteConfig } from '@/lib/site-config';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 
 /**
@@ -40,28 +40,27 @@ export function Hero() {
 
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
               <LinkButton
-                href={`tel:${siteConfig.phoneE164}`}
+                href={siteConfig.appointmentUrl}
                 variant="primary"
+                size="lg"
+              >
+                <CalendarDays className="h-[1.05rem] w-[1.05rem]" aria-hidden />
+                Request an appointment
+              </LinkButton>
+              <LinkButton
+                href={`tel:${siteConfig.phoneE164}`}
+                variant="outline"
                 size="lg"
                 aria-label={`Call ${siteConfig.phone}`}
               >
                 <Phone className="h-[1.05rem] w-[1.05rem]" aria-hidden />
                 Call {siteConfig.phone}
               </LinkButton>
-              <LinkButton
-                href={directionsUrl()}
-                external
-                variant="outline"
-                size="lg"
-              >
-                <MapPin className="h-[1.05rem] w-[1.05rem]" aria-hidden />
-                Get directions
-              </LinkButton>
             </div>
 
             <p className="mt-8 text-sm text-slate-500 leading-relaxed">
-              Walk-ins and new patients welcome. No referral needed in South
-              Carolina.
+              New patients welcome. Ask about same-week openings. No referral
+              is normally needed in South Carolina; check your plan for coverage rules.
             </p>
           </div>
 

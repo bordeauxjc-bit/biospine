@@ -51,7 +51,7 @@ const faqs = [
   {
     question: 'Is chiropractic care safe?',
     answer:
-      'Chiropractic care is widely recognized as a safe, effective treatment for many musculoskeletal conditions when performed by a licensed doctor of chiropractic. Dr. Jordan is board certified and licensed in South Carolina (License #4099).',
+      'All health care has potential benefits and risks. Dr. Jordan reviews your history, examines you, and explains whether chiropractic care is appropriate before treatment. He is licensed in South Carolina (License #4099).',
   },
 ];
 

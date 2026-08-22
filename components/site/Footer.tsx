@@ -107,6 +107,14 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/areas-we-serve"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                Areas We Serve
+              </Link>
+            </li>
           </ul>
         </nav>
 

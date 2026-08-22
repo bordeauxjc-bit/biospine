@@ -1,73 +1,67 @@
-/**
- * Netlify Forms-compatible contact form.
- *
- * If deployed to Netlify, the form submission is automatically captured and
- * emailed to the configured notification address. The `data-netlify="true"`
- * attribute + hidden `form-name` field are what Netlify's build plugin looks
- * for. No JavaScript required, graceful degradation to standard HTML POST.
- *
- * If deployed elsewhere (Vercel), this form will POST to /contact which will
- * 405. See README for Vercel-compatible API route alternative.
- */
+'use client';
+
+import { FormEvent, useState } from 'react';
+import { Loader2, Send } from 'lucide-react';
+
+type SubmitState = 'idle' | 'submitting' | 'error';
+
 export function ContactForm() {
+  const [submitState, setSubmitState] = useState<SubmitState>('idle');
+  const [error, setError] = useState('');
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitState('submitting');
+    setError('');
+
+    const form = event.currentTarget;
+    const payload = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(result.message || 'We could not send your message.');
+      }
+
+      window.location.assign('/contact/thanks');
+    } catch (submitError) {
+      setSubmitState('error');
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : 'We could not send your message. Please call the office instead.',
+      );
+    }
+  }
+
   return (
-    <form
-      name="biospine-contact"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      action="/contact/thanks"
-      className="space-y-5"
-    >
-      {/* Netlify form name */}
-      <input type="hidden" name="form-name" value="biospine-contact" />
-      {/* Honeypot for spam bots */}
-      <p className="hidden">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
+      <input type="hidden" name="subject" value="New BioSpine website inquiry" />
+      <p className="hidden" aria-hidden>
         <label>
-          Don&rsquo;t fill this out if you&rsquo;re human:{' '}
-          <input name="bot-field" tabIndex={-1} autoComplete="off" />
+          Leave this field empty
+          <input name="botcheck" tabIndex={-1} autoComplete="off" />
         </label>
       </p>
 
-      <div className="grid sm:grid-cols-2 gap-5">
-        <Field
-          label="First name"
-          name="firstName"
-          type="text"
-          required
-          autoComplete="given-name"
-        />
-        <Field
-          label="Last name"
-          name="lastName"
-          type="text"
-          required
-          autoComplete="family-name"
-        />
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="First name" name="firstName" type="text" required autoComplete="given-name" />
+        <Field label="Last name" name="lastName" type="text" required autoComplete="family-name" />
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-5">
-        <Field
-          label="Email"
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-        />
-        <Field
-          label="Phone"
-          name="phone"
-          type="tel"
-          required
-          autoComplete="tel"
-        />
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="Email" name="email" type="email" required autoComplete="email" />
+        <Field label="Phone" name="phone" type="tel" required autoComplete="tel" />
       </div>
 
       <div>
-        <label
-          htmlFor="reason"
-          className="mb-2 block text-sm font-medium text-brand-ink"
-        >
+        <label htmlFor="reason" className="mb-2 block text-sm font-medium text-brand-ink">
           Reason for visit
         </label>
         <select
@@ -75,14 +69,15 @@ export function ContactForm() {
           name="reason"
           className="w-full rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
           defaultValue=""
+          required
         >
-          <option value="" disabled>
-            Select a reason…
-          </option>
+          <option value="" disabled>Select a reason…</option>
           <option>New patient consultation</option>
           <option>Back or neck pain</option>
+          <option>Shockwave therapy</option>
           <option>Headaches or migraines</option>
           <option>Sports injury</option>
+          <option>Auto accident injury</option>
           <option>Arthritis or joint pain</option>
           <option>General wellness</option>
           <option>Other / not sure</option>
@@ -90,32 +85,41 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="mb-2 block text-sm font-medium text-brand-ink"
-        >
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-brand-ink">
           How can we help? <span className="text-slate-400">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
-          className="w-full rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20 resize-y"
-          placeholder="Briefly describe what’s going on…"
+          className="w-full resize-y rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+          placeholder="Please keep this brief and avoid private medical details."
         />
       </div>
 
-      <p className="text-xs text-slate-500 leading-relaxed">
+      <p className="text-xs leading-relaxed text-slate-500">
         By submitting this form, you consent to being contacted by phone or
-        email about your inquiry. We never share your information. Please do
-        not include sensitive health information in this form.
+        email about your inquiry. Do not include diagnoses, insurance numbers,
+        or other sensitive health information.
       </p>
+
+      {submitState === 'error' && (
+        <p role="alert" className="border-l-2 border-red-600 pl-3 text-sm text-red-700">
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"
-        className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded bg-brand-green px-7 py-3.5 font-medium text-white transition-colors hover:bg-brand-green-dark focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2"
+        disabled={submitState === 'submitting'}
+        className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded bg-brand-green px-7 py-3.5 font-medium text-white transition-colors hover:bg-brand-green-dark focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 sm:w-auto"
       >
-        Send message
+        {submitState === 'submitting' ? (
+          <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+        ) : (
+          <Send className="h-4 w-4" aria-hidden />
+        )}
+        {submitState === 'submitting' ? 'Sending…' : 'Request an appointment'}
       </button>
     </form>
   );
@@ -136,12 +140,9 @@ function Field({
 }) {
   return (
     <div>
-      <label
-        htmlFor={name}
-        className="mb-2 block text-sm font-medium text-brand-ink"
-      >
+      <label htmlFor={name} className="mb-2 block text-sm font-medium text-brand-ink">
         {label}
-        {required && <span className="text-brand-green ml-0.5">*</span>}
+        {required && <span className="ml-0.5 text-brand-green">*</span>}
       </label>
       <input
         id={name}

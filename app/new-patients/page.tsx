@@ -26,7 +26,7 @@ const steps = [
   {
     icon: FileText,
     title: 'Book your first visit',
-    text: `Call us at ${siteConfig.phone} or stop by the office. We’ll find a time that works for you.`,
+    text: `Send an appointment request or call us at ${siteConfig.phone}. We’ll help you find a time that works.`,
   },
   {
     icon: ClipboardCheck,
@@ -176,6 +176,24 @@ export default function NewPatientsPage() {
           </div>
           <div className="lg:col-span-8">
             <FaqList faqs={faqs} />
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="ink">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionLabel className="!text-brand-green-light">Ready to get started?</SectionLabel>
+          <h2 className="mt-5 !text-white">Request your first visit</h2>
+          <p className="mt-4 text-lg text-slate-300">
+            Send the office a short request or call during office hours.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <LinkButton href={siteConfig.appointmentUrl} size="lg">
+              Request an appointment
+            </LinkButton>
+            <LinkButton href="/contact#appointment-form" variant="outline" size="lg" className="!border-white/40 !text-white hover:!bg-white/10">
+              Send a request
+            </LinkButton>
           </div>
         </div>
       </Section>

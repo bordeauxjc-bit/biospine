@@ -13,7 +13,7 @@ export function LocationSection() {
     <Section tone="white" id="visit">
       <SectionHeading
         eyebrow="Plan your visit"
-        title="Find us on John Street"
+        title="Chiropractic care on John Street in Lake City"
         description="Easy to reach, easy to park, and open weekdays by appointment. Look for the brick building with the BioSpine logo on the door."
       />
 

@@ -10,6 +10,7 @@
 
   body {
     @apply bg-white text-brand-ink antialiased;
+    overflow-x: clip;
   }
 
   /* Serif headlines, set tight. Optical sizing keeps Newsreader from

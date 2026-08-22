@@ -37,8 +37,8 @@ export function localBusinessSchema() {
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
-    image: `${siteConfig.url}/og-default.png`,
-    logo: `${siteConfig.url}/logo.png`,
+    image: `${siteConfig.url}/opengraph-image`,
+    logo: `${siteConfig.url}/logo.svg`,
     priceRange: '$$',
     medicalSpecialty: 'Chiropractic',
     address: {
@@ -67,7 +67,7 @@ export function localBusinessSchema() {
       '@type': 'MedicalProcedure',
       name: s.name,
       description: s.summary,
-      url: `${siteConfig.url}/services#${s.slug}`,
+      url: `${siteConfig.url}${s.href}`,
     })),
     // Accessibility features (https://schema.org/Accommodation#amenityFeature)
     amenityFeature: [
@@ -185,7 +185,7 @@ export function articleSchema(opts: {
     '@type': 'Article',
     headline: opts.title,
     description: opts.description,
-    image: opts.image ?? `${siteConfig.url}/og-default.png`,
+    image: opts.image ?? `${siteConfig.url}/opengraph-image`,
     datePublished: opts.date,
     dateModified: opts.updated ?? opts.date,
     author: {
@@ -198,7 +198,7 @@ export function articleSchema(opts: {
       name: siteConfig.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/logo.png`,
+        url: `${siteConfig.url}/logo.svg`,
       },
     },
     mainEntityOfPage: {

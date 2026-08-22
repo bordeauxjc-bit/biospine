@@ -7,7 +7,7 @@ Modern, SEO-compliant Next.js website for **BioSpine Health and Wellness, LLC**
 - **Styling:** Tailwind CSS
 - **Content:** MDX blog posts in `content/blog/`
 - **SEO:** Metadata API, JSON-LD structured data, sitemap, robots, OG image
-- **Deploy target:** Netlify (recommended) or Vercel
+- **Deploy target:** Vercel
 
 ---
 
@@ -67,7 +67,7 @@ components/
 ├── ui/                   # Shared UI primitives (Button, Section, PageHeader)
 ├── seo/                  # JSON-LD helpers (LocalBusiness, Doctor, etc.)
 ├── blog/                 # Blog-specific components
-└── ContactForm.tsx       # Netlify-compatible contact form
+└── ContactForm.tsx       # Web3Forms-backed appointment request form
 
 content/blog/             # MDX blog posts (frontmatter + markdown/MDX)
 lib/
@@ -75,7 +75,7 @@ lib/
 ├── blog.ts               # MDX loader + frontmatter parser
 └── seo.ts                # buildMetadata() helper
 
-public/                   # Static assets (logo.png, icon.svg, manifest)
+public/                   # Static assets (logo.svg, icon.svg, manifest)
 ```
 
 ---
@@ -110,36 +110,27 @@ SEO metadata + Article JSON-LD.
 
 ### Logo
 
-The real BioSpine logo lives at `public/logo.png`. To replace it, drop a new
-PNG (ideally square or 4:3, on black) at the same path.
+The BioSpine vector lockup lives at `public/logo.svg`; the compact mark is
+`public/icon.svg`. The matching React lockup is in `components/site/Logo.tsx`.
 
 ---
 
 ## Deployment
 
-### Option A. Netlify (recommended)
-
-1. Push this repo to GitHub
-2. Go to [Netlify](https://app.netlify.com) → **Add new site → Import from Git**
-3. Select the repo. Netlify auto-detects Next.js.
-4. Under **Environment variables**, set `NEXT_PUBLIC_SITE_URL` to your production domain (e.g. `https://biospinehealth.com`)
-5. Click **Deploy**.
-6. (Custom domain) Site settings → Domain management → Add custom domain → follow DNS instructions.
-
-**Contact form:** Netlify Forms are auto-enabled. Submissions appear in
-**Site → Forms → biospine-contact**. Set up email notifications there.
-
-### Option B. Vercel
+### Vercel
 
 1. Push to GitHub.
 2. Go to [Vercel](https://vercel.com) → **Import Project**.
 3. Vercel auto-detects Next.js. Click **Deploy**.
-4. Set `NEXT_PUBLIC_SITE_URL` in **Settings → Environment Variables**.
+4. Set `NEXT_PUBLIC_SITE_URL` in **Settings → Environment Variables**. Use
+   `https://biospine.vercel.app` until a custom domain is connected.
+5. Create a [Web3Forms](https://web3forms.com/) access key and add it as the
+   server-side environment variable `WEB3FORMS_ACCESS_KEY`.
+6. Redeploy after adding or changing either environment variable.
 
-> ⚠️ **Contact form on Vercel:** The form will POST to `/contact/thanks`
-> and 405 by default. Replace it with an API route at `app/api/contact/route.ts`
-> using [Resend](https://resend.com) or nodemailer. Add `RESEND_API_KEY` and
-> `CONTACT_TO_EMAIL` env vars.
+The contact form posts to the local `/api/contact` route, which validates the
+request and forwards it to Web3Forms without exposing the access key in the
+browser bundle.
 
 ---
 
@@ -152,7 +143,19 @@ When launching, verify the following:
 - [ ] Run through [Google Rich Results Test](https://search.google.com/test/rich-results) on the home page (expect LocalBusiness + FAQ + WebSite)
 - [ ] Submit `https://yoursite.com/sitemap.xml` to [Google Search Console](https://search.google.com/search-console)
 - [ ] Claim the [Google Business Profile](https://business.google.com) and link the website
-- [ ] Add real clinic photos to `public/images/` and reference in pages (replace SVG placeholders)
+- [ ] Confirm permission to publish every doctor and office photo in `public/images/`
+
+### Local listing cleanup
+
+Use this exact NAP everywhere: **BioSpine Health and Wellness, LLC · 214 John
+St, Lake City, SC 29560 · 843-713-0669**.
+
+- [ ] Update the Zocdoc practice and doctor profiles from the former address
+- [ ] Update Healthgrades, Vitals, Yellow Pages, and other healthcare directories
+- [ ] Confirm the Google Business Profile primary category, hours, services, and appointment URL
+- [ ] Add the final custom domain to Google Search Console and Bing Webmaster Tools
+- [ ] Request patient reviews through a verified platform; never publish composite testimonials
+- [ ] Keep one regional `/areas-we-serve` page instead of creating thin duplicate city pages
 - [ ] Run [PageSpeed Insights](https://pagespeed.web.dev/), target 90+ Performance, 100 SEO/Accessibility/Best Practices
 - [ ] Verify all pages have unique titles and meta descriptions
 

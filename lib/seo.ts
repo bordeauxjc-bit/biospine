@@ -25,7 +25,7 @@ export function buildMetadata({
     title === siteConfig.name
       ? `${siteConfig.name} | ${siteConfig.tagline}`
       : `${title} | ${siteConfig.name}`;
-  const image = ogImage ?? `${siteConfig.url}/og-default.png`;
+  const image = ogImage ?? `${siteConfig.url}/opengraph-image`;
 
   return {
     title: fullTitle,

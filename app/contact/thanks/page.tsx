@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { CheckCircle2 } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
 import { buildMetadata } from '@/lib/seo';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Thank You',
@@ -29,6 +30,9 @@ export default function ThanksPage() {
           </LinkButton>
           <LinkButton href="/blog" variant="outline">
             Read our blog
+          </LinkButton>
+          <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline">
+            Call {siteConfig.phone}
           </LinkButton>
         </div>
       </div>

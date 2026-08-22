@@ -57,9 +57,7 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
   icons: {
     icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-    // Apple touch icon falls back to the PNG logo. Apple devices will
-    // display it on a black background matching the brand.
-    apple: '/logo.png',
+    apple: '/icon.svg',
   },
   manifest: '/manifest.webmanifest',
   formatDetection: { email: true, address: true, telephone: true },

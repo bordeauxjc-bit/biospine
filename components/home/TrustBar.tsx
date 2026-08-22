@@ -8,11 +8,11 @@ export function TrustBar() {
   const items = [
     {
       label: 'New patients',
-      text: 'Same-week appointments are usually available.',
+      text: 'Ask the office about current same-week openings.',
     },
     {
       label: 'No referral',
-      text: 'South Carolina lets you come straight to us.',
+      text: 'You can usually come directly; check your plan for coverage rules.',
     },
     {
       label: 'Insurance',

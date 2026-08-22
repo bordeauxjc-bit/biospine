@@ -5,6 +5,8 @@
  */
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Allows isolated local QA builds without disturbing another running dev server.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,

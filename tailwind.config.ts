@@ -3,10 +3,8 @@ import type { Config } from 'tailwindcss';
 /**
  * Design tokens for BioSpine Health and Wellness.
  *
- * Colors are derived from the client's actual logo (`public/logo.png`):
- * a leaf-green vertebrated "S" (#34A738) with a steel-blue wordmark
- * (#567FA0) on black. The greens here are darkened from the logo value so
- * text and buttons clear WCAG AA against white.
+ * Colors support the BioSpine living-spine mark: clinical greens on warm
+ * paper neutrals, darkened where text and controls need WCAG AA contrast.
  */
 const config: Config = {
   content: [

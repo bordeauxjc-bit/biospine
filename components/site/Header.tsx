@@ -88,7 +88,7 @@ export function Header() {
 
           <a
             href={`tel:${siteConfig.phoneE164}`}
-            className="sm:hidden inline-flex items-center justify-center rounded bg-brand-green p-2.5 text-white"
+            className="inline-flex h-11 w-11 items-center justify-center rounded bg-brand-green text-white sm:hidden"
             aria-label={`Call ${siteConfig.phone}`}
           >
             <Phone className="h-5 w-5" aria-hidden />
@@ -97,7 +97,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setIsOpen((v) => !v)}
-            className="lg:hidden inline-flex items-center justify-center rounded p-2 text-brand-ink hover:bg-brand-ink/5"
+            className="inline-flex h-11 w-11 items-center justify-center rounded text-brand-ink hover:bg-brand-ink/5 lg:hidden"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}

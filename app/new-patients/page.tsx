@@ -100,17 +100,12 @@ export default function NewPatientsPage() {
           role="list"
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8"
         >
-          {steps.map((step, idx) => (
+          {steps.map((step) => (
             <li key={step.title} className="border-t border-brand-ink/15 pt-6">
-              <div className="flex items-baseline gap-3">
-                <span className="font-display text-sm tabular-nums text-brand-green">
-                  0{idx + 1}
-                </span>
-                <step.icon
-                  className="h-[1.05rem] w-[1.05rem] self-center text-slate-400"
-                  aria-hidden
-                />
-              </div>
+              <step.icon
+                className="h-[1.15rem] w-[1.15rem] text-brand-green"
+                aria-hidden
+              />
               <h3 className="mt-4 font-display text-lg font-semibold text-brand-ink">
                 {step.title}
               </h3>

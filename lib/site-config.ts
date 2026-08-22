@@ -84,36 +84,49 @@ export const siteConfig = {
       name: 'Chiropractic Adjustments',
       summary:
         'Gentle, precise spinal adjustments to restore joint motion, reduce pain, and support nervous-system function.',
+      href: '/services#chiropractic-adjustments',
+    },
+    {
+      slug: 'shockwave-therapy',
+      name: 'Shockwave Therapy',
+      summary:
+        'Acoustic pulse therapy for stubborn tendon and soft-tissue pain that has not settled with rest or standard care.',
+      href: '/services/shockwave-therapy',
     },
     {
       slug: 'back-and-neck-pain',
       name: 'Back & Neck Pain Treatment',
       summary:
         'Targeted care for acute and chronic low back pain, neck pain, and sciatica using evidence-informed chiropractic techniques.',
+      href: '/services#back-and-neck-pain',
     },
     {
       slug: 'headache-migraine-care',
       name: 'Headache & Migraine Care',
       summary:
         'Relief for tension headaches, cervicogenic headaches, and migraines through spinal care and postural correction.',
+      href: '/services#headache-migraine-care',
     },
     {
       slug: 'sports-injury-care',
       name: 'Sports Injury Rehabilitation',
       summary:
         'Return-to-play care for athletes of every level, from weekend warriors to student athletes in the Pee Dee region.',
+      href: '/services#sports-injury-care',
+    },
+    {
+      slug: 'auto-accident-injury',
+      name: 'Auto Accident Injury Care',
+      summary:
+        'Evaluation and treatment for whiplash, back, neck, and shoulder pain after a collision, with documentation for your claim.',
+      href: '/services#auto-accident-injury',
     },
     {
       slug: 'arthritis-relief',
       name: 'Arthritis Relief',
       summary:
         'Conservative, non-surgical care to manage arthritis-related stiffness and joint pain and improve quality of life.',
-    },
-    {
-      slug: 'wellness-and-weight-loss',
-      name: 'Wellness & Weight Loss Consultations',
-      summary:
-        'Lifestyle and wellness guidance, including weight-loss consultations, to help you feel and move better every day.',
+      href: '/services#arthritis-relief',
     },
   ],
 
@@ -128,6 +141,10 @@ export const siteConfig = {
     'Arthritis',
     'Joint pain',
     'Whiplash',
+    'Plantar fasciitis',
+    'Tennis elbow',
+    'Rotator cuff pain',
+    'Achilles tendinitis',
     'Postural problems',
     'Muscle tension',
     'Work-related injuries',

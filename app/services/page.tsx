@@ -11,7 +11,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'Chiropractic Services',
   description:
-    'Chiropractic adjustments, back and neck pain care, headache relief, sports injury rehabilitation, arthritis care, and wellness consultations in Lake City, SC.',
+    'Chiropractic adjustments, shockwave therapy, back and neck pain care, headache relief, sports injury rehab, auto accident care, and arthritis treatment in Lake City, SC.',
   path: '/services',
 });
 
@@ -74,18 +74,32 @@ const serviceDetails: Record<
     ],
     commonFor: ['Spinal arthritis', 'Osteoarthritis', 'Degenerative joint disease', 'Stiffness'],
   },
-  'wellness-and-weight-loss': {
+  'shockwave-therapy': {
     benefits: [
-      'Sustainable lifestyle guidance',
-      'Movement and nutrition recommendations',
-      'Support for long-term spinal health',
-      'Integrated with your overall care plan',
+      'Targets tendon and soft-tissue pain that has stalled',
+      'No needles, no medication, no downtime',
+      'Sessions run about fifteen minutes',
+      'Combines with adjustments in the same visit',
     ],
     commonFor: [
-      'General wellness goals',
-      'Weight-loss support',
-      'Postural improvement',
-      'Energy and mobility',
+      'Plantar fasciitis',
+      'Tennis and golfer’s elbow',
+      'Achilles tendinitis',
+      'Rotator cuff pain',
+    ],
+  },
+  'auto-accident-injury': {
+    benefits: [
+      'Prompt evaluation after a collision',
+      'Care for whiplash, neck, back, and shoulder pain',
+      'Written documentation of findings for your claim',
+      'No referral needed to start treatment',
+    ],
+    commonFor: [
+      'Whiplash',
+      'Neck and shoulder pain',
+      'Low back pain after impact',
+      'Post-accident headaches',
     ],
   },
 };
@@ -105,7 +119,7 @@ export default function ServicesPage() {
 
       <Section tone="white">
         <div className="space-y-20 sm:space-y-28">
-          {siteConfig.services.map((service, idx) => {
+          {siteConfig.services.map((service) => {
             const details = serviceDetails[service.slug];
             return (
               <article
@@ -114,9 +128,6 @@ export default function ServicesPage() {
                 className="scroll-mt-24 grid lg:grid-cols-5 gap-10 lg:gap-14 items-start"
               >
                 <div className="lg:col-span-2">
-                  <p className="text-sm font-semibold uppercase tracking-widest text-brand-green mb-3">
-                    Service {String(idx + 1).padStart(2, '0')}
-                  </p>
                   <h2 className="!text-3xl sm:!text-4xl">{service.name}</h2>
                   <p className="mt-4 text-lg text-slate-600 leading-relaxed">
                     {service.summary}

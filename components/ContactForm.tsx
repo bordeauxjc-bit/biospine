@@ -1,11 +1,13 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Loader2, Send } from 'lucide-react';
 
 type SubmitState = 'idle' | 'submitting' | 'error';
 
 export function ContactForm() {
+  const router = useRouter();
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
   const [error, setError] = useState('');
 
@@ -29,7 +31,7 @@ export function ContactForm() {
         throw new Error(result.message || 'We could not send your message.');
       }
 
-      window.location.assign('/contact/thanks');
+      router.push('/contact/thanks');
     } catch (submitError) {
       setSubmitState('error');
       setError(

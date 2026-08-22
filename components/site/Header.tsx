@@ -39,7 +39,6 @@ export function Header() {
         <Link
           href="/"
           className="flex items-center focus-visible:rounded"
-          aria-label={`${siteConfig.name}, home`}
         >
           <Logo />
         </Link>

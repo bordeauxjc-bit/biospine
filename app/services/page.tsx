@@ -21,10 +21,10 @@ const serviceDetails: Record<
 > = {
   'chiropractic-adjustments': {
     benefits: [
-      'Restored range of motion in the spine and joints',
-      'Reduced muscle tension and nerve irritation',
-      'Improved posture and movement patterns',
-      'Drug-free, non-surgical pain relief',
+      'Care for restricted or uncomfortable joint motion',
+      'Technique adapted to findings and comfort',
+      'Hands-on care paired with movement guidance',
+      'Progress reassessed instead of assumed',
     ],
     commonFor: ['Back stiffness', 'Neck pain', 'Postural problems', 'Tension headaches'],
   },
@@ -39,10 +39,10 @@ const serviceDetails: Record<
   },
   'headache-migraine-care': {
     benefits: [
-      'Reduction in headache frequency and intensity',
+      'Tracking of headache frequency, intensity, and daily impact',
       'Identification of postural and muscular triggers',
-      'Targeted cervical adjustments for cervicogenic headaches',
-      'Lifestyle and ergonomic guidance',
+      'Conservative neck care when findings support it',
+      'Referral or medical co-management when appropriate',
     ],
     commonFor: [
       'Tension headaches',
@@ -53,9 +53,9 @@ const serviceDetails: Record<
   },
   'sports-injury-care': {
     benefits: [
-      'Faster return to sport and daily activity',
+      'A measured path back to sport and daily activity',
       'Soft-tissue and joint care for athletic injuries',
-      'Injury-prevention guidance for active patients',
+      'Activity and recurrence-risk guidance for active patients',
       'Care plans that work around your training schedule',
     ],
     commonFor: [
@@ -77,7 +77,7 @@ const serviceDetails: Record<
   'shockwave-therapy': {
     benefits: [
       'A focused unit, so it reaches deep targets too',
-      'No needles, no medication, no downtime',
+      'No needles or injected medication',
       'Sessions run about fifteen minutes',
       'Combines with adjustments in the same visit',
     ],

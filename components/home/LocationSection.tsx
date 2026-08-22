@@ -85,7 +85,7 @@ export function LocationSection() {
                       <span
                         className={
                           h.isClosed
-                            ? 'text-slate-400'
+                            ? 'text-slate-600'
                             : 'text-brand-ink font-medium tabular-nums'
                         }
                       >

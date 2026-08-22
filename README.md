@@ -3,7 +3,7 @@
 Modern, SEO-compliant Next.js website for **BioSpine Health and Wellness, LLC**
 (Dr. Chucky S. Jordan, D.C.) in Lake City, South Carolina.
 
-- **Framework:** Next.js 14 (App Router) + TypeScript
+- **Framework:** Next.js 16 (App Router) + React 19 + TypeScript
 - **Styling:** Tailwind CSS
 - **Content:** MDX blog posts in `content/blog/`
 - **SEO:** Metadata API, JSON-LD structured data, sitemap, robots, OG image
@@ -51,12 +51,13 @@ app/                      # Next.js App Router pages + route handlers
 ├── layout.tsx            # Root layout (fonts, global metadata, JSON-LD)
 ├── page.tsx              # Home
 ├── about/page.tsx        # About Dr. Jordan
-├── services/page.tsx     # Services overview
-├── conditions/page.tsx   # Conditions we treat (long-tail SEO)
+├── services/             # Overview + dedicated [slug] service guides
+├── conditions/           # Overview + dedicated [slug] condition guides
+├── reviews/page.tsx      # Attributable review excerpts + source policy
 ├── new-patients/page.tsx # What to expect as a new patient
 ├── contact/              # Contact form + thank-you page
 ├── blog/                 # Blog index + [slug] dynamic route
-├── sitemap.ts            # Dynamic sitemap including blog posts
+├── sitemap.ts            # Dynamic sitemap including guides + blog posts
 ├── robots.ts             # robots.txt
 ├── not-found.tsx         # 404 page
 └── opengraph-image.tsx   # Dynamic social preview image
@@ -72,6 +73,9 @@ components/
 content/blog/             # MDX blog posts (frontmatter + markdown/MDX)
 lib/
 ├── site-config.ts        # Single source of truth: NAP, hours, services, etc.
+├── conditions.ts         # Condition guide content + internal-link map
+├── service-guides.ts     # Dedicated service guide content
+├── reviews.ts            # Published review excerpts + source details
 ├── blog.ts               # MDX loader + frontmatter parser
 └── seo.ts                # buildMetadata() helper
 
@@ -166,12 +170,10 @@ St, Lake City, SC 29560 · 843-713-0669**.
 Search the codebase for `TODO` comments to find spots where client-specific
 info is needed:
 
-- **Office hours**, currently Mon–Fri 8–5 from directory listing
 - **Techniques offered** (Diversified, Gonstead, Activator, decompression, etc.)
 - **Accepted insurance** beyond Medicare
-- **Practice philosophy / mission statement**
-- **Real clinic and headshot photos** (currently SVG placeholders)
-- **Google Place ID** for more accurate map embed
+- **Photo-release permission** for every doctor and office image
+- **Web3Forms access key** and the final custom domain
 
 ---
 

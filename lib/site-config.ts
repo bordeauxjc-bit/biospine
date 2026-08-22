@@ -75,6 +75,7 @@ export const siteConfig = {
     facebook: 'https://www.facebook.com/BiospineHealth/',
   },
   reviews: {
+    google: 'https://www.google.com/maps?cid=3657180964230355155',
     zocdoc:
       'https://www.zocdoc.com/practice/biospine-health-and-wellness-75878',
   },
@@ -89,8 +90,8 @@ export const siteConfig = {
       slug: 'chiropractic-adjustments',
       name: 'Chiropractic Adjustments',
       summary:
-        'Gentle, precise spinal adjustments to restore joint motion, reduce pain, and support nervous-system function.',
-      href: '/services#chiropractic-adjustments',
+        'Individualized joint care intended to improve comfortable movement and support day-to-day function.',
+      href: '/services/chiropractic-adjustments',
     },
     {
       slug: 'shockwave-therapy',
@@ -110,15 +111,15 @@ export const siteConfig = {
       slug: 'headache-migraine-care',
       name: 'Headache & Migraine Care',
       summary:
-        'Relief for tension headaches, cervicogenic headaches, and migraines through spinal care and postural correction.',
-      href: '/services#headache-migraine-care',
+        'Evaluation of neck-related and tension-type headache contributors, with medical co-management when appropriate.',
+      href: '/services/headache-migraine-care',
     },
     {
       slug: 'sports-injury-care',
-      name: 'Sports Injury Rehabilitation',
+      name: 'Sports Injury Care',
       summary:
-        'Return-to-play care for athletes of every level, from weekend warriors to student athletes in the Pee Dee region.',
-      href: '/services#sports-injury-care',
+        'Assessment and conservative care for appropriate sports-related joint, muscle, and overuse problems.',
+      href: '/services/sports-injury-care',
     },
     {
       slug: 'auto-accident-injury',
@@ -132,7 +133,7 @@ export const siteConfig = {
       name: 'Arthritis Relief',
       summary:
         'Conservative, non-surgical care to manage arthritis-related stiffness and joint pain and improve quality of life.',
-      href: '/services#arthritis-relief',
+      href: '/services/arthritis-relief',
     },
   ],
 

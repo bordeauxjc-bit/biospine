@@ -24,14 +24,15 @@ export async function generateStaticParams(): Promise<Params[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Promise<Params>;
 }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) {
     return buildMetadata({
       title: 'Post not found',
       description: 'The article you are looking for could not be found.',
-      path: `/blog/${params.slug}`,
+      path: `/blog/${slug}`,
       noindex: true,
     });
   }
@@ -43,8 +44,9 @@ export async function generateMetadata({
   });
 }
 
-export default function BlogPostPage({ params }: { params: Params }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) notFound();
 
   // Get 2 related posts (excluding current)

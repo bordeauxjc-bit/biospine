@@ -69,7 +69,7 @@ export function OfficeGallery() {
                   className="object-cover"
                 />
               </div>
-              <figcaption className="mt-3 border-t border-brand-ink/12 pt-2.5 text-sm text-slate-500">
+              <figcaption className="mt-3 border-t border-brand-ink/12 pt-2.5 text-sm text-slate-600">
                 {photo.caption}
               </figcaption>
             </figure>

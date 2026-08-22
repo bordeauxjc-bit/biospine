@@ -3,6 +3,7 @@ import { Section } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
 import { siteConfig } from '@/lib/site-config';
 import { SectionLabel } from '@/components/ui/SectionLabel';
+import { conditionLinkMap } from '@/lib/conditions';
 
 /**
  * Conditions as a rule-divided index in columns, not a field of identical
@@ -36,7 +37,7 @@ export function ConditionsList() {
           {siteConfig.conditions.map((condition) => (
             <li key={condition}>
               <Link
-                href="/conditions"
+                href={conditionLinkMap[condition] ?? '/conditions'}
                 className="group flex items-baseline justify-between gap-4 border-t border-brand-ink/12 py-4 text-[0.9375rem] font-medium text-brand-ink transition-colors hover:border-brand-green hover:text-brand-green-dark"
               >
                 <span>{condition}</span>

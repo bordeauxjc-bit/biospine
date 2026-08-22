@@ -252,3 +252,34 @@ export function medicalTherapySchema(opts: {
     },
   };
 }
+
+/**
+ * MedicalCondition markup for patient education pages. This describes the
+ * topic without implying that a page diagnoses the reader.
+ */
+export function medicalConditionSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+  symptoms: string[];
+  possibleTreatment: string;
+  treatmentUrl: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalCondition',
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    signOrSymptom: opts.symptoms.map((name) => ({
+      '@type': 'MedicalSignOrSymptom',
+      name,
+    })),
+    possibleTreatment: {
+      '@type': 'MedicalTherapy',
+      name: opts.possibleTreatment,
+      url: opts.treatmentUrl,
+    },
+    relevantSpecialty: 'https://schema.org/Chiropractic',
+  };
+}

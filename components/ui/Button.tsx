@@ -93,7 +93,7 @@ export function LinkButton({
   }
 
   return (
-    <Link href={href} className={classes} prefetch={prefetch} {...(rest as any)}>
+    <Link href={href} className={classes} prefetch={prefetch} {...rest}>
       {children}
     </Link>
   );

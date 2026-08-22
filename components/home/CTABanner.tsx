@@ -11,7 +11,7 @@ export function CTABanner() {
       <div className="container py-16 sm:py-20">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
           <div className="max-w-2xl">
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-label text-white/60">
+            <p className="text-[0.6875rem] font-semibold uppercase tracking-label text-white/85">
               Ready when you are
             </p>
             <h2 className="mt-5 !text-white text-balance">

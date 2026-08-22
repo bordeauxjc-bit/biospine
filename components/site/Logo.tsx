@@ -64,7 +64,7 @@ export function Logo({
 }: LogoProps) {
   const isLight = variant === 'light';
   const bio = isLight ? 'text-white' : 'text-brand-green-dark';
-  const spine = isLight ? 'text-brand-green-light' : 'text-brand-green';
+  const spine = isLight ? 'text-brand-green-light' : 'text-brand-green-dark';
   const tag = isLight ? 'text-slate-300' : 'text-slate-600';
 
   if (layout === 'stacked') {

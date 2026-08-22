@@ -18,10 +18,8 @@ const newsreader = Newsreader({
   variable: '--font-newsreader',
   display: 'swap',
   style: ['normal', 'italic'],
-  weight: ['300', '400', '500', '600'],
-  // Next 14 has no fallback metrics for Newsreader, which makes it log a
-  // font-override error on every render. We declare Georgia explicitly
-  // instead, which is a close enough serif to keep layout shift small.
+  // Newsreader has no built-in fallback metrics here, so use Georgia as a
+  // close serif fallback to keep layout shift small.
   adjustFontFallback: false,
   fallback: ['Georgia', 'Times New Roman', 'serif'],
 });

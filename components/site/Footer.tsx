@@ -80,7 +80,7 @@ export function Footer() {
                   <span
                     className={
                       h.isClosed
-                        ? 'text-slate-500'
+                        ? 'text-slate-400'
                         : 'text-slate-200 tabular-nums'
                     }
                   >
@@ -115,10 +115,18 @@ export function Footer() {
                 Areas We Serve
               </Link>
             </li>
+            <li>
+              <Link
+                href="/reviews"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                Patient Reviews
+              </Link>
+            </li>
           </ul>
         </nav>
 
-        <div className="mt-8 border-t border-white/12 pt-7 flex flex-col sm:flex-row justify-between gap-3 text-[0.8125rem] text-slate-500">
+        <div className="mt-8 border-t border-white/12 pt-7 flex flex-col sm:flex-row justify-between gap-3 text-[0.8125rem] text-slate-400">
           <p>
             © {year} {siteConfig.legalName}. All rights reserved.
           </p>
@@ -128,7 +136,7 @@ export function Footer() {
           </p>
         </div>
 
-        <p className="mt-6 max-w-3xl text-[0.8125rem] leading-relaxed text-slate-600">
+        <p className="mt-6 max-w-3xl text-[0.8125rem] leading-relaxed text-slate-400">
           The information on this website is for general informational purposes
           only and does not constitute medical advice. For a medical emergency,
           call 911. Individual results vary and depend on condition, adherence

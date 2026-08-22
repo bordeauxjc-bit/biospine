@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'reason'] as const;
 

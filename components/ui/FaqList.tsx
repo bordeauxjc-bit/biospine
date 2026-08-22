@@ -15,16 +15,16 @@ export function FaqList({
   className?: string;
 }) {
   return (
-    <dl className={className}>
+    <div className={className}>
       {faqs.map((faq) => (
         <details
           key={faq.question}
           className="group border-t border-brand-ink/12 last:border-b"
         >
           <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
-            <dt className="font-display text-lg sm:text-xl font-semibold text-brand-ink transition-colors group-hover:text-brand-green-dark text-pretty">
+            <span className="font-display text-lg sm:text-xl font-semibold text-brand-ink transition-colors group-hover:text-brand-green-dark text-pretty">
               {faq.question}
-            </dt>
+            </span>
             <span
               aria-hidden
               className="mt-1 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-45"
@@ -39,11 +39,11 @@ export function FaqList({
               </svg>
             </span>
           </summary>
-          <dd className="-mt-1 pb-7 pr-10 text-[0.9375rem] leading-relaxed text-slate-600">
+          <p className="-mt-1 pb-7 pr-10 text-[0.9375rem] leading-relaxed text-slate-600">
             {faq.answer}
-          </dd>
+          </p>
         </details>
       ))}
-    </dl>
+    </div>
   );
 }

@@ -12,7 +12,6 @@ export function JsonLd({ data, id }: Props) {
     <script
       type="application/ld+json"
       id={id}
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );

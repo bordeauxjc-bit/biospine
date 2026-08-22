@@ -89,7 +89,7 @@ export default function BackNeckPainPage() {
           {[
             ['Listen and examine', 'Your history, movement, strength, and relevant orthopedic or neurological findings guide the visit.'],
             ['Explain the findings', 'You will hear what appears to be driving the pain, what can be treated here, and what would require referral.'],
-            ['Build a measured plan', 'Care is adjusted to your goals and response. If progress stalls, the plan is reassessed instead of extended automatically.'],
+            ['Know when to change course', 'Pain, motion, sleep, work, and other affected activity are rechecked. If those measures stall, the plan is reconsidered instead of extended automatically.'],
           ].map(([title, text]) => (
             <article key={title} className="border-t-2 border-brand-green pt-5">
               <h2 className="!text-2xl">{title}</h2>

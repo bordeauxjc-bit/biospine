@@ -11,7 +11,7 @@ import { directionsUrl, siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'Chiropractor Serving Lake City & the Pee Dee, SC',
   description:
-    'BioSpine Health and Wellness welcomes chiropractic patients from Lake City, Florence, Kingstree, Hemingway, Pamplico, and surrounding Pee Dee communities.',
+    'BioSpine provides chiropractic care, shockwave therapy, injury treatment, and DOT physicals from one Lake City office serving nearby Pee Dee communities.',
   path: '/areas-we-serve',
 });
 
@@ -23,7 +23,7 @@ export default function AreasWeServePage() {
       <PageHeader
         eyebrow="Areas we serve"
         title="One Lake City office, serving the Pee Dee"
-        description={`BioSpine welcomes patients from throughout the region at ${siteConfig.address.full}.`}
+        description={`Patients drive to ${siteConfig.address.full} from Florence, Kingstree, Hemingway, Pamplico, and other nearby communities.`}
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Areas we serve', href: '/areas-we-serve' },
@@ -35,8 +35,8 @@ export default function AreasWeServePage() {
           <div className="lg:col-span-5">
             <SectionHeading
               eyebrow="Regional care"
-              title="Local enough to know the community"
-              description="Patients come to Lake City for straightforward chiropractic care, shockwave therapy, injury evaluation, and help with back and neck pain. Every patient is treated at the same BioSpine office—these are service areas, not additional locations."
+              title="Every appointment is at 214 John Street"
+              description="BioSpine does not operate satellite offices. The towns listed here are communities served by the Lake City practice."
             />
             <div className="flex flex-col gap-3 sm:flex-row">
               <LinkButton href={directionsUrl()} external>
@@ -72,8 +72,8 @@ export default function AreasWeServePage() {
             <p className="mt-3 text-slate-600">BioSpine offers focused ESWT for selected chronic tendon and soft-tissue problems after an appropriate evaluation.</p>
           </article>
           <article>
-            <h2 className="!text-2xl">New patients welcome</h2>
-            <p className="mt-3 text-slate-600">Call the office or send a brief appointment request. The office can also help confirm insurance before your visit.</p>
+            <h2 className="!text-2xl">DOT physicals</h2>
+            <p className="mt-3 text-slate-600">Dr. Jordan is listed on the FMCSA National Registry and performs commercial-driver physicals at the Lake City office.</p>
           </article>
         </div>
       </Section>

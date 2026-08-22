@@ -57,7 +57,7 @@ export default async function ConditionGuidePage({ params }: Props) {
     <>
       <PageHeader
         eyebrow="Condition guide"
-        title={`${condition.name} care in Lake City, SC`}
+        title={`${condition.name} in Lake City, SC`}
         description={condition.summary}
         crumbs={[
           { label: 'Home', href: '/' },
@@ -105,7 +105,7 @@ export default async function ConditionGuidePage({ params }: Props) {
             <SectionHeading
               eyebrow="Why it happens"
               title="Common contributors"
-              description="The examination is used to decide which possibilities fit your presentation and which do not."
+              description="Several problems can create the same symptom pattern. The exam narrows the list instead of guessing from one complaint."
             />
           </div>
           <ul role="list" className="lg:col-span-7">
@@ -186,9 +186,10 @@ export default async function ConditionGuidePage({ params }: Props) {
 
       <Section tone="sand">
         <div className="mx-auto max-w-3xl text-center">
-          <h2>Start with an evaluation</h2>
+          <h2>Want Dr. Jordan to examine it?</h2>
           <p className="mt-4 text-lg text-slate-600">
-            Visit BioSpine at {siteConfig.address.full}, or contact the office to discuss whether an appointment is the right next step.
+            BioSpine sees patients at {siteConfig.address.full}. Call if you want
+            to describe the symptoms before requesting an appointment.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <LinkButton href={siteConfig.appointmentUrl} size="lg">

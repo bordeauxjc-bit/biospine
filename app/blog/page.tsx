@@ -22,8 +22,8 @@ export default function BlogIndexPage() {
     <>
       <PageHeader
         eyebrow="Blog"
-        title="Resources for a pain-free life"
-        description="Practical, evidence-informed articles on chiropractic care, back pain, headaches, sports injuries, and healthy living."
+        title="Straight answers about pain, movement, and chiropractic care"
+        description="Dr. Jordan’s articles explain common back, neck, headache, posture, and sports-injury questions without promising a diagnosis from a webpage."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Blog', href: '/blog' },

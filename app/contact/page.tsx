@@ -26,8 +26,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="We’re here to help"
-        description={`Call, email, or send a message, we’ll get back to you as soon as we can during office hours.`}
+        title="Call or message the John Street office"
+        description={`Call ${siteConfig.phone} during office hours or send a short appointment request. The form is for scheduling, not private medical details or emergencies.`}
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Contact', href: '/contact' },

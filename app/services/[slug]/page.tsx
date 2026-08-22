@@ -69,7 +69,7 @@ export default async function ServiceGuidePage({ params }: Props) {
       <Section tone="white">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="prose-biospine lg:col-span-6">
-            <h2 className="!mt-0">What this service is designed to do</h2>
+            <h2 className="!mt-0">What Dr. Jordan is evaluating and treating</h2>
             {service.introduction.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -99,8 +99,8 @@ export default async function ServiceGuidePage({ params }: Props) {
       <Section tone="cream">
         <SectionHeading
           eyebrow="Your visit"
-          title="A clear process from evaluation to follow-up"
-          description="Care starts with the findings and changes when the findings or your response change."
+          title="How the visit is handled"
+          description="The first exam decides whether treatment begins here, needs to wait for more information, or should happen somewhere else."
         />
         <ol className="grid gap-8 lg:grid-cols-3">
           {service.visitSteps.map((step, index) => (
@@ -154,7 +154,7 @@ export default async function ServiceGuidePage({ params }: Props) {
       <Section tone="sand">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <SectionHeading eyebrow="Related guides" title="Learn about common concerns" />
+            <SectionHeading eyebrow="Related guides" title="Read about the symptoms behind the visit" />
           </div>
           <ul role="list" className="lg:col-span-8">
             {service.relatedConditions.map((condition) => (
@@ -187,9 +187,10 @@ export default async function ServiceGuidePage({ params }: Props) {
 
       <Section tone="ink">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="!text-white">Ask whether this care fits your situation</h2>
+          <h2 className="!text-white">Have Dr. Jordan examine the problem</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Request an appointment at {siteConfig.address.full}, or call the office before booking.
+            Appointments are at {siteConfig.address.full}. Call first if you want
+            to describe the problem before scheduling.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <LinkButton href={siteConfig.appointmentUrl} size="lg">

@@ -42,8 +42,8 @@ export default function ConditionsPage() {
     <>
       <PageHeader
         eyebrow="Conditions"
-        title="Condition guides for Lake City patients"
-        description="Learn what common symptoms can mean, what an evaluation may include, when conservative care may fit, and which warning signs need urgent attention."
+        title="Start with the symptom, not an online diagnosis"
+        description="These guides explain what Dr. Jordan checks for, which problems may respond to care at BioSpine, and which warning signs should not wait for a chiropractic appointment."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Conditions', href: '/conditions' },
@@ -79,7 +79,7 @@ export default function ConditionsPage() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <SectionLabel className="mb-5">How to use these pages</SectionLabel>
-            <h2 className="text-balance">Education before an appointment</h2>
+            <h2 className="text-balance">Use the guides to prepare, not self-diagnose</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3 lg:col-span-8">
             {[
@@ -92,8 +92,8 @@ export default function ConditionsPage() {
                 'Each guide identifies symptoms that should be evaluated urgently instead of waiting for a routine visit.',
               ],
               [
-                'Choose a next step',
-                'See how BioSpine evaluates the concern and when referral or other care may be more appropriate.',
+                'See what Dr. Jordan checks',
+                'Each page explains the exam and the findings that would lead to treatment, imaging, or referral.',
               ],
             ].map(([title, text]) => (
               <article key={title} className="border-t border-brand-ink/15 pt-5">
@@ -109,7 +109,7 @@ export default function ConditionsPage() {
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-4">
             <SectionLabel className="mb-5">Questions</SectionLabel>
-            <h2 className="text-balance">Before you choose a type of care</h2>
+            <h2 className="text-balance">Before you book the wrong kind of appointment</h2>
             <div className="mt-8">
               <LinkButton href="/contact#appointment-form" variant="outline">
                 Ask about an appointment

@@ -24,8 +24,8 @@ export default function ReviewsPage() {
     <>
       <PageHeader
         eyebrow="Public feedback"
-        title="BioSpine reviews you can check at the source"
-        description="We publish short, attributable excerpts and clearly distinguish verified Zocdoc patients from public Google reviewers."
+        title="What people have said about BioSpine"
+        description="The page includes all 12 ratings from BioSpine’s Google listing and separate excerpts that Zocdoc identifies as verified patient reviews."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Reviews', href: '/reviews' },
@@ -68,7 +68,7 @@ export default function ReviewsPage() {
       <Section tone="sand">
         <SectionHeading
           eyebrow="12 public Google ratings"
-          title="Every rating currently shown on BioSpine’s Google profile"
+          title="All 12 ratings from the Google listing"
           description="Ten reviewers left written comments and two left a five-star rating without text. Written comments are summarized below; open Google to read the original wording and context."
         />
         <div className="grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-3">

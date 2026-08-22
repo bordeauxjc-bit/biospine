@@ -49,8 +49,8 @@ export function OfficeGallery() {
     <Section tone="cream">
       <SectionHeading
         eyebrow="Inside the office"
-        title="A small practice, kept the way you would want it"
-        description="Clean, comfortable, and set up for everything from adjustments to rehab."
+        title="See the John Street office before you arrive"
+        description="The front door, waiting room, check-in desk, and treatment floor shown here are the same spaces you will use at your appointment."
       />
 
       <ul

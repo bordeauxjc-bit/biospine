@@ -11,12 +11,12 @@ export function AboutPreview() {
       text: 'A decade of treating patients across Lake City and the wider Pee Dee.',
     },
     {
-      title: 'Care planned around you',
-      text: 'Treatment built for your goals, your health history, and what your week actually looks like.',
+      title: 'The exam comes first',
+      text: 'An appointment does not automatically mean an adjustment. The findings decide what happens next.',
     },
     {
-      title: 'Plain, honest answers',
-      text: 'You will always know the diagnosis, the plan, and roughly how long it should take.',
+      title: 'Referral when it is needed',
+      text: 'If imaging, medical care, or formal rehabilitation should come first, Dr. Jordan will say so.',
     },
   ];
 
@@ -35,8 +35,8 @@ export function AboutPreview() {
               />
             </div>
             <figcaption className="mt-3.5 border-t border-brand-ink/12 pt-3 text-sm text-slate-500">
-              Every visit includes an explanation of what is actually going on
-              in your spine.
+              Dr. Jordan uses the exam and, when useful, a model to explain the
+              problem before discussing treatment.
             </figcaption>
           </figure>
         </div>
@@ -45,15 +45,15 @@ export function AboutPreview() {
           <SectionLabel className="mb-5">Meet your chiropractor</SectionLabel>
 
           <h2 className="text-balance">
-            A doctor who listens first and explains as he goes
+            Dr. Jordan examines first, then explains the plan
           </h2>
 
           <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-            {siteConfig.doctor.name} trained at{' '}
-            {siteConfig.doctor.education} and has spent more than ten years
-            treating patients in this part of South Carolina. He pairs
-            evidence-informed technique with straightforward talk, so you leave
-            knowing where you stand.
+            {siteConfig.doctor.name} graduated from{' '}
+            {siteConfig.doctor.education} in {siteConfig.doctor.graduationYear}
+            and holds South Carolina chiropractic license #4099. He has treated
+            patients in and around Lake City for more than ten years and is also
+            listed by FMCSA to perform DOT physicals.
           </p>
 
           <ul role="list" className="mt-9">

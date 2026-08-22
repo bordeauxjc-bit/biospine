@@ -16,12 +16,12 @@ export function ConditionsList() {
         <div className="lg:col-span-4">
           <SectionLabel className="mb-5">Conditions we see</SectionLabel>
           <h2 className="text-balance">
-            Most of what walks through the door
+            Back pain is common here. It is not the only thing we see.
           </h2>
           <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-            Chiropractic care has good evidence behind it for a range of
-            musculoskeletal and nerve-related problems. If something here
-            sounds like you, it&rsquo;s worth a call.
+            Patients also come in with stiff necks, sciatica, headaches,
+            collision injuries, arthritic joints, and stubborn tendon pain.
+            The first exam determines what belongs in this office.
           </p>
           <div className="mt-8">
             <LinkButton href="/conditions" variant="outline">

@@ -19,7 +19,7 @@ export function BlogPreview() {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-14">
         <div className="max-w-2xl">
           <SectionLabel className="mb-5">From the blog</SectionLabel>
-          <h2 className="text-balance">Reading for between visits</h2>
+          <h2 className="text-balance">Answers to questions that come up in the office</h2>
         </div>
         <Link
           href="/blog"

@@ -3,6 +3,7 @@ import {
   ClipboardCheck,
   Clock,
   FileText,
+  Phone,
   ShieldCheck,
 } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
@@ -25,23 +26,23 @@ export const metadata: Metadata = buildMetadata({
 const steps = [
   {
     icon: FileText,
-    title: 'Book your first visit',
-    text: `Send an appointment request or call us at ${siteConfig.phone}. We’ll help you find a time that works.`,
+    title: 'Choose a time',
+    text: `Send a request or call ${siteConfig.phone}. Mention whether the visit is for pain, an injury, shockwave therapy, or a DOT physical.`,
   },
   {
     icon: ClipboardCheck,
-    title: 'Arrive a little early',
-    text: 'Plan to arrive 10 minutes before your appointment to complete new-patient paperwork.',
+    title: 'Bring the useful records',
+    text: 'Arrive about 10 minutes early with your ID, insurance card, medication list, and any recent imaging or reports.',
   },
   {
     icon: Clock,
-    title: 'Exam & consultation',
-    text: 'Dr. Jordan will review your health history, perform a thorough exam, and discuss your goals.',
+    title: 'History and examination',
+    text: 'Dr. Jordan asks how the problem started, checks movement and relevant neurological or orthopedic findings, and explains what he sees.',
   },
   {
     icon: ShieldCheck,
-    title: 'Your care plan',
-    text: "If appropriate, you’ll receive your first adjustment the same day. You’ll leave with a clear plan for next steps.",
+    title: 'A treatment decision',
+    text: 'Treatment may begin that day when the exam supports it. If imaging, records, or another provider should come first, Dr. Jordan will explain why.',
   },
 ];
 
@@ -82,8 +83,8 @@ export default function NewPatientsPage() {
     <>
       <PageHeader
         eyebrow="New patients"
-        title="Your first visit, step by step"
-        description="No surprises, here’s exactly what to expect when you walk through our door."
+        title="What happens at your first BioSpine visit"
+        description="Plan on 45–60 minutes for the history, examination, explanation, and—when the findings support it—first treatment."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'New Patients', href: '/new-patients' },
@@ -92,8 +93,8 @@ export default function NewPatientsPage() {
 
       <Section tone="white">
         <SectionHeading
-          eyebrow="What to expect"
-          title="Four simple steps"
+          eyebrow="The appointment"
+          title="From booking to the first treatment decision"
         />
 
         <ol
@@ -153,8 +154,9 @@ export default function NewPatientsPage() {
               {siteConfig.insurance.note}
             </p>
             <p className="mt-4 text-slate-700 leading-relaxed">
-              If you&rsquo;re paying out of pocket, we&rsquo;re happy to
-              discuss options before you book. Transparency matters to us.
+              If you are paying out of pocket, ask what the visit will cost
+              before you book. Insurance benefits are determined by your plan,
+              even when the office helps verify them.
             </p>
             <div className="mt-6">
               <LinkButton
@@ -182,7 +184,7 @@ export default function NewPatientsPage() {
 
       <Section tone="ink">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionLabel className="!text-brand-green-light">Ready to get started?</SectionLabel>
+          <SectionLabel className="!text-brand-green-light">First appointment</SectionLabel>
           <h2 className="mt-5 !text-white">Request your first visit</h2>
           <p className="mt-4 text-lg text-slate-300">
             Send the office a short request or call during office hours.
@@ -191,8 +193,8 @@ export default function NewPatientsPage() {
             <LinkButton href={siteConfig.appointmentUrl} size="lg">
               Request an appointment
             </LinkButton>
-            <LinkButton href="/contact#appointment-form" variant="outline" size="lg" className="!border-white/40 !text-white hover:!bg-white/10">
-              Send a request
+            <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg" className="!border-white/40 !text-white hover:!bg-white/10">
+              <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
             </LinkButton>
           </div>
         </div>

@@ -84,8 +84,8 @@ const serviceDetails: Record<
     benefits: [
       'Conservative, non-surgical management',
       'Joint mobilization to maintain motion',
-      'Movement and home-care guidance tailored to your needs',
-      'Home care and mobility guidance',
+      'Movement suggestions based on the joints and daily tasks that are actually limited',
+      'Activity pacing for flare-ups and especially stiff days',
     ],
     commonFor: ['Spinal arthritis', 'Osteoarthritis', 'Degenerative joint disease', 'Stiffness'],
   },
@@ -124,8 +124,8 @@ export default function ServicesPage() {
     <>
       <PageHeader
         eyebrow="Services"
-        title="Chiropractic care designed around your goals"
-        description="Whether you’re recovering from an injury, managing chronic pain, or investing in long-term wellness, we have a care path for you."
+        title="What Dr. Jordan does at the Lake City office"
+        description="BioSpine provides chiropractic examinations and treatment, focused shockwave therapy, injury care, and FMCSA DOT physicals at 214 John Street."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -156,7 +156,7 @@ export default function ServicesPage() {
 
                 <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
                   <div className="rounded-sm bg-brand-cream p-6 sm:p-7">
-                    <h3 className="label-muted">What you can expect</h3>
+                    <h3 className="label-muted">How this is handled at BioSpine</h3>
                     <ul role="list" className="mt-4 space-y-3">
                       {details.benefits.map((b) => (
                         <li key={b} className="flex items-start gap-3 text-[0.9375rem] leading-relaxed text-slate-700">
@@ -199,10 +199,10 @@ export default function ServicesPage() {
 
       <Section tone="ink">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="!text-white">Not sure which service you need?</h2>
+          <h2 className="!text-white">Not sure whether this belongs in a chiropractic office?</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Give us a call. We&rsquo;ll listen to what&rsquo;s going on and help
-            you figure out the right next step, even if it isn&rsquo;t us.
+            Call and describe the problem. The office can tell you whether to
+            schedule with Dr. Jordan or contact another type of provider first.
           </p>
           <div className="mt-8">
             <LinkButton

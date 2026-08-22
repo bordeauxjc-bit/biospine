@@ -22,7 +22,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title={`Meet ${siteConfig.doctor.name}, ${siteConfig.doctor.credential}`}
-        description="A chiropractor serving the Pee Dee region with a straightforward, patient-first approach to spinal health and wellness."
+        description="Dr. Jordan has practiced in Lake City for more than ten years. He examines before treating, explains his findings plainly, and refers out when chiropractic care is not the right fit."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },
@@ -55,36 +55,32 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-3 prose-biospine">
-            <h2 className="!mt-0">A Lake City chiropractor dedicated to honest, effective care</h2>
+            <h2 className="!mt-0">A Lake City chiropractor since 2015</h2>
             <p>
               {siteConfig.doctor.name} is a Doctor of Chiropractic and owner of{' '}
-              {siteConfig.legalName} in Lake City, South Carolina. With over a
-              decade of clinical experience, he has helped patients across the
-              Pee Dee region recover from pain, move more freely, and get back
-              to doing what they love.
+              {siteConfig.legalName} at {siteConfig.address.full}. He graduated
+              from {siteConfig.doctor.education} in {siteConfig.doctor.graduationYear}
+              and holds {siteConfig.doctor.license}.
             </p>
             <p>
-              His approach is built on three commitments: a thorough evaluation
-              before any adjustment, clear explanations of your diagnosis and
-              treatment plan, and realistic expectations, so you always know
-              what to expect and why. Patients appreciate his direct
-              communication style and his willingness to spend the time
-              required to get the diagnosis right.
+              Dr. Jordan treats back and neck pain, sciatica, headache patterns
+              linked to the neck, sports and auto injuries, arthritic stiffness,
+              and selected chronic tendon problems. He also performs DOT
+              physicals as an FMCSA-listed certified Medical Examiner.
             </p>
 
-            <h3>A note on our approach</h3>
+            <h3>What happens before treatment</h3>
             <p>
-              Chiropractic care works best when it fits into your life, not the
-              other way around. We schedule so you&rsquo;re seen on time. We
-              recommend imaging only when it will change your treatment plan.
-              And we set clear milestones so you know if the care is working.
-              If it isn&rsquo;t, we&rsquo;ll tell you and help you find the
-              right next step.
+              Dr. Jordan reviews the history, examines the area, and checks for
+              findings that should be handled by a medical clinician, imaging
+              center, or rehabilitation provider. An appointment does not
+              automatically lead to an adjustment.
             </p>
             <p>
-              Whether you&rsquo;re dealing with acute back pain, recurring
-              headaches, a sports injury, or simply want to feel better in your
-              body, we&rsquo;re here to help you get there.
+              When chiropractic care does fit, he explains the technique, what
+              improvement will be measured, and when the plan should be changed
+              or stopped. Imaging is recommended when it can change the decision,
+              not as a routine requirement for every new patient.
             </p>
           </div>
         </div>
@@ -93,7 +89,7 @@ export default function AboutPage() {
       <Section tone="cream">
         <SectionHeading
           eyebrow="Our values"
-          title="What you can expect every visit"
+          title="Four things the office is accountable for"
         />
 
         <ul
@@ -104,22 +100,22 @@ export default function AboutPage() {
             {
               icon: Clock,
               title: '10+ years experience',
-              text: 'A decade of helping Pee Dee patients recover, move, and live without pain.',
+              text: 'Dr. Jordan has practiced in Lake City since graduating from Logan in 2015.',
             },
             {
               icon: Heart,
-              title: 'Patient-first',
-              text: 'Your goals, not a template, drive your care plan. We listen first, adjust second.',
+              title: 'Exam before treatment',
+              text: 'The history and physical findings decide whether an adjustment belongs in the visit.',
             },
             {
               icon: BadgeCheck,
-              title: 'Transparent',
-              text: 'Clear diagnoses, clear care plans, clear pricing. No surprises.',
+              title: 'Plain explanations',
+              text: 'You should know what Dr. Jordan found, what he recommends, and what would make him change the plan.',
             },
             {
               icon: Users,
-              title: 'Community-rooted',
-              text: 'Proudly serving Lake City and the surrounding Pee Dee communities.',
+              title: 'One local office',
+              text: `Every appointment is at ${siteConfig.address.street} in Lake City—not a rotating or satellite location.`,
             },
           ].map((v) => (
             <li
@@ -144,8 +140,8 @@ export default function AboutPage() {
       <Section tone="white">
         <SectionHeading
           eyebrow="Serving the Pee Dee region"
-          title="Patients come to us from across South Carolina"
-          description="Our Lake City practice welcomes patients from throughout the region."
+          title="Patients drive in from Lake City and nearby Pee Dee towns"
+          description="The names below are communities served by the John Street office, not additional BioSpine locations."
         />
         <div className="flex flex-wrap gap-2">
           {siteConfig.areaServed.map((area) => (

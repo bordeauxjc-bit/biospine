@@ -117,12 +117,12 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
       <Section tone="ink">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-green-light mb-3">
-            Ready to feel better?
+            Still have questions?
           </p>
-          <h2 className="!text-white">Book your visit with Dr. Jordan</h2>
+          <h2 className="!text-white">An article cannot examine the problem</h2>
           <p className="mt-4 text-lg text-slate-300">
-            If this article resonates with what you&rsquo;re experiencing,
-            chiropractic care may help. Call to schedule a consultation.
+            Call the Lake City office if you want Dr. Jordan to review your
+            history and findings in person.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <LinkButton

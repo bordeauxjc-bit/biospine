@@ -92,7 +92,7 @@ export const siteConfig = {
       slug: 'chiropractic-adjustments',
       name: 'Chiropractic Adjustments',
       summary:
-        'Individualized joint care intended to improve comfortable movement and support day-to-day function.',
+        'Hands-on or lower-force techniques selected after Dr. Jordan examines the painful or restricted area.',
       href: '/services/chiropractic-adjustments',
     },
     {
@@ -113,21 +113,21 @@ export const siteConfig = {
       slug: 'back-and-neck-pain',
       name: 'Back & Neck Pain Treatment',
       summary:
-        'Targeted care for acute and chronic low back pain, neck pain, and sciatica using evidence-informed chiropractic techniques.',
+        'An examination for back pain, neck pain, or sciatica followed by treatment when the findings support chiropractic care.',
       href: '/services/back-neck-pain',
     },
     {
       slug: 'headache-migraine-care',
       name: 'Headache & Migraine Care',
       summary:
-        'Evaluation of neck-related and tension-type headache contributors, with medical co-management when appropriate.',
+        'Evaluation of headache patterns that travel with neck stiffness or tension, with medical referral when the pattern calls for it.',
       href: '/services/headache-migraine-care',
     },
     {
       slug: 'sports-injury-care',
       name: 'Sports Injury Care',
       summary:
-        'Assessment and conservative care for appropriate sports-related joint, muscle, and overuse problems.',
+        'Assessment of joint, muscle, and overuse pain to decide what can be treated here and what needs imaging or rehabilitation.',
       href: '/services/sports-injury-care',
     },
     {
@@ -141,7 +141,7 @@ export const siteConfig = {
       slug: 'arthritis-relief',
       name: 'Arthritis Relief',
       summary:
-        'Conservative, non-surgical care to manage arthritis-related stiffness and joint pain and improve quality of life.',
+        'Gentle joint and movement care for arthritis-related stiffness, adapted to bone health, medications, and prior procedures.',
       href: '/services/arthritis-relief',
     },
   ],

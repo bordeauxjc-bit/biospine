@@ -8,8 +8,8 @@ export function Reviews() {
     <Section tone="sand">
       <SectionHeading
         eyebrow="Patient feedback"
-        title="Reviews you can check at the source"
-        description="Google shows a 5.0 rating from 12 public reviews, and Zocdoc shows a 5.00 rating from six verified patient reviews. Counts and ratings can change."
+        title="Read the reviews—and where they came from"
+        description="BioSpine’s Google listing has 12 public five-star ratings. Zocdoc lists six verified patient reviews. We link both profiles and label them separately."
       />
 
       <div className="grid gap-x-12 gap-y-10 md:grid-cols-3">

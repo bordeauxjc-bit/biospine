@@ -22,7 +22,7 @@ export const serviceGuides: ServiceGuide[] = [
     eyebrow: 'Chiropractic care',
     seoTitle: 'Chiropractic Adjustments in Lake City, SC',
     metaDescription:
-      'Individualized chiropractic adjustments and conservative joint care from Dr. Chucky S. Jordan at BioSpine in Lake City, SC.',
+      'Hands-on and lower-force chiropractic adjustments selected after an examination by Dr. Chucky S. Jordan at BioSpine in Lake City, SC.',
     headline: 'Chiropractic adjustments selected for you—not a routine applied to everyone',
     introduction: [
       'A chiropractic adjustment is a hands-on technique intended to improve motion in a joint that is not moving comfortably or normally. Technique, position, and force should vary with the patient, the examination findings, and personal preference.',
@@ -99,7 +99,7 @@ export const serviceGuides: ServiceGuide[] = [
     seoTitle: 'Headache & Migraine Care in Lake City, SC',
     metaDescription:
       'Conservative care for appropriate neck-related and tension-type headache contributors at BioSpine Health and Wellness in Lake City, SC.',
-    headline: 'A careful look at neck-related headache contributors',
+    headline: 'When a headache travels with neck pain or stiffness',
     introduction: [
       'Some recurring headaches are influenced by the joints and muscles of the neck, sustained positions, or movement. Migraine is a neurological disorder and may require care from a primary-care clinician or specialist, even when neck symptoms occur at the same time.',
       'BioSpine evaluates musculoskeletal contributors, checks for patterns that need medical attention, and explains where conservative chiropractic care may fit. The goal is appropriate co-management—not a claim that every headache has a spinal cause.',
@@ -175,7 +175,7 @@ export const serviceGuides: ServiceGuide[] = [
     seoTitle: 'Sports Injury Chiropractor in Lake City, SC',
     metaDescription:
       'Evaluation and conservative chiropractic care for sports-related joint, muscle, and overuse injuries in Lake City and the Pee Dee region.',
-    headline: 'Build a safe path back to training and everyday movement',
+    headline: 'Find out what you can keep doing—and what needs time off',
     introduction: [
       'Sports-related pain may follow one event or develop as training load, technique, equipment, or recovery changes. The first priority is identifying whether the problem is suitable for conservative care or needs imaging, formal rehabilitation, or specialist evaluation.',
       'BioSpine works with student athletes, recreational athletes, active adults, and people returning to exercise. Care is matched to the examination findings and the real demands of the activity you want to resume.',
@@ -250,8 +250,8 @@ export const serviceGuides: ServiceGuide[] = [
     eyebrow: 'Mobility-focused care',
     seoTitle: 'Arthritis & Joint Pain Care in Lake City, SC',
     metaDescription:
-      'Gentle, individualized chiropractic care intended to support mobility and manage arthritis-related stiffness in Lake City, SC.',
-    headline: 'Conservative care focused on mobility, comfort, and daily function',
+      'Gentle chiropractic care for arthritis-related stiffness, selected with bone health, medications, and previous procedures in mind.',
+    headline: 'Arthritis cannot be adjusted away. Stiff joints can still be worked with.',
     introduction: [
       'Arthritis is a group of conditions, not one uniform problem. Osteoarthritis, inflammatory arthritis, previous injuries, bone health, medications, and overall health can all affect which techniques are suitable.',
       'BioSpine does not claim to reverse arthritis. The purpose of conservative care is to support useful movement, reduce related muscle guarding for some patients, and help people stay as active as their condition safely allows.',

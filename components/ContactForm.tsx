@@ -75,6 +75,7 @@ export function ContactForm() {
         >
           <option value="" disabled>Select a reason…</option>
           <option>New patient consultation</option>
+          <option>DOT physical</option>
           <option>Back or neck pain</option>
           <option>Shockwave therapy</option>
           <option>Headaches or migraines</option>

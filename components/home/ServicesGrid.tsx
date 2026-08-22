@@ -12,8 +12,8 @@ export function ServicesGrid() {
     <Section tone="cream" id="services">
       <SectionHeading
         eyebrow="Services"
-        title="Care and driver health services built around real needs"
-        description="From acute pain and long-term mobility to DOT medical certification, each visit follows the findings and the work your day demands."
+        title="Chiropractic care, injury treatment, and DOT exams in Lake City"
+        description="Dr. Jordan treats common back, neck, joint, and tendon problems and performs FMCSA physicals for commercial drivers—all at the John Street office."
       />
 
       <ul role="list" className="grid sm:grid-cols-2 gap-x-12 lg:gap-x-20">

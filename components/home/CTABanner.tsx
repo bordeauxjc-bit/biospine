@@ -12,14 +12,15 @@ export function CTABanner() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
           <div className="max-w-2xl">
             <p className="text-[0.6875rem] font-semibold uppercase tracking-label text-white/85">
-              Ready when you are
+              Lake City appointments
             </p>
             <h2 className="mt-5 !text-white text-balance">
-              Send a request or call the office.
+              Tell the office what is bothering you.
             </h2>
             <p className="mt-5 text-lg text-white/80 leading-relaxed">
-              Tell us what is going on and what works for your schedule. Bring
-              your insurance card and anything a previous provider sent you.
+              Include the body area, how long it has been going on, and the days
+              that work for you. If you need a DOT physical, include your
+              certification deadline.
             </p>
           </div>
 

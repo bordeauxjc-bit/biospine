@@ -36,7 +36,7 @@ const faqs = [
   {
     question: 'What should I expect at my first appointment?',
     answer:
-      "At your first visit, Dr. Jordan will review your health history, perform a thorough exam, and discuss your goals. If appropriate, you’ll receive your first adjustment the same day. Plan on about 45–60 minutes for your initial appointment.",
+      'Plan on about 45–60 minutes. Dr. Jordan reviews how the problem started, examines the relevant joints, muscles, and nerves, and explains the findings. Treatment may begin that day when the exam supports it.',
   },
   {
     question: 'Do you accept insurance?',
@@ -46,7 +46,7 @@ const faqs = [
   {
     question: 'How long until I feel better?',
     answer:
-      'Every patient is different. Some feel noticeable improvement after the first adjustment, while others with chronic conditions may take several visits. Dr. Jordan will give you an honest assessment and a clear care plan after your initial evaluation.',
+      'There is no honest visit count before the examination. Dr. Jordan sets a starting plan based on the findings and tracks changes in pain, motion, sleep, work, or other affected activity. If those measures are not changing, the plan should change too.',
   },
   {
     question: 'Is chiropractic care safe?',
@@ -75,8 +75,8 @@ export default function HomePage() {
               Things people ask before booking
             </h2>
             <p className="mt-5 text-slate-600 leading-relaxed">
-              If yours is not here, call the office and we will answer it
-              straight.
+              Call the office for questions about timing, insurance, records,
+              or whether your problem belongs on Dr. Jordan&rsquo;s schedule.
             </p>
             <div className="mt-8">
               <LinkButton href="/contact" variant="outline">

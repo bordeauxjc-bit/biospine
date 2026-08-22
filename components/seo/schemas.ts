@@ -207,3 +207,48 @@ export function articleSchema(opts: {
     },
   };
 }
+
+/**
+ * MedicalTherapy for a treatment the clinic performs. Lets search engines
+ * connect the procedure to the practice rather than treating the page as a
+ * generic article.
+ */
+export function medicalTherapySchema(opts: {
+  name: string;
+  alternateName?: string;
+  description: string;
+  url: string;
+  indications: string[];
+  contraindication?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalTherapy',
+    name: opts.name,
+    ...(opts.alternateName ? { alternateName: opts.alternateName } : {}),
+    description: opts.description,
+    url: opts.url,
+    medicineSystem: 'https://schema.org/Chiropractic',
+    relevantSpecialty: 'https://schema.org/Chiropractic',
+    ...(opts.contraindication
+      ? { contraindication: opts.contraindication }
+      : {}),
+    indication: opts.indications.map((name) => ({
+      '@type': 'MedicalIndication',
+      name,
+    })),
+    performerOfProcedure: {
+      '@type': 'MedicalClinic',
+      name: siteConfig.legalName,
+      telephone: siteConfig.phoneE164,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.state,
+        postalCode: siteConfig.address.zip,
+        addressCountry: siteConfig.address.country,
+      },
+    },
+  };
+}

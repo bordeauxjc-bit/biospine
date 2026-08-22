@@ -5,14 +5,18 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { LinkButton } from '@/components/ui/Button';
 import { FaqList } from '@/components/ui/FaqList';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { breadcrumbSchema, faqSchema } from '@/components/seo/schemas';
+import {
+  breadcrumbSchema,
+  faqSchema,
+  medicalTherapySchema,
+} from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Shockwave Therapy in Lake City, SC',
+  title: 'Shockwave Therapy (ESWT) in Lake City, SC',
   description:
-    'Shockwave therapy at BioSpine Health and Wellness in Lake City, SC. A non-surgical option for plantar fasciitis, tennis elbow, Achilles and rotator cuff pain that has not settled with rest.',
+    'Extracorporeal shockwave therapy (ESWT) at BioSpine Health and Wellness in Lake City, SC. A non-surgical option for plantar fasciitis, tennis elbow, Achilles and rotator cuff pain that has not settled with rest.',
   path: '/services/shockwave-therapy',
 });
 
@@ -138,11 +142,14 @@ export default function ShockwaveTherapyPage() {
           </div>
           <div className="lg:col-span-8 prose-biospine">
             <p>
-              Shockwave therapy sends rapid acoustic pressure pulses through the
-              skin into the tissue underneath. It is not electricity and there
-              is nothing to insert. The pulses deliberately irritate a stalled
-              injury, which increases blood flow to the area and restarts the
-              repair process the body gave up on.
+              Shockwave therapy, or extracorporeal shockwave therapy (ESWT),
+              sends rapid acoustic pressure pulses through the skin into the
+              tissue underneath. Extracorporeal simply means the pulses are
+              generated outside the body: nothing is injected and nothing is
+              inserted, and it is not electrical stimulation. The pulses
+              deliberately irritate a stalled injury, which increases blood
+              flow to the area and restarts the repair process the body gave up
+              on.
             </p>
             <p>
               That matters for tendon problems in particular. Tendons have a
@@ -262,6 +269,19 @@ export default function ShockwaveTherapyPage() {
         </div>
       </Section>
 
+      <JsonLd
+        id="ld-shockwave-therapy"
+        data={medicalTherapySchema({
+          name: 'Shockwave Therapy',
+          alternateName: 'Extracorporeal Shockwave Therapy (ESWT)',
+          description:
+            'Non-surgical acoustic pressure wave treatment for chronic tendon and soft-tissue injuries, performed at BioSpine Health and Wellness in Lake City, South Carolina.',
+          url: `${siteConfig.url}/services/shockwave-therapy`,
+          indications: treats.flatMap((group) => group.items),
+          contraindication:
+            'Not used during pregnancy over the abdomen or pelvis, with bleeding disorders or anticoagulant therapy, over active infection, open wounds, tumours at the treatment site, open growth plates in children, or within six weeks of a cortisone injection at the site.',
+        })}
+      />
       <JsonLd id="ld-shockwave-faq" data={faqSchema(faqs)} />
       <JsonLd
         id="ld-shockwave-breadcrumb"

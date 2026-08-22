@@ -13,8 +13,8 @@ export function LocationSection() {
     <Section tone="white" id="visit">
       <SectionHeading
         eyebrow="Plan your visit"
-        title="Find us on N Matthews Road"
-        description="Easy to reach, easy to park, and open weekdays by appointment."
+        title="Find us on John Street"
+        description="Easy to reach, easy to park, and open weekdays by appointment. Look for the brick building with the BioSpine logo on the door."
       />
 
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">

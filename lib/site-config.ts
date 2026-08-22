@@ -23,20 +23,20 @@ export const siteConfig = {
   phoneE164: '+18437130669',
   email: 'Biospinehealthandwellness@gmail.com',
 
-  // Address (confirmed by client)
+  // Address (current location, confirmed by client Aug 2026)
   address: {
-    street: '111 N Matthews Rd',
+    street: '214 John St',
     city: 'Lake City',
     state: 'SC',
     zip: '29560',
     country: 'US',
-    full: '111 N Matthews Rd, Lake City, SC 29560',
+    full: '214 John St, Lake City, SC 29560',
   },
 
-  // Geo (approximate for 111 N Matthews Rd, Lake City, SC)
+  // Geo for 214 John St, geocoded to an exact house-number match in OSM.
   geo: {
-    latitude: 33.8799,
-    longitude: -79.7604,
+    latitude: 33.8746,
+    longitude: -79.7586,
   },
 
   // Hours (confirmed: usually 9 AM to 5 PM)

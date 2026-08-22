@@ -31,11 +31,58 @@ const officialLinks = {
     'https://nationalregistry.fmcsa.dot.gov/search-medical-examiners',
   exam:
     'https://www.fmcsa.dot.gov/medical/driver-medical-requirements/dot-medical-exam-and-commercial-motor-vehicle-certification',
-  form:
+  forms:
+    'https://www.fmcsa.dot.gov/medical/driver-medical-requirements/medical-applications-and-forms',
+  medicalHistory:
     'https://www.fmcsa.dot.gov/regulations/medical/medical-examination-report-form-commercial-driver-medical-certification',
+  insulinDiabetes:
+    'https://www.fmcsa.dot.gov/regulations/medical/insulin-treated-diabetes-mellitus-assessment-form-mcsa-5870',
+  vision:
+    'https://www.fmcsa.dot.gov/regulations/medical/vision-evaluation-report-form-mcsa-5871',
+  nonInsulinDiabetes:
+    'https://www.fmcsa.dot.gov/regulations/medical/non-insulin-treated-diabetes-mellitus-assessment-form-mcsa-5872-optional',
+  medication:
+    'https://www.fmcsa.dot.gov/regulations/medical/39141-cmv-driver-medication-form-mcsa-5895-optional',
   southCarolina:
-    'https://www.scdmvonline.com/-/media/Files/Motor-Carrier-Connection-Spring-2025.ashx',
+    'https://dmv.sc.gov/Driver-Services/Commercial-Licenses/Renew-Or-Upgrade-Your-CDL',
+  southCarolinaSelfCertification:
+    'https://dmv.sc.gov/sites/scdmv/files/media/Forms/DL-405A.pdf',
 };
+
+const dotForms = [
+  {
+    name: 'Insulin-Treated Diabetes Assessment',
+    number: 'MCSA-5870',
+    who: 'Required if you use insulin to treat diabetes',
+    details:
+      'Your treating clinician completes this form. Give the completed form to Dr. Jordan within 45 days of the clinician’s signature.',
+    href: officialLinks.insulinDiabetes,
+  },
+  {
+    name: 'Vision Evaluation Report',
+    number: 'MCSA-5871',
+    who: 'Required for the federal alternative vision standard',
+    details:
+      'An ophthalmologist or optometrist completes this form. The DOT examination must begin within 45 days of the eye professional’s signature.',
+    href: officialLinks.vision,
+  },
+  {
+    name: 'Non-Insulin-Treated Diabetes Assessment',
+    number: 'MCSA-5872',
+    who: 'Optional—use when the medical examiner requests it',
+    details:
+      'This form gives the medical examiner additional information about diabetes that is not treated with insulin. Call before asking your clinician to complete it.',
+    href: officialLinks.nonInsulinDiabetes,
+  },
+  {
+    name: 'CMV Driver Medication Form',
+    number: 'MCSA-5895',
+    who: 'Optional—use when the medical examiner requests it',
+    details:
+      'A prescribing clinician uses this form to explain medications and whether the condition or medication could affect safe commercial driving.',
+    href: officialLinks.medication,
+  },
+];
 
 const bringItems = [
   'A current driver’s license or other government-issued photo ID',
@@ -46,6 +93,11 @@ const bringItems = [
 ];
 
 const faqs = [
+  {
+    question: 'Which paperwork should I complete before a DOT physical?',
+    answer:
+      'Every driver completes the driver information and health history in Section 1 of Form MCSA-5875. Forms MCSA-5870, MCSA-5871, MCSA-5872, and MCSA-5895 apply only to certain medical situations or when the medical examiner requests them. The official links and instructions are listed on this page.',
+  },
   {
     question: 'Is the urinalysis part of a DOT physical a drug test?',
     answer:
@@ -155,7 +207,82 @@ export default function DotPhysicalsPage() {
         </div>
       </Section>
 
-      <Section tone="cream">
+      <Section id="dot-paperwork" tone="cream">
+        <SectionHeading
+          eyebrow="Official DOT paperwork"
+          title="Open the forms before your appointment"
+          description="These links go to FMCSA’s current form pages. Each page provides the official PDF and explains who completes it."
+        />
+
+        <article className="border-t-2 border-brand-green py-6 lg:grid lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <p className="label-muted">Every driver</p>
+            <h2 className="mt-3 !text-2xl">Medical Examination Report</h2>
+            <p className="mt-2 font-medium text-brand-green-dark">Form MCSA-5875</p>
+          </div>
+          <div className="mt-4 lg:col-span-8 lg:mt-0">
+            <p className="text-slate-700">
+              Complete Section 1 with your driver information, medical history,
+              medications, and explanations for any &ldquo;yes&rdquo; answers. Dr. Jordan
+              completes the examination portion. You may print it before the visit
+              or complete the driver section at the office.
+            </p>
+            <a
+              href={officialLinks.medicalHistory}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
+            >
+              Open Form MCSA-5875 on FMCSA
+              <ExternalLink className="h-4 w-4" aria-hidden />
+            </a>
+          </div>
+        </article>
+
+        <div className="mt-8">
+          <p className="label-muted">Only when applicable</p>
+          <div className="mt-4 grid gap-x-10 gap-y-8 md:grid-cols-2">
+            {dotForms.map((form) => (
+              <article key={form.number} className="border-t border-brand-ink/15 pt-5">
+                <p className="text-sm font-semibold text-brand-green-dark">{form.number}</p>
+                <h2 className="mt-2 !text-xl">{form.name}</h2>
+                <p className="mt-3 text-sm font-medium text-brand-ink">{form.who}</p>
+                <p className="mt-2 text-slate-600">{form.details}</p>
+                <a
+                  href={form.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
+                >
+                  Open {form.number} on FMCSA
+                  <ExternalLink className="h-4 w-4" aria-hidden />
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 border-l-2 border-brand-green bg-white p-5 sm:p-6">
+          <h2 className="!text-xl">You do not complete the medical certificate yourself</h2>
+          <p className="mt-3 text-slate-600">
+            Form MCSA-5876 is the Medical Examiner&rsquo;s Certificate. Dr. Jordan
+            completes it only after making the qualification decision. Bring
+            sensitive medical paperwork to the office; do not submit it through
+            the website appointment form.
+          </p>
+          <a
+            href={officialLinks.forms}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
+          >
+            View all FMCSA medical forms
+            <ExternalLink className="h-4 w-4" aria-hidden />
+          </a>
+        </div>
+      </Section>
+
+      <Section tone="white">
         <SectionHeading
           eyebrow="Before your appointment"
           title="Bring the information the examiner needs"
@@ -182,7 +309,7 @@ export default function DotPhysicalsPage() {
         </p>
       </Section>
 
-      <Section tone="white">
+      <Section tone="cream">
         <SectionHeading
           eyebrow="The examination"
           title="What a DOT physical includes"
@@ -221,7 +348,7 @@ export default function DotPhysicalsPage() {
           </li>
         </ol>
         <a
-          href={officialLinks.form}
+          href={officialLinks.medicalHistory}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-9 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
@@ -253,15 +380,31 @@ export default function DotPhysicalsPage() {
               provided after the visit and follow current instructions from SCDMV
               and your employer.
             </p>
-            <a
-              href={officialLinks.southCarolina}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
-            >
-              Read the SCDMV electronic certification notice
-              <ExternalLink className="h-4 w-4" aria-hidden />
-            </a>
+            <div className="flex flex-col items-start gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
+              <a
+                href={officialLinks.southCarolinaSelfCertification}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
+              >
+                Open SCDMV Form DL-405A
+                <ExternalLink className="h-4 w-4" aria-hidden />
+              </a>
+              <a
+                href={officialLinks.southCarolina}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green"
+              >
+                Read current SCDMV CDL requirements
+                <ExternalLink className="h-4 w-4" aria-hidden />
+              </a>
+            </div>
+            <p className="mt-3 text-sm text-slate-600">
+              DL-405A is used when applying for, renewing, or upgrading a South
+              Carolina CDL, or when your self-certified type of commerce changes.
+              It is separate from the physical examination paperwork.
+            </p>
           </div>
         </div>
       </Section>

@@ -6,6 +6,7 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
 import { FaqList } from '@/components/ui/FaqList';
+import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { JsonLd } from '@/components/seo/JsonLd';
 import {
   breadcrumbSchema,
@@ -13,6 +14,7 @@ import {
   medicalTherapySchema,
 } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
+import { serviceClinicalSources } from '@/lib/clinical-sources';
 import { getServiceGuide, serviceGuides } from '@/lib/service-guides';
 import { siteConfig } from '@/lib/site-config';
 
@@ -184,6 +186,8 @@ export default async function ServiceGuidePage({ params }: Props) {
           </div>
         </div>
       </Section>
+
+      <ClinicalSources sources={serviceClinicalSources[service.slug]} />
 
       <Section tone="ink">
         <div className="mx-auto max-w-3xl text-center">

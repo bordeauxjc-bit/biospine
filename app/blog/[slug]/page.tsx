@@ -93,9 +93,23 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
+                    timeZone: 'UTC',
                   })}
                 </time>
               </span>
+              {post.updated && (
+                <span>
+                  Updated{' '}
+                  <time dateTime={post.updated}>
+                    {new Date(post.updated).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      timeZone: 'UTC',
+                    })}
+                  </time>
+                </span>
+              )}
               {post.readingTime && (
                 <span className="inline-flex items-center gap-2">
                   <Clock className="h-4 w-4 text-brand-green" aria-hidden />

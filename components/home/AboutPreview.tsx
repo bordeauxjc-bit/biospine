@@ -50,7 +50,7 @@ export function AboutPreview() {
 
           <p className="mt-6 text-lg text-slate-600 leading-relaxed">
             {siteConfig.doctor.name} graduated from{' '}
-            {siteConfig.doctor.education} in {siteConfig.doctor.graduationYear}
+            {siteConfig.doctor.education} in {siteConfig.doctor.graduationYear}{' '}
             and holds South Carolina chiropractic license #4099. He has treated
             patients in and around Lake City for more than ten years and is also
             listed by FMCSA to perform DOT physicals.

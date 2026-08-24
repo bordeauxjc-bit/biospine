@@ -11,12 +11,12 @@ export function TrustBar() {
       text: 'Ask the office about current same-week openings.',
     },
     {
-      label: 'No referral',
-      text: 'You can usually come directly; check your plan for coverage rules.',
+      label: 'Before your visit',
+      text: 'Call to confirm any referral or coverage rules for your plan.',
     },
     {
       label: 'Insurance',
-      text: 'Medicare accepted, plus many commercial plans.',
+      text: 'Medicare accepted. Call to confirm any other coverage.',
     },
     {
       label: 'Where we serve',

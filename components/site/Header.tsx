@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CalendarDays, Menu, X, Phone } from 'lucide-react';
 import { Logo } from './Logo';
 import { siteConfig } from '@/lib/site-config';
@@ -10,6 +10,8 @@ import { siteConfig } from '@/lib/site-config';
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -22,8 +24,35 @@ export function Header() {
   useEffect(() => {
     if (!isOpen) return;
     document.body.style.overflow = 'hidden';
+
+    const focusable = mobileMenuRef.current?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled])',
+    );
+    const first = focusable?.[0];
+    const last = focusable?.[focusable.length - 1];
+    first?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key !== 'Tab' || !first || !last) return;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen]);
 
@@ -93,9 +122,10 @@ export function Header() {
           </a>
 
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => setIsOpen((v) => !v)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded text-brand-ink hover:bg-brand-ink/5 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded text-brand-ink hover:bg-brand-ink/5 focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 lg:hidden"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -111,9 +141,12 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
+        ref={mobileMenuRef}
         id="mobile-menu"
-        className={`lg:hidden fixed inset-x-0 top-[4.5rem] sm:top-20 bottom-0 z-40 bg-brand-cream transition-transform duration-200 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-x-0 top-[4.5rem] bottom-0 z-40 bg-brand-cream sm:top-20 lg:hidden ${
+          isOpen
+            ? 'block'
+            : 'hidden'
         }`}
         aria-hidden={!isOpen}
       >

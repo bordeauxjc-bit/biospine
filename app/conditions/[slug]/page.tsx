@@ -10,10 +10,12 @@ import {
 } from '@/components/seo/schemas';
 import { LinkButton } from '@/components/ui/Button';
 import { FaqList } from '@/components/ui/FaqList';
+import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { conditionGuides, getConditionGuide } from '@/lib/conditions';
 import { buildMetadata } from '@/lib/seo';
+import { conditionClinicalSources } from '@/lib/clinical-sources';
 import { siteConfig } from '@/lib/site-config';
 
 type Props = {
@@ -183,6 +185,8 @@ export default async function ConditionGuidePage({ params }: Props) {
           </div>
         </div>
       </Section>
+
+      <ClinicalSources sources={conditionClinicalSources[condition.slug]} />
 
       <Section tone="sand">
         <div className="mx-auto max-w-3xl text-center">

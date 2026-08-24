@@ -4,9 +4,11 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
 import { FaqList } from '@/components/ui/FaqList';
+import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema, faqSchema, medicalTherapySchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
+import { staticPageClinicalSources } from '@/lib/clinical-sources';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
@@ -43,7 +45,7 @@ const faqs = [
   },
   {
     question: 'Do you accept insurance for back and neck pain care?',
-    answer: `BioSpine accepts Medicare and works with several commercial plans. Call ${siteConfig.phone} so the office can confirm your specific coverage before the visit.`,
+    answer: `BioSpine accepts Medicare. Call ${siteConfig.phone} to ask about any other plan and confirm your specific coverage before the visit.`,
   },
 ];
 
@@ -109,6 +111,8 @@ export default function BackNeckPainPage() {
           </div>
         </div>
       </Section>
+
+      <ClinicalSources sources={staticPageClinicalSources.backAndNeck} />
 
       <Section tone="ink">
         <div className="mx-auto max-w-3xl text-center">

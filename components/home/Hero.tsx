@@ -59,8 +59,8 @@ export function Hero() {
             </div>
 
             <p className="mt-8 text-sm text-slate-500 leading-relaxed">
-              New patients welcome. Ask about same-week openings. No referral
-              is normally needed in South Carolina; check your plan for coverage rules.
+              New patients are welcome. Ask about same-week openings and call
+              before your visit to confirm any coverage requirements.
             </p>
           </div>
 

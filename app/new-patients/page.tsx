@@ -19,7 +19,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 export const metadata: Metadata = buildMetadata({
   title: 'New Patients',
   description:
-    'Everything new patients need to know about their first chiropractic visit at BioSpine Health and Wellness in Lake City, SC, what to bring, what to expect, and insurance details.',
+    'What to bring and expect at your first BioSpine chiropractic visit in Lake City, SC, including the exam, timing, insurance questions, and consent.',
   path: '/new-patients',
 });
 
@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     question: 'Do you accept my insurance?',
-    answer: `We accept Medicare and work with a number of commercial insurance plans. Call us at ${siteConfig.phone} and we’ll verify your specific coverage before your visit.`,
+    answer: `BioSpine accepts Medicare. Call us at ${siteConfig.phone} to ask about any other plan and confirm your specific coverage before your visit.`,
   },
   {
     question: 'Will I get an adjustment on my first visit?',
@@ -69,7 +69,7 @@ const faqs = [
   {
     question: 'Do I need a referral from my primary care doctor?',
     answer:
-      'In South Carolina, you do not need a referral to see a chiropractor. Some insurance plans require one for coverage, call us and we can help you confirm.',
+      'Many patients schedule directly, but referral and coverage rules can vary by insurance plan. Call before your visit and the office can help you identify what to confirm with your plan.',
   },
   {
     question: 'What should I wear?',
@@ -149,8 +149,7 @@ export default function NewPatientsPage() {
               title="Coverage & payment"
             />
             <p className="text-slate-700 leading-relaxed">
-              We accept {siteConfig.insurance.confirmed.join(', ')} and work
-              with a variety of commercial insurance plans.{' '}
+              We accept {siteConfig.insurance.confirmed.join(', ')}.{' '}
               {siteConfig.insurance.note}
             </p>
             <p className="mt-4 text-slate-700 leading-relaxed">

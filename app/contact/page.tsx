@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Mail, Phone } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { ContactForm } from '@/components/ContactForm';
@@ -15,19 +15,24 @@ import {
 
 export const metadata: Metadata = buildMetadata({
   title: 'Contact & Location',
-  description: `Contact ${siteConfig.name} in Lake City, SC. Call ${siteConfig.phone}, email us, get directions, or send a message using the form.`,
+  description: `Contact ${siteConfig.name} in Lake City, SC. Call ${siteConfig.phone}, email the office, get directions, or request an appointment online when the form is available.`,
   path: '/contact',
 });
 
 export default function ContactPage() {
   const hours = formatHours();
+  const formEnabled = Boolean(process.env.WEB3FORMS_ACCESS_KEY);
 
   return (
     <>
       <PageHeader
         eyebrow="Contact"
         title="Call or message the John Street office"
-        description={`Call ${siteConfig.phone} during office hours or send a short appointment request. The form is for scheduling, not private medical details or emergencies.`}
+        description={
+          formEnabled
+            ? `Call ${siteConfig.phone} during office hours or send a short appointment request. The form is for scheduling, not private medical details or emergencies.`
+            : `Call ${siteConfig.phone} during office hours or email the Lake City office. Online appointment requests are being connected.`
+        }
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Contact', href: '/contact' },
@@ -37,14 +42,44 @@ export default function ContactPage() {
       <Section tone="white" id="appointment-form">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
           <div className="lg:col-span-3">
-            <h2 className="!text-3xl !mt-0">Request an appointment</h2>
-            <p className="mt-3 text-slate-600">
-              Share your contact details and preferred reason for visiting. We&rsquo;ll
-              follow up by phone or email during office hours.
-            </p>
-            <div className="mt-8">
-              <ContactForm />
-            </div>
+            <h2 className="!text-3xl !mt-0">
+              {formEnabled ? 'Request an appointment' : 'Contact the office directly'}
+            </h2>
+            {formEnabled ? (
+              <>
+                <p className="mt-3 text-slate-600">
+                  Share your contact details and preferred reason for visiting.
+                  We&rsquo;ll follow up by phone or email during office hours.
+                </p>
+                <div className="mt-8">
+                  <ContactForm />
+                </div>
+              </>
+            ) : (
+              <div className="mt-6 border-l-2 border-brand-green bg-brand-cream p-6 sm:p-7">
+                <p className="font-medium text-brand-ink">
+                  Online appointment requests are being connected.
+                </p>
+                <p className="mt-2 max-w-xl text-slate-600">
+                  Please call or email BioSpine for scheduling. Do not send
+                  private medical details by email.
+                </p>
+                <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row">
+                  <a
+                    href={`tel:${siteConfig.phoneE164}`}
+                    className="inline-flex min-h-12 items-center gap-2 rounded bg-brand-green px-5 py-3 font-medium text-white transition-colors hover:bg-brand-green-dark focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2"
+                  >
+                    <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
+                  </a>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="inline-flex min-h-12 items-center gap-2 rounded border border-brand-ink/20 bg-white px-5 py-3 font-medium text-brand-ink transition-colors hover:border-brand-green hover:text-brand-green-dark focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2"
+                  >
+                    <Mail className="h-4 w-4" aria-hidden /> Email BioSpine
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
 
           <aside className="lg:col-span-2">
@@ -110,7 +145,7 @@ export default function ContactPage() {
                         <span
                           className={
                             h.isClosed
-                              ? 'text-slate-400'
+                              ? 'text-slate-600'
                               : 'font-medium tabular-nums text-brand-ink'
                           }
                         >

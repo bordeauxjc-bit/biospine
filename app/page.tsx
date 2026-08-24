@@ -20,7 +20,7 @@ import { siteConfig } from '@/lib/site-config';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = buildMetadata({
-  title: `${siteConfig.tagline} | ${siteConfig.doctor.name}`,
+  title: 'Chiropractor & DOT Physicals in Lake City, SC',
   description: siteConfig.description,
   path: '/',
 });
@@ -29,9 +29,9 @@ const faqs = [
   {
     question: 'Do I need a referral to see a chiropractor?',
     answer:
-      'No. In South Carolina, you can see a chiropractor without a referral from another doctor. Simply call our office at ' +
+      'Many patients schedule directly, but referral and coverage rules can vary by plan. Call our office at ' +
       siteConfig.phone +
-      ' to schedule your first visit.',
+      ' before your visit if you plan to use insurance.',
   },
   {
     question: 'What should I expect at my first appointment?',
@@ -41,7 +41,7 @@ const faqs = [
   {
     question: 'Do you accept insurance?',
     answer:
-      'We accept Medicare and work with a variety of insurance plans. Please call our office to confirm coverage for your specific plan before your visit.',
+      'BioSpine accepts Medicare. Please call our office to ask about any other plan and confirm your specific coverage before your visit.',
   },
   {
     question: 'How long until I feel better?',

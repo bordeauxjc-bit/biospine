@@ -23,8 +23,8 @@ export function buildMetadata({
   const url = `${siteConfig.url}${path}`;
   const fullTitle =
     title === siteConfig.name
-      ? `${siteConfig.name} | ${siteConfig.tagline}`
-      : `${title} | ${siteConfig.name}`;
+      ? `${siteConfig.shortName} | ${siteConfig.tagline}`
+      : `${title} | ${siteConfig.shortName}`;
   const image = ogImage ?? `${siteConfig.url}/opengraph-image`;
 
   return {

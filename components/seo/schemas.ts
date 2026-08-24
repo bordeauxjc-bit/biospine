@@ -29,17 +29,16 @@ export function localBusinessSchema() {
 
   return {
     '@context': 'https://schema.org',
-    '@type': ['MedicalBusiness', 'MedicalClinic', 'LocalBusiness'],
+    '@type': 'MedicalClinic',
     '@id': `${siteConfig.url}/#business`,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     description: siteConfig.description,
     url: siteConfig.url,
-    telephone: siteConfig.phone,
+    telephone: siteConfig.phoneE164,
     email: siteConfig.email,
     image: `${siteConfig.url}/opengraph-image`,
     logo: `${siteConfig.url}/logo.svg`,
-    priceRange: '$$',
     medicalSpecialty: 'Chiropractic',
     address: {
       '@type': 'PostalAddress',
@@ -55,16 +54,14 @@ export function localBusinessSchema() {
       longitude: siteConfig.geo.longitude,
     },
     openingHoursSpecification: openingHoursSpec,
-    sameAs: Object.values(siteConfig.social),
-    areaServed: siteConfig.areaServed.map((a) => ({
-      '@type': 'City',
-      name: a,
-    })),
-    hasMap: `https://www.google.com/maps?q=${encodeURIComponent(
-      siteConfig.address.full,
-    )}`,
+    sameAs: [
+      ...Object.values(siteConfig.social),
+      ...Object.values(siteConfig.reviews),
+    ],
+    areaServed: [...siteConfig.areaServed],
+    hasMap: siteConfig.reviews.google,
     availableService: siteConfig.services.map((s) => ({
-      '@type': 'MedicalProcedure',
+      '@type': 'Service',
       name: s.name,
       description: s.summary,
       url: `${siteConfig.url}${s.href}`,
@@ -87,19 +84,18 @@ export function localBusinessSchema() {
         value: true,
       },
     ].filter(Boolean),
-    isAccessibleForFree: false,
   };
 }
 
 export function doctorSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Physician',
+    '@type': 'Person',
     '@id': `${siteConfig.url}/about#doctor`,
     name: siteConfig.doctor.fullName,
     honorificSuffix: siteConfig.doctor.credential,
     jobTitle: siteConfig.doctor.title,
-    medicalSpecialty: 'Chiropractic',
+    url: `${siteConfig.url}/about`,
     worksFor: {
       '@id': `${siteConfig.url}/#business`,
     },

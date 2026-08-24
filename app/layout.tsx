@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Newsreader, Karla } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Header } from '@/components/site/Header';
 import { Footer } from '@/components/site/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -17,7 +19,7 @@ const newsreader = Newsreader({
   subsets: ['latin'],
   variable: '--font-newsreader',
   display: 'swap',
-  style: ['normal', 'italic'],
+  style: ['normal'],
   // Newsreader has no built-in fallback metrics here, so use Georgia as a
   // close serif fallback to keep layout shift small.
   adjustFontFallback: false,
@@ -80,7 +82,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${newsreader.variable} ${karla.variable}`}>
-      <body className="flex min-h-screen flex-col font-sans">
+      <body className="flex min-h-screen flex-col overflow-x-clip font-sans">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-brand-ink focus:px-4 focus:py-2 focus:text-white"
@@ -95,6 +97,8 @@ export default function RootLayout({
 
         <JsonLd id="ld-business" data={localBusinessSchema()} />
         <JsonLd id="ld-website" data={websiteSchema()} />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

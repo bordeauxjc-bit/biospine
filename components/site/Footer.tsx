@@ -123,6 +123,14 @@ export function Footer() {
                 Patient Reviews
               </Link>
             </li>
+            <li>
+              <Link
+                href="/privacy"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                Privacy
+              </Link>
+            </li>
           </ul>
         </nav>
 

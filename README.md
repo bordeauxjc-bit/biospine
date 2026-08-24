@@ -7,6 +7,7 @@ Modern, SEO-compliant Next.js website for **BioSpine Health and Wellness, LLC**
 - **Styling:** Tailwind CSS
 - **Content:** MDX blog posts in `content/blog/`
 - **SEO:** Metadata API, JSON-LD structured data, sitemap, robots, OG image
+- **Monitoring:** Vercel Web Analytics + Speed Insights
 - **Deploy target:** Vercel
 
 ---
@@ -131,6 +132,11 @@ The BioSpine vector lockup lives at `public/logo.svg`; the compact mark is
 5. Create a [Web3Forms](https://web3forms.com/) access key and add it as the
    server-side environment variable `WEB3FORMS_ACCESS_KEY`.
 6. Redeploy after adding or changing either environment variable.
+
+Web Analytics and Speed Insights are already enabled for the Vercel project.
+Their Next.js components live in `app/layout.tsx`; no public tracking ID is
+required. The noindex `/contact/thanks` page is the form-completion destination
+to use as the primary appointment-request conversion in page-level reporting.
 
 The contact form posts to the local `/api/contact` route, which validates the
 request and forwards it to Web3Forms without exposing the access key in the

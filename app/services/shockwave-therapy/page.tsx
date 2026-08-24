@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/Section';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { LinkButton } from '@/components/ui/Button';
 import { FaqList } from '@/components/ui/FaqList';
+import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { JsonLd } from '@/components/seo/JsonLd';
 import {
   breadcrumbSchema,
@@ -11,6 +12,7 @@ import {
   medicalTherapySchema,
 } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
+import { staticPageClinicalSources } from '@/lib/clinical-sources';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
@@ -292,6 +294,8 @@ export default function ShockwaveTherapyPage() {
           </div>
         </div>
       </Section>
+
+      <ClinicalSources sources={staticPageClinicalSources.shockwave} />
 
       <JsonLd
         id="ld-shockwave-therapy"

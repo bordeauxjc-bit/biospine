@@ -53,13 +53,13 @@ export function ContactForm() {
       </p>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="First name" name="firstName" type="text" required autoComplete="given-name" />
-        <Field label="Last name" name="lastName" type="text" required autoComplete="family-name" />
+        <Field label="First name" name="firstName" type="text" required autoComplete="given-name" maxLength={80} />
+        <Field label="Last name" name="lastName" type="text" required autoComplete="family-name" maxLength={80} />
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Email" name="email" type="email" required autoComplete="email" />
-        <Field label="Phone" name="phone" type="tel" required autoComplete="tel" />
+        <Field label="Email" name="email" type="email" required autoComplete="email" maxLength={254} />
+        <Field label="Phone" name="phone" type="tel" required autoComplete="tel" maxLength={30} />
       </div>
 
       <div>
@@ -89,18 +89,20 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="mb-2 block text-sm font-medium text-brand-ink">
-          How can we help? <span className="text-slate-400">(optional)</span>
+          How can we help? <span className="text-slate-600">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
+          maxLength={1500}
+          aria-describedby="contact-privacy-note"
           className="w-full resize-y rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
           placeholder="Please keep this brief and avoid private medical details."
         />
       </div>
 
-      <p className="text-xs leading-relaxed text-slate-500">
+      <p id="contact-privacy-note" className="text-xs leading-relaxed text-slate-600">
         By submitting this form, you consent to being contacted by phone or
         email about your inquiry. Do not include diagnoses, insurance numbers,
         or other sensitive health information.
@@ -134,12 +136,14 @@ function Field({
   type,
   required,
   autoComplete,
+  maxLength,
 }: {
   label: string;
   name: string;
   type: string;
   required?: boolean;
   autoComplete?: string;
+  maxLength?: number;
 }) {
   return (
     <div>
@@ -153,6 +157,7 @@ function Field({
         type={type}
         required={required}
         autoComplete={autoComplete}
+        maxLength={maxLength}
         className="w-full rounded border border-slate-300 bg-white px-4 py-3 text-brand-ink transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
       />
     </div>

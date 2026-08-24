@@ -108,7 +108,7 @@ const serviceDetails: Record<
       'Prompt evaluation after a collision',
       'Care for whiplash, neck, back, and shoulder pain',
       'Written documentation of findings for your claim',
-      'No referral needed to start treatment',
+      'Referral or imaging recommendation when findings call for it',
     ],
     commonFor: [
       'Whiplash',

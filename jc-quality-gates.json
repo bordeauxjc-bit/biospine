@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "system_name": "JC Website Perfection + SEO System",
+  "version": "1.0",
+  "issued": "2026-08-23",
+  "owner": "Dr. Je’an-Claude Bordeaux, D.C.",
+  "principles": {
+    "preview_before_production": true,
+    "audit_implement_retest": true,
+    "preserve_url_equity": true,
+    "no_ranking_guarantees": true,
+    "no_fake_business_facts": true,
+    "no_spam_or_doorway_pages": true,
+    "schema_must_match_visible_content": true,
+    "automated_scores_do_not_replace_manual_review": true
+  },
+  "core_web_vitals_field_p75_good": {
+    "lcp_ms_max": 2500,
+    "inp_ms_max": 200,
+    "cls_max": 0.1
+  },
+  "lighthouse_mobile": {
+    "performance_min": 90,
+    "performance_target": 95,
+    "accessibility_min": 95,
+    "accessibility_target": 100,
+    "best_practices_min": 95,
+    "best_practices_target": 100,
+    "seo_min": 100,
+    "notes": "Use repeat runs/medians where practical. Lab data is diagnostic and does not prove field Core Web Vitals."
+  },
+  "crawl_and_indexation": {
+    "priority_internal_4xx_max": 0,
+    "priority_internal_5xx_max": 0,
+    "redirect_loops_max": 0,
+    "unexplained_redirect_chains_over_one_hop_max": 0,
+    "priority_orphan_pages_max": 0,
+    "canonical_to_error_redirect_noindex_or_irrelevant_max": 0,
+    "invalid_sitemap_urls_max": 0,
+    "unintentionally_blocked_priority_pages_max": 0,
+    "priority_pages_must_be_internally_discoverable_percent": 100,
+    "sitemap_urls_must_be_canonical_indexable_200_percent": 100
+  },
+  "on_page": {
+    "empty_priority_titles_max": 0,
+    "duplicate_priority_titles_unexplained_max": 0,
+    "missing_priority_h1_max": 0,
+    "missing_priority_commercial_meta_descriptions_max": 0,
+    "keyword_stuffed_elements_max": 0,
+    "informative_priority_images_with_meaningful_alt_percent": 100,
+    "decorative_images_hidden_from_assistive_technology_percent": 100,
+    "house_h1_standard": "One clear visible primary H1 per page unless a documented component architecture requires another accessible solution.",
+    "title_length_guidance_not_gate": "Often approximately 30-60 characters; accuracy and usefulness take priority.",
+    "description_length_guidance_not_gate": "Often approximately 120-160 characters; quality takes priority and snippets may be rewritten."
+  },
+  "structured_data": {
+    "critical_errors_priority_pages_max": 0,
+    "false_or_hidden_claims_max": 0,
+    "self_serving_localbusiness_or_organization_review_star_markup_max": 0,
+    "preferred_format": "JSON-LD where practical",
+    "must_validate_rendered_production_output": true
+  },
+  "accessibility": {
+    "target_standard": "WCAG 2.2 Level AA",
+    "critical_automated_violations_priority_templates_max": 0,
+    "serious_automated_violations_priority_templates_max": 0,
+    "keyboard_traps_max": 0,
+    "primary_forms_keyboard_and_at_operable_percent": 100,
+    "interactive_controls_with_accessible_name_role_state_percent": 100,
+    "manual_testing_required": true,
+    "automated_scan_is_not_compliance_certification": true
+  },
+  "conversion_and_functionality": {
+    "critical_journeys_must_pass_percent": 100,
+    "primary_conversion_events_must_be_implemented_and_tested_percent": 100,
+    "events_must_not_duplicate": true,
+    "notifications_or_crm_delivery_must_be_tested": true,
+    "critical_journeys": [
+      "navigation",
+      "form_submission",
+      "click_to_call",
+      "email",
+      "booking_or_quote",
+      "payment_or_checkout_if_applicable",
+      "client_login_if_applicable",
+      "gallery_or_event_lookup_if_applicable",
+      "confirmation_and_notification"
+    ]
+  },
+  "security_and_reliability": {
+    "https_required": true,
+    "mixed_content_max": 0,
+    "exposed_secrets_max": 0,
+    "server_side_input_validation_required": true,
+    "backup_and_rollback_documented": true,
+    "true_404_required": true,
+    "security_headers_review_required": true,
+    "no_pii_or_sensitive_data_in_analytics": true
+  },
+  "search_and_ai_discovery": {
+    "google_search_console_required_when_access_available": true,
+    "bing_webmaster_tools_required_when_access_available": true,
+    "indexnow_recommended_when_supported": true,
+    "oai_searchbot_policy": "Allow when the client wants eligibility for ChatGPT search and the content is public; verify CDN/WAF access.",
+    "gptbot_policy": "Separate client decision from OAI-SearchBot/search eligibility.",
+    "llms_txt_policy": "Optional experiment only; never a substitute for crawlability, indexability, useful content, or structured data, and not a Google Search requirement."
+  },
+  "house_performance_budgets": {
+    "classification": "Internal engineering targets, not search-engine ranking rules",
+    "initial_compressed_javascript_kb_standard_marketing_page_target": 200,
+    "standard_page_transfer_mb_before_interaction_target": 1.5,
+    "image_heavy_portfolio_transfer_mb_before_interaction_target": 2.5,
+    "mobile_hero_lcp_image_kb_target_where_quality_permits": 250,
+    "desktop_hero_image_kb_target_where_quality_permits": 500,
+    "font_families_target_max": 2,
+    "third_party_scripts_require_owner_purpose_and_cost": true,
+    "document_justified_exceptions": true
+  },
+  "hard_launch_blockers": [
+    "unintended production noindex, password protection, robots block, or crawler firewall block",
+    "priority 4xx, 5xx, soft-404, redirect loop, or broken rendering",
+    "material canonical, redirect, sitemap, robots, hreflang, or internal-link conflict",
+    "broken navigation or critical assets",
+    "failed primary form, booking, payment, login, call, lead, or notification flow",
+    "invalid HTTPS, mixed content, exposed secret, or critical security defect",
+    "unusable critical mobile layout or missing primary mobile content",
+    "critical or serious accessibility failure blocking a core action",
+    "false, spammy, or critically invalid structured data",
+    "placeholder, staging, fake review, test, lorem ipsum, or garbled content",
+    "migration with changed valuable URLs and no tested redirect map",
+    "primary conversion analytics absent or untested",
+    "thin doorway or city-swap content or another search-spam pattern",
+    "unsupported regulated, medical, legal, financial, safety, or guaranteed-outcome claim requiring correction or qualified review",
+    "mobile Lighthouse Performance below 90 on a key template without documented essential limitation and remediation plan",
+    "fixable Lighthouse SEO failure",
+    "untested critical third-party integration"
+  ],
+  "scorecard": {
+    "technical_crawl_indexation": 15,
+    "content_and_on_page_seo": 15,
+    "performance_and_core_web_vitals": 12,
+    "architecture_and_internal_linking": 8,
+    "structured_data_and_ai_entity_clarity": 8,
+    "local_or_ecommerce_discovery": 10,
+    "accessibility": 8,
+    "ux_trust_and_conversion": 8,
+    "security_privacy_and_reliability": 6,
+    "analytics_and_monitoring": 5,
+    "authority_and_off_page_visibility": 5,
+    "total": 100
+  },
+  "ratings": {
+    "elite": { "min": 95, "max": 100, "requires_no_hard_blockers": true },
+    "excellent": { "min": 90, "max": 94.99, "requires_no_hard_blockers": true },
+    "strong_not_perfection": { "min": 85, "max": 89.99 },
+    "material_work_required": { "min": 75, "max": 84.99 },
+    "not_launch_ready": { "min": 0, "max": 74.99 }
+  },
+  "allowed_status_values": [
+    "PASS",
+    "FAIL",
+    "FIXED",
+    "PARTIAL",
+    "NOT APPLICABLE",
+    "NEEDS BUSINESS INPUT",
+    "BLOCKED BY ACCESS",
+    "PLATFORM LIMITATION",
+    "MONITOR AFTER LAUNCH"
+  ],
+  "required_final_outputs": [
+    "executive summary",
+    "100-point scorecard",
+    "hard-blocker status",
+    "before-and-after performance evidence",
+    "field Core Web Vitals status or insufficient-data statement",
+    "crawl and URL summary",
+    "changes implemented with files/settings and affected URLs",
+    "structured-data inventory and validation",
+    "accessibility automated and manual results",
+    "conversion and analytics test results",
+    "local, ecommerce, search, and AI discovery status",
+    "redirect map or URL-preservation confirmation",
+    "unresolved items with owner, impact, and next action",
+    "business facts or access still required",
+    "30-60-90-day visibility plan",
+    "monitoring and regression schedule"
+  ]
+}

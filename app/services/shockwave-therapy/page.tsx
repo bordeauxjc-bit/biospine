@@ -18,7 +18,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'Focused Shockwave Therapy (ESWT) in Lake City, SC',
   description:
-    'Focused extracorporeal shockwave therapy (ESWT) at BioSpine Health and Wellness in Lake City, SC, for plantar fasciitis, tennis elbow, Achilles pain, and calcific shoulder tendinitis that has not settled with rest.',
+    'Focused ESWT at BioSpine in Lake City, SC, for stubborn plantar fascia, elbow, Achilles, and calcific shoulder tendon pain after screening.',
   path: '/services/shockwave-therapy',
 });
 

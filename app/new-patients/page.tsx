@@ -19,7 +19,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 export const metadata: Metadata = buildMetadata({
   title: 'New Patients',
   description:
-    'Everything new patients need to know about their first chiropractic visit at BioSpine Health and Wellness in Lake City, SC, what to bring, what to expect, and insurance details.',
+    'What to bring and expect at your first BioSpine chiropractic visit in Lake City, SC, including the exam, timing, insurance questions, and consent.',
   path: '/new-patients',
 });
 

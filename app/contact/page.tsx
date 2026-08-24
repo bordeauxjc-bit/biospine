@@ -15,7 +15,7 @@ import {
 
 export const metadata: Metadata = buildMetadata({
   title: 'Contact & Location',
-  description: `Contact ${siteConfig.name} in Lake City, SC. Call ${siteConfig.phone}, email the office, get directions, or request an appointment online when the form is available.`,
+  description: `Contact BioSpine in Lake City, SC. Call ${siteConfig.phone}, email the office, get directions, or request an appointment online when available.`,
   path: '/contact',
 });
 

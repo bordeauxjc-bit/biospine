@@ -24,7 +24,7 @@ import { siteConfig } from '@/lib/site-config';
 const pagePath = '/services/dot-physicals';
 const pageUrl = `${siteConfig.url}${pagePath}`;
 const description =
-  'Schedule a DOT physical in Lake City, SC with Dr. Chucky Jordan, an FMCSA-listed certified Medical Examiner serving commercial drivers across the Pee Dee region.';
+  'Schedule a DOT physical in Lake City, SC with Dr. Chucky Jordan, an FMCSA-listed certified Medical Examiner serving drivers across the Pee Dee.';
 
 const officialLinks = {
   registry:

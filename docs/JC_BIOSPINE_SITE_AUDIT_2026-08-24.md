@@ -1,11 +1,11 @@
 # JC WEBSITE PERFECTION + SEO AUDIT REPORT
 
-**Site:** BioSpine Health and Wellness, LLC  
-**Production:** https://biospine.vercel.app  
-**Audited preview:** https://biospine-git-codex-jc-seo-audit-bordeauxjc-7662s-projects.vercel.app  
-**Repository:** bordeauxjc-bit/biospine  
-**Branch:** `codex/jc-seo-audit`  
-**Audit date:** August 24, 2026  
+**Site:** BioSpine Health and Wellness, LLC<br>
+**Production:** https://biospine.vercel.app<br>
+**Audited preview:** https://biospine-git-codex-jc-seo-audit-bordeauxjc-7662s-projects.vercel.app<br>
+**Repository:** bordeauxjc-bit/biospine<br>
+**Branch:** `codex/jc-seo-audit`<br>
+**Audit date:** August 24, 2026<br>
 **Quality system:** JC Website Perfection + SEO System v1.0
 
 # 1. EXECUTIVE SUMMARY
@@ -172,7 +172,7 @@ the Vercel preview, where Best Practices is 100.
 | Contact | Post-fix local median, 3 runs | 98 | 100 | 96* | 100 | 2,464 ms | 0 | 753 KB |
 | Contact | Public preview, 1 run | 92 | 100 | 100 | 66** | 3,198 ms | 0 | 757 KB |
 
-\* Local-only analytics endpoint limitation.  
+\* Local-only analytics endpoint limitation.<br>
 \** Lighthouse detects Vercel's preview `x-robots-tag: noindex`. Production
 baseline SEO is 100 and the preview crawl confirms the rendered canonical,
 metadata, robots file, and sitemap are correct.

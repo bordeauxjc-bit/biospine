@@ -16,7 +16,7 @@ export const siteConfig = {
 
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
-    'https://biospine.vercel.app',
+    'https://biospinemovedifferently.com',
 
   // Contact
   phone: '843-713-0669',

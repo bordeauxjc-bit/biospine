@@ -128,7 +128,7 @@ The BioSpine vector lockup lives at `public/logo.svg`; the compact mark is
 2. Go to [Vercel](https://vercel.com) → **Import Project**.
 3. Vercel auto-detects Next.js. Click **Deploy**.
 4. Set `NEXT_PUBLIC_SITE_URL` in **Settings → Environment Variables**. Use
-   `https://biospine.vercel.app` until a custom domain is connected.
+   `https://biospinemovedifferently.com` for production.
 5. Create a [Web3Forms](https://web3forms.com/) access key and add it as the
    server-side environment variable `WEB3FORMS_ACCESS_KEY`.
 6. Redeploy after adding or changing either environment variable.

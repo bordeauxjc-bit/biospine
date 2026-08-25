@@ -28,15 +28,15 @@ export default function PrivacyPage() {
 
       <Section tone="white">
         <div className="prose-biospine max-w-3xl">
-          <p className="label-muted">Last updated August 24, 2026</p>
+          <p className="label-muted">Last updated August 25, 2026</p>
 
           <h2>Information you choose to send</h2>
           <p>
             If the online appointment form is available, it asks for your name,
             email address, phone number, reason for visiting, and an optional
             short message. BioSpine uses that information to respond to your
-            scheduling inquiry. Form submissions are delivered through
-            Web3Forms.
+            scheduling inquiry. Your browser sends the form submission directly
+            to Web3Forms, which delivers it to the practice by email.
           </p>
           <p>
             You may also contact the office by phone or email. Information you

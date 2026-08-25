@@ -130,7 +130,7 @@ The BioSpine vector lockup lives at `public/logo.svg`; the compact mark is
 4. Set `NEXT_PUBLIC_SITE_URL` in **Settings → Environment Variables**. Use
    `https://biospinemovedifferently.com` for production.
 5. Create a [Web3Forms](https://web3forms.com/) access key and add it as the
-   server-side environment variable `WEB3FORMS_ACCESS_KEY`.
+   environment variable `WEB3FORMS_ACCESS_KEY`.
 6. Redeploy after adding or changing either environment variable.
 
 Web Analytics and Speed Insights are already enabled for the Vercel project.
@@ -138,9 +138,11 @@ Their Next.js components live in `app/layout.tsx`; no public tracking ID is
 required. The noindex `/contact/thanks` page is the form-completion destination
 to use as the primary appointment-request conversion in page-level reporting.
 
-The contact form posts to the local `/api/contact` route, which validates the
-request and forwards it to Web3Forms without exposing the access key in the
-browser bundle.
+The contact page renders only when `WEB3FORMS_ACCESS_KEY` is present. Following
+Web3Forms' supported integration, the browser submits the validated form
+directly to Web3Forms. Web3Forms documents access keys as public form
+identifiers, so restrict the form to the production domain in the Web3Forms
+dashboard and keep the built-in honeypot enabled.
 
 ---
 

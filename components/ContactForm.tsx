@@ -6,7 +6,12 @@ import { Loader2, Send } from 'lucide-react';
 
 type SubmitState = 'idle' | 'submitting' | 'error';
 
-export function ContactForm() {
+type Web3FormsResult = {
+  success?: boolean;
+  message?: string;
+};
+
+export function ContactForm({ accessKey }: { accessKey: string }) {
   const router = useRouter();
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
   const [error, setError] = useState('');
@@ -20,17 +25,35 @@ export function ContactForm() {
     const payload = Object.fromEntries(new FormData(form).entries());
 
     try {
-      const response = await fetch('/api/contact', {
+      // Web3Forms recommends browser-side submission and documents access keys
+      // as public form identifiers. The key is supplied by the server-rendered
+      // contact page only when the production environment variable is present.
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: 'New BioSpine appointment request',
+          from_name: 'BioSpine website',
+          first_name: payload.firstName,
+          last_name: payload.lastName,
+          email: payload.email,
+          phone: payload.phone,
+          reason: payload.reason,
+          message: payload.message,
+          botcheck: payload.botcheck,
+        }),
       });
-      const result = (await response.json()) as { message?: string };
+      const result = (await response.json().catch(() => ({}))) as Web3FormsResult;
 
-      if (!response.ok) {
-        throw new Error(result.message || 'We could not send your message.');
+      if (!response.ok || !result.success) {
+        throw new Error('We could not send your request. Please call the office instead.');
       }
 
+      form.reset();
       router.push('/contact/thanks');
     } catch (submitError) {
       setSubmitState('error');
@@ -44,7 +67,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
-      <input type="hidden" name="subject" value="New BioSpine website inquiry" />
       <p className="hidden" aria-hidden>
         <label>
           Leave this field empty

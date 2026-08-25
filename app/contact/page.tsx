@@ -21,7 +21,8 @@ export const metadata: Metadata = buildMetadata({
 
 export default function ContactPage() {
   const hours = formatHours();
-  const formEnabled = Boolean(process.env.WEB3FORMS_ACCESS_KEY);
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY ?? '';
+  const formEnabled = Boolean(accessKey);
 
   return (
     <>
@@ -52,7 +53,7 @@ export default function ContactPage() {
                   We&rsquo;ll follow up by phone or email during office hours.
                 </p>
                 <div className="mt-8">
-                  <ContactForm />
+                  <ContactForm accessKey={accessKey} />
                 </div>
               </>
             ) : (

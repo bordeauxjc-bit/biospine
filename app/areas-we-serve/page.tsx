@@ -39,6 +39,9 @@ export default function AreasWeServePage() {
               description="BioSpine does not operate satellite offices. The towns listed here are communities served by the Lake City practice."
             />
             <div className="flex flex-col gap-3 sm:flex-row">
+              <LinkButton href="/locations/lake-city" variant="primary">
+                Lake City office details
+              </LinkButton>
               <LinkButton href={directionsUrl()} external>
                 <MapPin className="h-4 w-4" aria-hidden /> Get directions
               </LinkButton>

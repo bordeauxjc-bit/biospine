@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/conditions`, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/new-patients`, priority: 0.8, changeFrequency: 'yearly' as const },
     { url: `${siteConfig.url}/contact`, priority: 0.9, changeFrequency: 'yearly' as const },
+    { url: `${siteConfig.url}/locations/lake-city`, priority: 0.95, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/areas-we-serve`, priority: 0.8, changeFrequency: 'yearly' as const },
     { url: `${siteConfig.url}/reviews`, priority: 0.8, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/blog`, priority: 0.8, changeFrequency: 'weekly' as const },

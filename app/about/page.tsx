@@ -12,7 +12,7 @@ import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
   title: `About ${siteConfig.doctor.name}`,
-  description: `Meet ${siteConfig.doctor.fullName}, ${siteConfig.doctor.credential}, providing chiropractic care in Lake City, SC with over a decade of clinical experience.`,
+  description: `Meet ${siteConfig.doctor.fullName}, ${siteConfig.doctor.credential}. Review his education, credentials, military service, and approach to chiropractic care in Lake City, SC.`,
   path: '/about',
 });
 
@@ -55,18 +55,34 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-3 prose-biospine">
-            <h2 className="!mt-0">A Lake City chiropractor since 2015</h2>
+            <h2 className="!mt-0">Practicing since 2015. BioSpine since 2016.</h2>
             <p>
               {siteConfig.doctor.name} is a Doctor of Chiropractic and owner of{' '}
-              {siteConfig.legalName} at {siteConfig.address.full}. He graduated
-              from {siteConfig.doctor.education} in {siteConfig.doctor.graduationYear}{' '}
-              and holds {siteConfig.doctor.license}.
+              {siteConfig.legalName} at {siteConfig.address.full}. After beginning
+              practice in Lake City in {siteConfig.doctor.practiceStartYear}, he
+              opened BioSpine in {siteConfig.doctor.bioSpineOpeningYear}.
             </p>
             <p>
               Dr. Jordan treats back and neck pain, sciatica, headache patterns
               linked to the neck, sports and auto injuries, arthritic stiffness,
               and selected chronic tendon problems. He also performs DOT
               physicals as an FMCSA-listed certified Medical Examiner.
+            </p>
+
+            <h3>Education and service</h3>
+            <p>
+              Raised in Mullins, South Carolina, Dr. Jordan served in the{' '}
+              {siteConfig.doctor.militaryService}. He completed{' '}
+              {siteConfig.doctor.sportsMedicineEducation}, earned his Doctor of
+              Chiropractic degree from {siteConfig.doctor.education} in{' '}
+              {siteConfig.doctor.graduationYear}, and completed a master&rsquo;s
+              degree in Nutrition and Human Performance at Logan University in
+              2019.
+            </p>
+            <p>
+              He holds {siteConfig.doctor.license} and National Board of
+              Chiropractic Examiners certification. His public provider record
+              also identifies him by NPI {siteConfig.doctor.npi}.
             </p>
 
             <h3>What happens before treatment</h3>
@@ -100,7 +116,7 @@ export default function AboutPage() {
             {
               icon: Clock,
               title: '10+ years experience',
-              text: 'Dr. Jordan has practiced in Lake City since graduating from Logan in 2015.',
+              text: 'Dr. Jordan began practicing in 2015 and opened BioSpine in Lake City in 2016.',
             },
             {
               icon: Heart,

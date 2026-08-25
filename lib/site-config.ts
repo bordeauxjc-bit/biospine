@@ -57,7 +57,8 @@ export const siteConfig = {
     wheelchairRestroom: true,
   },
 
-  // Doctor, sourced from CMS NPPES registry + Logan College public records
+  // Doctor, sourced from CMS NPPES registry, Logan public records, and the
+  // doctor's current professional biography published by The Joint.
   doctor: {
     name: 'Dr. Chucky S. Jordan',
     fullName: 'Dr. Chucky Sentell Jordan',
@@ -67,6 +68,13 @@ export const siteConfig = {
     license: 'South Carolina #4099',
     education: 'Logan College of Chiropractic',
     graduationYear: 2015,
+    sportsMedicineEducation:
+      'sports medicine studies at Keiser University in 2011',
+    advancedEducation:
+      'Master’s in Nutrition and Human Performance, Logan University, 2019',
+    militaryService: 'U.S. Army, 1998–2004',
+    practiceStartYear: 2015,
+    bioSpineOpeningYear: 2016,
     boardCertified: 'National Board of Chiropractic Examiners',
     fmcsaNationalRegistryNumber: '8852422617',
     fmcsaCertificationDate: '2021-11-22',

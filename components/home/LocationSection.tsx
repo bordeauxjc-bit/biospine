@@ -1,4 +1,5 @@
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { LinkButton } from '@/components/ui/Button';
 import {
   siteConfig,
   directionsUrl,
@@ -50,6 +51,11 @@ export function LocationSection() {
                 >
                   Get directions
                 </a>
+                <div className="mt-5">
+                  <LinkButton href="/locations/lake-city" variant="outline" size="sm">
+                    Lake City office details
+                  </LinkButton>
+                </div>
               </dd>
             </div>
 

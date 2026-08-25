@@ -99,11 +99,22 @@ export function doctorSchema() {
     worksFor: {
       '@id': `${siteConfig.url}/#business`,
     },
-    alumniOf: {
-      '@type': 'CollegeOrUniversity',
-      name: siteConfig.doctor.education,
-    },
+    alumniOf: [
+      {
+        '@type': 'CollegeOrUniversity',
+        name: siteConfig.doctor.education,
+      },
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'Keiser University',
+      },
+    ],
     hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'degree',
+        name: siteConfig.doctor.advancedEducation,
+      },
       {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'license',
@@ -170,6 +181,28 @@ export function websiteSchema() {
   };
 }
 
+export function locationPageSchema() {
+  const url = `${siteConfig.url}/locations/lake-city`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: `BioSpine Lake City Office | ${siteConfig.name}`,
+    description: `Visit ${siteConfig.name} at ${siteConfig.address.full} for chiropractic care and DOT physicals.`,
+    isPartOf: {
+      '@id': `${siteConfig.url}/#website`,
+    },
+    about: {
+      '@id': `${siteConfig.url}/#business`,
+    },
+    mainEntity: {
+      '@id': `${siteConfig.url}/#business`,
+    },
+  };
+}
+
 export function breadcrumbSchema(
   items: { name: string; url: string }[],
 ) {
@@ -185,7 +218,9 @@ export function breadcrumbSchema(
   };
 }
 
-export function faqSchema(faqs: { question: string; answer: string }[]) {
+export function faqSchema(
+  faqs: readonly { question: string; answer: string }[],
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

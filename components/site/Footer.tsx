@@ -109,6 +109,14 @@ export function Footer() {
             ))}
             <li>
               <Link
+                href="/locations/lake-city"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                Lake City Office
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/areas-we-serve"
                 className="text-slate-400 transition-colors hover:text-white"
               >

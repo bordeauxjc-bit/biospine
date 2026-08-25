@@ -59,7 +59,7 @@ export default function AboutPage() {
             <p>
               {siteConfig.doctor.name} is a Doctor of Chiropractic and owner of{' '}
               {siteConfig.legalName} at {siteConfig.address.full}. He graduated
-              from {siteConfig.doctor.education} in {siteConfig.doctor.graduationYear}
+              from {siteConfig.doctor.education} in {siteConfig.doctor.graduationYear}{' '}
               and holds {siteConfig.doctor.license}.
             </p>
             <p>

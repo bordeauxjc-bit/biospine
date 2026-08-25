@@ -5,6 +5,7 @@ const canonicalOrigin = (
 
 const decodeText = (value = '') =>
   value
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
@@ -50,6 +51,10 @@ for (const pathname of uniquePaths) {
   const canonical = html.match(
     /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i,
   )?.[1];
+  const visibleText = decodeText(html);
+  const suspiciousJoinedWords = [
+    ...new Set(visibleText.match(/\b\d{3,}[A-Za-z]{2,}\b/g) ?? []),
+  ];
   const h1Count = matches(html, /<h1\b[^>]*>/gi).length;
   const images = matches(html, /<img\b[^>]*>/gi).map((match) => match[0]);
   const imagesMissingAlt = images.filter((image) => !/\balt=["']/i.test(image));
@@ -83,6 +88,11 @@ for (const pathname of uniquePaths) {
     issues.push(`${pathname} has unexpected canonical ${canonical ?? '(missing)'}`);
   }
   if (h1Count !== 1) issues.push(`${pathname} has ${h1Count} H1 elements`);
+  if (suspiciousJoinedWords.length) {
+    issues.push(
+      `${pathname} contains joined number/word text: ${suspiciousJoinedWords.join(', ')}`,
+    );
+  }
   if (imagesMissingAlt.length) {
     issues.push(`${pathname} has ${imagesMissingAlt.length} image(s) without alt`);
   }
@@ -97,6 +107,7 @@ for (const pathname of uniquePaths) {
     h1Count,
     images: images.length,
     imagesMissingAlt: imagesMissingAlt.length,
+    suspiciousJoinedWords,
     jsonLdBlocks: jsonLd.length,
     internalLinks: internalLinks.length,
   });

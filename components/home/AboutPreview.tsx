@@ -25,18 +25,18 @@ export function AboutPreview() {
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         <div className="lg:col-span-6">
           <figure>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-brand-sand ring-1 ring-brand-ink/10">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-brand-sand ring-1 ring-brand-ink/10">
               <Image
-                src="/images/office/doctor-in-action.jpg"
-                alt={`${siteConfig.doctor.name} explaining spinal anatomy with a model at BioSpine Health and Wellness`}
+                src="/images/office/dr-jordan-chiropractic-care.webp"
+                alt={`${siteConfig.doctor.name} providing hands-on chiropractic care to a patient at BioSpine Health and Wellness`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover object-[center_45%]"
               />
             </div>
             <figcaption className="mt-3.5 border-t border-brand-ink/12 pt-3 text-sm text-slate-500">
-              Dr. Jordan uses the exam and, when useful, a model to explain the
-              problem before discussing treatment.
+              Dr. Jordan providing hands-on care in BioSpine&rsquo;s Lake City
+              treatment room.
             </figcaption>
           </figure>
         </div>

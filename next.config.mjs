@@ -14,6 +14,21 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.biospinemovedifferently.com',
+          },
+        ],
+        destination: 'https://biospinemovedifferently.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

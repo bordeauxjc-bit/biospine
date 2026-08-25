@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { AlertTriangle, CalendarDays, CheckCircle2, Phone } from 'lucide-react';
@@ -96,6 +97,30 @@ export default async function ServiceGuidePage({ params }: Props) {
             </ul>
           </aside>
         </div>
+
+        {service.slug === 'chiropractic-adjustments' && (
+          <figure className="mt-14 grid items-center gap-7 border-t border-brand-ink/12 pt-10 lg:grid-cols-12 lg:gap-14">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-brand-sand ring-1 ring-brand-ink/10 lg:col-span-5">
+              <Image
+                src="/images/office/chiropractic-adjustment-at-biospine.webp"
+                alt={`${siteConfig.doctor.name} performing a chiropractic adjustment for a patient at BioSpine in Lake City, SC`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-[center_43%]"
+              />
+            </div>
+            <figcaption className="lg:col-span-7">
+              <p className="label-muted">Care at the Lake City office</p>
+              <h2 className="mt-3">Hands-on care selected after the examination</h2>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
+                Dr. Jordan chooses the contact, position, and amount of force for
+                the person in front of him. Before treatment, he explains what he
+                found and confirms that the technique is appropriate and that you
+                are comfortable proceeding.
+              </p>
+            </figcaption>
+          </figure>
+        )}
       </Section>
 
       <Section tone="cream">

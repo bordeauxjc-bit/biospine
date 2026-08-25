@@ -11,7 +11,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'Blog & Patient Resources',
   description:
-    'Practical articles on chiropractic visits, back and neck pain, headaches, desk work, and sports injuries for BioSpine patients in Lake City, SC.',
+    'Practical Lake City guides for DOT physicals, South Carolina CDL medical certification, school sports forms, injuries, pain, and chiropractic visits.',
   path: '/blog',
 });
 
@@ -22,8 +22,8 @@ export default function BlogIndexPage() {
     <>
       <PageHeader
         eyebrow="Blog"
-        title="Straight answers about pain, movement, and chiropractic care"
-        description="Dr. Jordan’s articles explain common back, neck, headache, posture, and sports-injury questions without promising a diagnosis from a webpage."
+        title="Useful answers for patients, drivers, and local families"
+        description="Current, practical guides about DOT physicals, South Carolina driver paperwork, school sports forms, injuries, pain, movement, and chiropractic visits in Lake City."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Blog', href: '/blog' },

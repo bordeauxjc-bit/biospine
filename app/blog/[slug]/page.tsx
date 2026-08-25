@@ -49,10 +49,19 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  // Get 2 related posts (excluding current)
+  const postTags = new Set(post.tags ?? []);
   const relatedPosts = getAllPosts()
     .filter((p) => p.slug !== post.slug)
-    .slice(0, 2);
+    .map((candidate) => ({
+      post: candidate,
+      sharedTags: (candidate.tags ?? []).filter((tag) => postTags.has(tag)).length,
+    }))
+    .sort((a, b) => {
+      if (b.sharedTags !== a.sharedTags) return b.sharedTags - a.sharedTags;
+      return new Date(b.post.date).getTime() - new Date(a.post.date).getTime();
+    })
+    .slice(0, 2)
+    .map(({ post: relatedPost }) => relatedPost);
 
   return (
     <>

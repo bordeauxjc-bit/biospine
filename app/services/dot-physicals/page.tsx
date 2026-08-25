@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import {
   BadgeCheck,
   CalendarDays,
@@ -90,6 +91,29 @@ const bringItems = [
   'Glasses, contact lenses, or hearing aids you use while driving',
   'Relevant records or letters from treating clinicians for ongoing medical conditions',
   'When applicable, recent CPAP compliance, blood-sugar, cardiac, vision, or exemption documentation',
+];
+
+const driverGuides = [
+  {
+    href: '/blog/dot-physical-near-lake-city-sc',
+    title: 'DOT physical near Lake City',
+    description: 'How to verify the examiner, prepare for the visit, and request an appointment.',
+  },
+  {
+    href: '/blog/south-carolina-dot-medical-card-renewal',
+    title: 'South Carolina renewal checklist',
+    description: 'The exam, electronic reporting, SCDMV status check, and CDL-renewal distinction.',
+  },
+  {
+    href: '/blog/what-to-bring-dot-physical',
+    title: 'What to bring',
+    description: 'A document checklist for medications, CPAP, diabetes, vision, and ongoing care.',
+  },
+  {
+    href: '/blog/how-long-dot-medical-certificate-lasts',
+    title: 'How long certification lasts',
+    description: 'Why the certificate may be valid for up to 24 months or for a shorter period.',
+  },
 ];
 
 const faqs = [
@@ -407,6 +431,29 @@ export default function DotPhysicalsPage() {
             </p>
           </div>
         </div>
+      </Section>
+
+      <Section tone="cream">
+        <SectionHeading
+          eyebrow="Driver resources"
+          title="Plan the exam before the deadline"
+          description="These focused guides answer the questions South Carolina drivers most often ask before a DOT physical."
+        />
+        <ul role="list" className="grid gap-x-10 gap-y-8 md:grid-cols-2">
+          {driverGuides.map((guide) => (
+            <li key={guide.href} className="border-t border-brand-ink/15 pt-5">
+              <Link href={guide.href} className="group block">
+                <h2 className="!text-xl transition-colors group-hover:text-brand-green-dark">
+                  {guide.title}
+                </h2>
+                <p className="mt-2 text-slate-600">{guide.description}</p>
+                <span className="mt-3 inline-flex text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 group-hover:decoration-brand-green">
+                  Read the guide
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section tone="white">

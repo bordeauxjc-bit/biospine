@@ -1,6 +1,6 @@
 const baseUrl = (process.argv[2] ?? 'http://127.0.0.1:3100').replace(/\/$/, '');
 const canonicalOrigin = (
-  process.env.CANONICAL_ORIGIN ?? 'https://biospine.vercel.app'
+  process.env.CANONICAL_ORIGIN ?? 'https://biospinemovedifferently.com'
 ).replace(/\/$/, '');
 
 const decodeText = (value = '') =>

@@ -28,7 +28,7 @@ export default function PrivacyPage() {
 
       <Section tone="white">
         <div className="prose-biospine max-w-3xl">
-          <p className="label-muted">Last updated August 25, 2026</p>
+          <p className="label-muted">Last updated August 30, 2026</p>
 
           <h2>Information you choose to send</h2>
           <p>
@@ -55,13 +55,30 @@ export default function PrivacyPage() {
 
           <h2>Website analytics and performance data</h2>
           <p>
-            The site uses Vercel Web Analytics and Speed Insights to understand
-            page visits and website performance. Vercel describes Web Analytics
-            as cookie-free and based on anonymized data. BioSpine does not send
-            names, contact details, appointment reasons, or message contents as
-            analytics properties.
+            The site uses Google Analytics 4, Vercel Web Analytics, and Vercel
+            Speed Insights to understand page visits, traffic sources, and
+            website performance. Google Analytics may use first-party cookies
+            and process technical information such as browser and device type,
+            approximate location, referring page, pages viewed, and interaction
+            events. Vercel describes its Web Analytics product as cookie-free and
+            based on anonymized data.
+          </p>
+          <p>
+            BioSpine does not send names, contact details, appointment reasons,
+            message contents, diagnoses, or medical records as analytics
+            properties. Google Signals and advertising-personalization signals
+            are disabled in the website configuration.
           </p>
           <ul>
+            <li>
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google privacy policy
+              </a>
+            </li>
             <li>
               <a
                 href="https://vercel.com/docs/analytics/privacy-policy"
@@ -71,6 +88,16 @@ export default function PrivacyPage() {
                 Vercel Web Analytics privacy information
               </a>
             </li>
+          </ul>
+
+          <h2>Appointment requests and analytics</h2>
+          <p>
+            Analytics tools are not configured to receive the contents of the
+            appointment form. The form sends the information you enter directly
+            to Web3Forms for delivery to the practice. Do not include private
+            medical details in the reason or message fields.
+          </p>
+          <ul>
             <li>
               <a
                 href="https://web3forms.com/privacy"

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Newsreader, Karla } from 'next/font/google';
+import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Header } from '@/components/site/Header';
@@ -12,6 +13,8 @@ import {
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 import './globals.css';
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 // Editorial serif for headlines. Optical sizing is what keeps it from
 // looking thin at display sizes.
@@ -97,6 +100,25 @@ export default function RootLayout({
 
         <JsonLd id="ld-business" data={localBusinessSchema()} />
         <JsonLd id="ld-website" data={websiteSchema()} />
+        {gaMeasurementId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-biospine" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaMeasurementId}', {
+                  allow_google_signals: false,
+                  allow_ad_personalization_signals: false
+                });
+              `}
+            </Script>
+          </>
+        )}
         <Analytics />
         <SpeedInsights />
       </body>

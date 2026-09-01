@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { MapPin, Phone } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
@@ -65,17 +66,37 @@ export default function AreasWeServePage() {
       </Section>
 
       <Section tone="cream">
-        <div className="grid gap-10 lg:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <article>
-            <h2 className="!text-2xl">Lake City chiropractic care</h2>
+            <h2 className="!text-2xl">
+              <Link href="/locations/lake-city" className="transition-colors hover:text-brand-green-dark">
+                Lake City chiropractor
+              </Link>
+            </h2>
             <p className="mt-3 text-slate-600">The office is located on John Street in Lake City with weekday appointment hours and accessible parking, entrance, and restroom.</p>
           </article>
           <article>
-            <h2 className="!text-2xl">Focused shockwave therapy</h2>
-            <p className="mt-3 text-slate-600">BioSpine offers focused ESWT for selected chronic tendon and soft-tissue problems after an appropriate evaluation.</p>
+            <h2 className="!text-2xl">
+              <Link href="/services/back-neck-pain" className="transition-colors hover:text-brand-green-dark">
+                Back and neck pain
+              </Link>
+            </h2>
+            <p className="mt-3 text-slate-600">Dr. Jordan evaluates low back pain, neck pain, sciatica, stiffness, and related movement problems before recommending care.</p>
           </article>
           <article>
-            <h2 className="!text-2xl">DOT physicals</h2>
+            <h2 className="!text-2xl">
+              <Link href="/services/headache-migraine-care" className="transition-colors hover:text-brand-green-dark">
+                Neck pain and headaches
+              </Link>
+            </h2>
+            <p className="mt-3 text-slate-600">BioSpine examines appropriate neck-related headache patterns and refers symptoms that belong in medical or emergency care.</p>
+          </article>
+          <article>
+            <h2 className="!text-2xl">
+              <Link href="/services/dot-physicals" className="transition-colors hover:text-brand-green-dark">
+                DOT physicals
+              </Link>
+            </h2>
             <p className="mt-3 text-slate-600">Dr. Jordan is listed on the FMCSA National Registry and performs commercial-driver physicals at the Lake City office.</p>
           </article>
         </div>

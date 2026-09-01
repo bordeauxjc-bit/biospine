@@ -25,8 +25,8 @@ import {
 } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Lake City Chiropractor & DOT Physicals Office',
-  description: `Visit BioSpine at ${siteConfig.address.full} for chiropractic care, shockwave therapy, injury evaluation, and DOT physicals with Dr. Chucky S. Jordan.`,
+  title: 'Chiropractor in Lake City, SC & DOT Physicals',
+  description: `Looking for a chiropractor in Lake City, SC? Visit Dr. Chucky S. Jordan at ${siteConfig.address.full} for chiropractic care and DOT physicals.`,
   path: '/locations/lake-city',
 });
 
@@ -63,8 +63,8 @@ export default function LakeCityLocationPage() {
     <>
       <PageHeader
         eyebrow="Lake City office"
-        title="Chiropractic care and DOT physicals at 214 John Street"
-        description="This is BioSpine’s only office: a weekday chiropractic and commercial-driver exam practice led by Dr. Chucky S. Jordan in Lake City, South Carolina."
+        title="A chiropractor in Lake City, SC, and DOT physicals at 214 John Street"
+        description="BioSpine is Dr. Chucky S. Jordan’s only office: a weekday chiropractic and commercial-driver exam practice serving Lake City and nearby Pee Dee communities."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Lake City Office', href: '/locations/lake-city' },
@@ -117,6 +117,42 @@ export default function LakeCityLocationPage() {
               <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg">
                 <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
               </LinkButton>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="sand">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              eyebrow="Local care"
+              title="Searching for a chiropractor near Lake City?"
+              description="The useful answer is a real office, a licensed clinician, and a page that tells you what is actually treated. BioSpine is located in Lake City—not a virtual or satellite location."
+            />
+          </div>
+          <div className="prose-biospine lg:col-span-7">
+            <p>
+              Dr. Jordan evaluates common back and neck pain, sciatica, selected
+              headache patterns associated with the neck, sports and auto injuries,
+              arthritis-related stiffness, and selected chronic tendon problems.
+              Treatment begins only when the history and examination support it.
+            </p>
+            <p>
+              Commercial drivers can also complete an FMCSA physical with a
+              certified Medical Examiner at this address. Use the service links
+              below to see what happens during each visit and what to bring.
+            </p>
+            <div className="not-prose mt-6 flex flex-col items-start gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
+              <Link href="/services/back-neck-pain" className="inline-flex min-h-11 items-center text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green">
+                Back and neck pain care
+              </Link>
+              <Link href="/services/headache-migraine-care" className="inline-flex min-h-11 items-center text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green">
+                Neck pain and headache evaluation
+              </Link>
+              <Link href="/services/dot-physicals" className="inline-flex min-h-11 items-center text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 hover:decoration-brand-green">
+                DOT physicals
+              </Link>
             </div>
           </div>
         </div>

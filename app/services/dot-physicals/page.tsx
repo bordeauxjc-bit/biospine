@@ -25,7 +25,7 @@ import { siteConfig } from '@/lib/site-config';
 const pagePath = '/services/dot-physicals';
 const pageUrl = `${siteConfig.url}${pagePath}`;
 const description =
-  'Schedule a DOT physical in Lake City, SC with Dr. Chucky Jordan, an FMCSA-listed certified Medical Examiner serving drivers across the Pee Dee.';
+  'Need a DOT physical near Lake City, SC? Schedule with Dr. Chucky Jordan, an FMCSA-listed certified Medical Examiner serving Pee Dee drivers.';
 
 const officialLinks = {
   registry:
@@ -150,7 +150,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: 'DOT Physicals in Lake City, SC',
+  title: 'DOT Physical Near Lake City, SC',
   description,
   path: pagePath,
 });
@@ -160,8 +160,8 @@ export default function DotPhysicalsPage() {
     <>
       <PageHeader
         eyebrow="Commercial driver exams"
-        title="DOT physicals for South Carolina commercial drivers"
-        description="Complete your FMCSA physical qualification exam with Dr. Chucky Jordan, a certified Medical Examiner listed on the National Registry."
+        title="A DOT physical near Lake City, SC, with a certified Medical Examiner"
+        description="Complete your FMCSA physical qualification exam at BioSpine’s John Street office with Dr. Chucky Jordan, a certified Medical Examiner listed on the National Registry."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -184,6 +184,11 @@ export default function DotPhysicalsPage() {
               certified Doctor of Chiropractic Medical Examiner. Appointments are
               available for drivers from Lake City, Florence County, Williamsburg
               County, and communities across the Pee Dee region.
+            </p>
+            <p>
+              If you searched for a &ldquo;DOT physical near me,&rdquo; confirm the
+              examiner in the federal registry before scheduling. BioSpine&rsquo;s
+              only exam location is {siteConfig.address.full}.
             </p>
             <a
               href={officialLinks.exam}

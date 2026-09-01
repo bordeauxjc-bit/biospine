@@ -95,13 +95,13 @@ export const serviceGuides: ServiceGuide[] = [
   {
     slug: 'headache-migraine-care',
     name: 'Headache & Migraine Care',
-    eyebrow: 'Headache care',
-    seoTitle: 'Headache & Migraine Care in Lake City, SC',
+    eyebrow: 'Neck pain & headache care',
+    seoTitle: 'Neck Pain & Headache Chiropractor in Lake City, SC',
     metaDescription:
-      'Conservative care for appropriate neck-related and tension-type headache contributors at BioSpine Health and Wellness in Lake City, SC.',
-    headline: 'When a headache travels with neck pain or stiffness',
+      'Looking for a chiropractor for neck pain and headaches? BioSpine evaluates appropriate neck-related headache patterns in Lake City, SC.',
+    headline: 'A chiropractor for neck pain and headaches in Lake City, SC',
     introduction: [
-      'Some recurring headaches are influenced by the joints and muscles of the neck, sustained positions, or movement. Migraine is a neurological disorder and may require care from a primary-care clinician or specialist, even when neck symptoms occur at the same time.',
+      'People often search for a chiropractor when neck pain and headaches occur together. Some recurring headaches are influenced by the joints and muscles of the neck, sustained positions, or movement. Migraine is a neurological disorder and may require care from a primary-care clinician or specialist, even when neck symptoms occur at the same time.',
       'BioSpine evaluates musculoskeletal contributors, checks for patterns that need medical attention, and explains where conservative chiropractic care may fit. The goal is appropriate co-management—not a claim that every headache has a spinal cause.',
     ],
     commonReasons: [
@@ -146,6 +146,11 @@ export const serviceGuides: ServiceGuide[] = [
       { label: 'Posture and mobility', href: '/conditions/postural-problems' },
     ],
     faqs: [
+      {
+        question: 'Can a chiropractor help with neck pain and headaches?',
+        answer:
+          'A chiropractic examination can identify whether restricted or painful neck movement, joints, or surrounding muscles appear to be contributing. When the findings fit and no warning signs are present, conservative neck care may be reasonable. Headaches with a different cause need the appropriate medical care.',
+      },
       {
         question: 'Can chiropractic care cure migraine?',
         answer:

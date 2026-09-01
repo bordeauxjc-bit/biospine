@@ -117,6 +117,30 @@ export function Footer() {
             </li>
             <li>
               <Link
+                href="/services/dot-physicals"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                DOT Physicals
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/back-neck-pain"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                Back &amp; Neck Pain
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/headache-migraine-care"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                Neck Pain &amp; Headaches
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/areas-we-serve"
                 className="text-slate-400 transition-colors hover:text-white"
               >

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { CalendarDays, CheckCircle2, Phone } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
@@ -12,9 +13,9 @@ import { staticPageClinicalSources } from '@/lib/clinical-sources';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Back & Neck Pain Chiropractor in Lake City, SC',
+  title: 'Back Pain Chiropractor Serving the Pee Dee, SC',
   description:
-    'Evaluation and conservative chiropractic care for back pain, neck pain, sciatica, stiffness, and whiplash at BioSpine in Lake City, South Carolina.',
+    'Back pain chiropractor in Lake City serving the Pee Dee with evaluation and conservative care for low back pain, sciatica, stiffness, and neck pain.',
   path: '/services/back-neck-pain',
 });
 
@@ -47,15 +48,43 @@ const faqs = [
     question: 'Do you accept insurance for back and neck pain care?',
     answer: `BioSpine accepts Medicare. Call ${siteConfig.phone} to ask about any other plan and confirm your specific coverage before the visit.`,
   },
+  {
+    question: 'Does BioSpine prescribe back pain medicine?',
+    answer:
+      'No. BioSpine provides non-drug chiropractic evaluation and conservative musculoskeletal care. If your symptoms require medication management or another medical service, Dr. Jordan will explain that and recommend the appropriate next step.',
+  },
 ];
+
+const regionalGuides = [
+  {
+    href: '/conditions/low-back-pain',
+    title: 'Low back pain',
+    description: 'Common symptom patterns, examination steps, and urgent warning signs.',
+  },
+  {
+    href: '/conditions/sciatica',
+    title: 'Sciatica and leg pain',
+    description: 'How radiating leg symptoms are evaluated before conservative care begins.',
+  },
+  {
+    href: '/conditions/neck-pain',
+    title: 'Neck pain',
+    description: 'Evaluation for stiffness, restricted motion, shoulder-blade pain, and arm symptoms.',
+  },
+  {
+    href: '/areas-we-serve',
+    title: 'Pee Dee communities served',
+    description: 'Directions to BioSpine’s single Lake City office from nearby communities.',
+  },
+] as const;
 
 export default function BackNeckPainPage() {
   return (
     <>
       <PageHeader
         eyebrow="Back & neck pain"
-        title="Back and neck pain care in Lake City, SC"
-        description="A careful exam, a clear explanation, and conservative treatment planned around how your pain affects work, sleep, and everyday movement."
+        title="Back pain chiropractor serving Lake City and the Pee Dee"
+        description="A careful exam, a clear explanation, and conservative care planned around how back or neck pain affects work, driving, sleep, and everyday movement."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -83,6 +112,33 @@ export default function BackNeckPainPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </Section>
+
+      <Section tone="sand">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              eyebrow="Lake City office"
+              title="Back pain care for the Pee Dee"
+              description="BioSpine has one office at 214 John Street in Lake City. Patients travel here from Florence, Kingstree, Hemingway, Pamplico, Scranton, Coward, and other nearby communities."
+            />
+          </div>
+          <ul role="list" className="lg:col-span-7">
+            {regionalGuides.map((guide) => (
+              <li key={guide.href} className="border-t border-brand-ink/15 py-5 first:border-t-2 first:border-brand-green">
+                <Link href={guide.href} className="group block">
+                  <h2 className="!text-xl transition-colors group-hover:text-brand-green-dark">
+                    {guide.title}
+                  </h2>
+                  <p className="mt-2 text-slate-600">{guide.description}</p>
+                  <span className="mt-3 inline-flex text-sm font-medium text-brand-green-dark underline decoration-brand-green/35 underline-offset-4 group-hover:decoration-brand-green">
+                    Read the guide
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 

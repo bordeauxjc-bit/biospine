@@ -6,18 +6,19 @@ import { serviceGuides } from '@/lib/service-guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const searchLandingUpdated = new Date('2026-09-01');
+  const laserServiceAdded = new Date('2026-09-15');
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: `${siteConfig.url}/`, priority: 1.0, changeFrequency: 'monthly' as const },
+    { url: `${siteConfig.url}/`, lastModified: laserServiceAdded, priority: 1.0, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/about`, priority: 0.9, changeFrequency: 'yearly' as const },
-    { url: `${siteConfig.url}/services`, priority: 0.9, changeFrequency: 'monthly' as const },
+    { url: `${siteConfig.url}/services`, lastModified: laserServiceAdded, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/services/shockwave-therapy`, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/services/back-neck-pain`, lastModified: searchLandingUpdated, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/services/auto-accident-injury`, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/services/dot-physicals`, lastModified: searchLandingUpdated, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/conditions`, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/new-patients`, priority: 0.8, changeFrequency: 'yearly' as const },
-    { url: `${siteConfig.url}/contact`, priority: 0.9, changeFrequency: 'yearly' as const },
-    { url: `${siteConfig.url}/locations/lake-city`, lastModified: searchLandingUpdated, priority: 0.95, changeFrequency: 'monthly' as const },
+    { url: `${siteConfig.url}/contact`, lastModified: laserServiceAdded, priority: 0.9, changeFrequency: 'yearly' as const },
+    { url: `${siteConfig.url}/locations/lake-city`, lastModified: laserServiceAdded, priority: 0.95, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/areas-we-serve`, lastModified: searchLandingUpdated, priority: 0.8, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/reviews`, priority: 0.8, changeFrequency: 'monthly' as const },
     { url: `${siteConfig.url}/blog`, priority: 0.8, changeFrequency: 'weekly' as const },
@@ -26,6 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const serviceRoutes: MetadataRoute.Sitemap = serviceGuides.map((service) => ({
     url: `${siteConfig.url}/services/${service.slug}`,
+    ...(service.slug === 'class-iv-laser-therapy'
+      ? { lastModified: laserServiceAdded }
+      : {}),
     ...(service.slug === 'headache-migraine-care'
       ? { lastModified: searchLandingUpdated }
       : {}),

@@ -125,6 +125,14 @@ export function Footer() {
             </li>
             <li>
               <Link
+                href="/services/class-iv-laser-therapy"
+                className="text-slate-400 transition-colors hover:text-white"
+              >
+                Class IV Laser Therapy
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/services/back-neck-pain"
                 className="text-slate-400 transition-colors hover:text-white"
               >

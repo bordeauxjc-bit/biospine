@@ -17,6 +17,89 @@ export type ServiceGuide = {
 
 export const serviceGuides: ServiceGuide[] = [
   {
+    slug: 'class-iv-laser-therapy',
+    name: 'Class IV Laser Therapy',
+    eyebrow: 'Laser treatment · Lake City, SC',
+    seoTitle: 'Class IV Laser Therapy in Lake City, SC',
+    metaDescription:
+      'Explore Class IV laser therapy at BioSpine in Lake City, SC. Learn what to expect, how it differs from cold laser therapy, and how to request a visit.',
+    headline: 'Class IV laser therapy in Lake City, SC',
+    introduction: [
+      'BioSpine offers Class IV laser therapy at its 214 John Street office. This non-invasive treatment delivers laser light to a selected area and may be considered as part of a plan for muscle or joint discomfort. Dr. Jordan examines the problem first and explains whether laser treatment fits your findings and goals.',
+      'The aim is to make everyday movement more comfortable. Research on high-intensity laser therapy suggests possible improvements in pain and function for some musculoskeletal conditions, but study quality and results vary. Benefits depend on the condition, equipment, treatment settings, and individual response; relief is not guaranteed.',
+      'Laser therapy can be discussed alongside chiropractic care and movement guidance. It does not replace an examination, needed medical care, or the gradual return to activity that your condition requires. Patients from Lake City, Scranton, Coward, and nearby Pee Dee communities can request a consultation at the Lake City office.',
+    ],
+    commonReasons: [
+      'Muscle or joint discomfort that needs assessment',
+      'Pain or stiffness limiting everyday movement',
+      'Questions about adding laser to an existing care plan',
+      'Interest in a non-invasive treatment option',
+      'Comparing laser therapy with shockwave therapy',
+      'Understanding likely benefits, risks, and alternatives',
+    ],
+    visitSteps: [
+      {
+        title: 'Examine the painful area',
+        text: 'Discuss when symptoms started, which activities are difficult, previous treatment, and your health history. The examination guides whether laser is an appropriate option.',
+      },
+      {
+        title: 'Discuss treatment and safety',
+        text: 'Ask what the proposed treatment involves, its cost, and the expected course of care. Laser-specific protective eyewear and appropriate skin precautions are needed during treatment.',
+      },
+      {
+        title: 'Reassess comfort and movement',
+        text: 'Track changes in the activities that matter to you. If improvement is limited or symptoms change, discuss adjusting the plan or whether another evaluation is needed.',
+      },
+    ],
+    careMayInclude: [
+      'Laser treatment of an area selected after examination',
+      'Discussion of expected benefits and treatment limits',
+      'Chiropractic care when separately appropriate',
+      'Home movement or exercise guidance',
+      'Activity adjustments while symptoms settle',
+      'Follow-up assessment of pain and everyday function',
+    ],
+    importantNotes: [
+      'Class IV describes a laser safety category. Treatment requires appropriate training, eye protection, and precautions to prevent skin injury.',
+      'Tell Dr. Jordan about medications, light sensitivity, skin problems, pregnancy, cancer history, and other ongoing treatment so suitability can be assessed using the device’s instructions.',
+      'The number of visits, treatment time, cost, and insurance coverage should be discussed with the office before starting. Results vary, and no preset course guarantees relief.',
+    ],
+    indications: ['Selected musculoskeletal pain after clinical evaluation'],
+    relatedConditions: [
+      { label: 'Back and neck pain evaluation', href: '/services/back-neck-pain' },
+      { label: 'Joint pain and stiffness', href: '/conditions/arthritis-joint-pain' },
+      { label: 'Sports injury evaluation', href: '/services/sports-injury-care' },
+      { label: 'How shockwave therapy differs', href: '/services/shockwave-therapy' },
+    ],
+    faqs: [
+      {
+        question: 'Is Class IV laser therapy the same as cold laser therapy?',
+        answer:
+          'The terms are not interchangeable. Cold laser usually refers to low-level, non-heating laser therapy. Class IV identifies a higher laser hazard category; some therapeutic Class IV treatments can produce warmth. Ask about the equipment and settings being used rather than assuming every laser treatment works or feels the same.',
+      },
+      {
+        question: 'What might I feel during laser therapy?',
+        answer:
+          'Sensation depends on the equipment, settings, and treatment area. Warmth may occur; tell the treating clinician immediately if you feel uncomfortable heat or pain. Protective eyewear is important even when the laser light is not visible.',
+      },
+      {
+        question: 'Is laser therapy the same as shockwave therapy?',
+        answer:
+          'No. Laser therapy uses light energy, while shockwave therapy uses acoustic pulses. BioSpine offers both, and Dr. Jordan can explain whether either is appropriate for the problem found during your examination.',
+      },
+      {
+        question: 'How many sessions will I need, and what does it cost?',
+        answer:
+          'There is no single schedule or price that applies to every treatment plan. Contact BioSpine for current fees and appointment details. Dr. Jordan can discuss a starting plan after the examination and reassess your response before recommending further care. Confirm insurance coverage separately.',
+      },
+      {
+        question: 'Can I request laser therapy at the Lake City office?',
+        answer:
+          'Yes. Select Class IV laser therapy on the appointment request form or call 843-713-0669. Visits take place at 214 John St, Lake City, SC 29560. The office will confirm scheduling; an examination determines whether treatment is appropriate.',
+      },
+    ],
+  },
+  {
     slug: 'chiropractic-adjustments',
     name: 'Chiropractic Adjustments',
     eyebrow: 'Chiropractic care',

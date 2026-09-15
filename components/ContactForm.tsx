@@ -101,6 +101,7 @@ export function ContactForm({ accessKey }: { accessKey: string }) {
           <option>School or sports physical question</option>
           <option>Back or neck pain</option>
           <option>Shockwave therapy</option>
+          <option>Class IV laser therapy</option>
           <option>Headaches or migraines</option>
           <option>Sports injury</option>
           <option>Auto accident injury</option>

@@ -118,6 +118,13 @@ export const siteConfig = {
       href: '/services/shockwave-therapy',
     },
     {
+      slug: 'class-iv-laser-therapy',
+      name: 'Class IV Laser Therapy',
+      summary:
+        'Non-invasive laser treatment considered for selected muscle and joint symptoms after an examination, with progress reassessed during care.',
+      href: '/services/class-iv-laser-therapy',
+    },
+    {
       slug: 'back-and-neck-pain',
       name: 'Back & Neck Pain Treatment',
       summary:

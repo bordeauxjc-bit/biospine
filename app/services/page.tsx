@@ -11,7 +11,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = buildMetadata({
   title: 'Chiropractic Services',
   description:
-    'Chiropractic care, shockwave therapy, injury treatment, and DOT physicals from an FMCSA-listed certified Medical Examiner in Lake City, SC.',
+    'Explore chiropractic care, Class IV laser therapy, shockwave therapy, injury care, and DOT physicals at BioSpine in Lake City, SC.',
   path: '/services',
 });
 
@@ -19,6 +19,21 @@ const serviceDetails: Record<
   string,
   { benefits: string[]; commonFor: string[]; commonForHeading?: string }
 > = {
+  'class-iv-laser-therapy': {
+    benefits: [
+      'Suitability assessed before treatment',
+      'Non-invasive application of laser light',
+      'Laser-specific eye protection and safety precautions',
+      'Progress tracked through comfort and everyday movement',
+    ],
+    commonForHeading: 'Questions to discuss at your visit',
+    commonFor: [
+      'Muscle and joint discomfort',
+      'Pain with everyday movement',
+      'Laser alongside chiropractic care',
+      'Treatment options and expected results',
+    ],
+  },
   'chiropractic-adjustments': {
     benefits: [
       'Care for restricted or uncomfortable joint motion',
@@ -125,7 +140,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="What Dr. Jordan does at the Lake City office"
-        description="BioSpine provides chiropractic examinations and treatment, focused shockwave therapy, injury care, and FMCSA DOT physicals at 214 John Street."
+        description="BioSpine provides chiropractic care, Class IV laser therapy, focused shockwave therapy, injury care, and FMCSA DOT physicals at 214 John Street."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },

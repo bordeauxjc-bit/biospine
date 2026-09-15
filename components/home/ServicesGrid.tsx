@@ -13,7 +13,7 @@ export function ServicesGrid() {
       <SectionHeading
         eyebrow="Services"
         title="Chiropractic care, injury treatment, and DOT exams in Lake City"
-        description="Dr. Jordan treats common back, neck, joint, and tendon problems and performs FMCSA physicals for commercial drivers—all at the John Street office."
+        description="Explore chiropractic care, Class IV laser therapy, and shockwave therapy for appropriate muscle and joint problems, plus FMCSA physicals for commercial drivers—all at the John Street office."
       />
 
       <ul role="list" className="grid sm:grid-cols-2 gap-x-12 lg:gap-x-20">

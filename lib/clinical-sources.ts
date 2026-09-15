@@ -47,6 +47,18 @@ const workstation: ClinicalSource = {
 };
 
 export const serviceClinicalSources: Record<string, ClinicalSource[]> = {
+  'class-iv-laser-therapy': [
+    {
+      name: 'Frequently Asked Questions About Lasers: Hazard Classes and Safety',
+      publisher: 'U.S. Food and Drug Administration',
+      url: 'https://www.fda.gov/radiation-emitting-products/laser-products-and-instruments/frequently-asked-questions-about-lasers',
+    },
+    {
+      name: 'High-Intensity Laser Therapy for Musculoskeletal Disorders: A Systematic Review and Meta-Analysis of Randomized Clinical Trials',
+      publisher: 'Journal of Clinical Medicine (2023), indexed in PubMed',
+      url: 'https://pubmed.ncbi.nlm.nih.gov/36836014/',
+    },
+  ],
   'chiropractic-adjustments': [spinalManipulation],
   'headache-migraine-care': [headache, spinalManipulation],
   'sports-injury-care': [concussion, spinalManipulation],

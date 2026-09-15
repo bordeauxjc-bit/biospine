@@ -34,6 +34,8 @@
  * started without CSP_MODE still served the enforcing header from a build made
  * with it.
  */
+const cspEnforced = process.env.CSP_MODE === 'enforce';
+
 const cspDirectives = [
   "default-src 'self'",
   "base-uri 'self'",
@@ -56,13 +58,14 @@ const cspDirectives = [
   "media-src 'self'",
   "worker-src 'self' blob:",
   "manifest-src 'self'",
-  'upgrade-insecure-requests',
+  // Spec says this directive is ignored in a report-only policy, and Chrome
+  // logs an error for it on every page load. Only emit it when enforcing.
+  ...(cspEnforced ? ['upgrade-insecure-requests'] : []),
 ].join('; ');
 
-const cspHeaderName =
-  process.env.CSP_MODE === 'enforce'
-    ? 'Content-Security-Policy'
-    : 'Content-Security-Policy-Report-Only';
+const cspHeaderName = cspEnforced
+  ? 'Content-Security-Policy'
+  : 'Content-Security-Policy-Report-Only';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

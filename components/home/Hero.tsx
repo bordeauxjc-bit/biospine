@@ -81,7 +81,7 @@ export function Hero() {
             Chiropractic care in Lake City, SC
           </span>
           <span className="sr-only">. </span>
-          <span className="block">You’ve put&nbsp;up&nbsp;with it long&nbsp;enough.</span>
+          <span className="block">You’ve put&nbsp;up&nbsp;with it long&nbsp;enough.</span>{' '}
           <span className="block italic text-brand-green-dark">Move differently.</span>
         </h1>
 

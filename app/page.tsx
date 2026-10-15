@@ -46,7 +46,7 @@ const faqs = [
   {
     question: 'How long until I feel better?',
     answer:
-      'There is no honest visit count before the examination. Dr. Jordan sets a starting plan based on the findings and tracks changes in pain, motion, sleep, work, or other affected activity. If those measures are not changing, the plan should change too.',
+      'Recovery time depends on the condition, your health history, and your response to care. Dr. Jordan explains a starting plan and tracks changes in comfort, movement, and daily activity at follow-up visits.',
   },
   {
     question: 'Is chiropractic care safe?',
@@ -75,8 +75,8 @@ export default function HomePage() {
               Things people ask before booking
             </h2>
             <p className="mt-5 text-slate-600 leading-relaxed">
-              Call the office for questions about timing, insurance, records,
-              or whether your problem belongs on Dr. Jordan&rsquo;s schedule.
+              Get help with scheduling, insurance, records, and preparing for
+              your first appointment.
             </p>
             <div className="mt-8">
               <LinkButton href="/contact" variant="outline">

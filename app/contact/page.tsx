@@ -3,6 +3,7 @@ import { AlertTriangle, Mail, Phone } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { ContactForm } from '@/components/ContactForm';
+import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
@@ -15,7 +16,7 @@ import {
 
 export const metadata: Metadata = buildMetadata({
   title: 'Contact & Location',
-  description: `Contact BioSpine in Lake City, SC. Call ${siteConfig.phone}, email the office, get directions, or request an appointment online when available.`,
+  description: `Book with Dr. Chucky Jordan on Zocdoc, call ${siteConfig.phone}, or contact BioSpine at 214 John Street in Lake City, SC.`,
   path: '/contact',
 });
 
@@ -28,12 +29,9 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Call or message the John Street office"
-        description={
-          formEnabled
-            ? `Call ${siteConfig.phone} during office hours or send a short appointment request. The form is for scheduling, not private medical details or emergencies.`
-            : `Call ${siteConfig.phone} during office hours or email the Lake City office. Online appointment requests are being connected.`
-        }
+        title="Book a visit at BioSpine in Lake City"
+        description={`Choose an appointment time on Zocdoc or call ${siteConfig.phone}. New and returning patients are welcome at 214 John Street.`}
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Contact', href: '/contact' },
@@ -43,14 +41,31 @@ export default function ContactPage() {
       <Section tone="white" id="appointment-form">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
           <div className="lg:col-span-3">
+            <div className="mb-10 rounded-sm border border-brand-green/25 bg-brand-cream p-6 sm:p-8">
+              <h2 className="!mt-0 !text-3xl">Choose your appointment time</h2>
+              <p className="mt-3 text-base leading-relaxed text-slate-700">
+                Open Dr. Jordan&rsquo;s Zocdoc schedule, choose your visit reason,
+                and enter your insurance or self-pay preference. Select the
+                patient type that fits your visit.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <BookingButton placement="contact">Book a new patient visit</BookingButton>
+                <BookingButton placement="contact" patientType="existing" variant="outline">Book a return visit</BookingButton>
+              </div>
+              <p className="mt-4 text-sm text-slate-600">
+                Scheduling opens on Zocdoc. Call the office if you need help
+                finding a time or confirming coverage.
+              </p>
+            </div>
             <h2 className="!text-3xl !mt-0">
-              {formEnabled ? 'Request an appointment' : 'Contact the office directly'}
+              {formEnabled ? 'Prefer the office to contact you?' : 'Contact the office directly'}
             </h2>
             {formEnabled ? (
               <>
                 <p className="mt-3 text-slate-600">
-                  Share your contact details and preferred reason for visiting.
-                  We&rsquo;ll follow up by phone or email during office hours.
+                  Send an appointment request below. The team will follow up
+                  during office hours to arrange a time. A form request is
+                  confirmed when the office contacts you.
                 </p>
                 <div className="mt-8">
                   <ContactForm accessKey={accessKey} />
@@ -59,7 +74,7 @@ export default function ContactPage() {
             ) : (
               <div className="mt-6 border-l-2 border-brand-green bg-brand-cream p-6 sm:p-7">
                 <p className="font-medium text-brand-ink">
-                  Online appointment requests are being connected.
+                  Need help with scheduling?
                 </p>
                 <p className="mt-2 max-w-xl text-slate-600">
                   Please call or email BioSpine for scheduling. Do not send

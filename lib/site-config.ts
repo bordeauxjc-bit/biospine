@@ -87,12 +87,16 @@ export const siteConfig = {
   reviews: {
     google: 'https://www.google.com/maps?cid=3657180964230355155',
     zocdoc:
-      'https://www.zocdoc.com/practice/biospine-health-and-wellness-75878',
+      'https://www.zocdoc.com/doctor/chucky-jordan-dc-371117',
   },
 
   // Public scheduling profile. Keep this separate from social profiles so it
   // can be used consistently by every appointment CTA.
-  appointmentUrl: '/contact#appointment-form',
+  appointmentUrl:
+    'https://www.zocdoc.com/doctor/chucky-jordan-dc-371117?LocIdent=434015&isNewPatient=true',
+  returningPatientAppointmentUrl:
+    'https://www.zocdoc.com/doctor/chucky-jordan-dc-371117?LocIdent=434015&isNewPatient=false',
+  appointmentRequestUrl: '/contact#appointment-form',
 
   // Services offered, used for Services page and MedicalProcedure schema
   services: [

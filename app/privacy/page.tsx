@@ -28,7 +28,7 @@ export default function PrivacyPage() {
 
       <Section tone="white">
         <div className="prose-biospine max-w-3xl">
-          <p className="label-muted">Last updated August 30, 2026</p>
+          <p className="label-muted">Last updated October 15, 2026</p>
 
           <h2>Information you choose to send</h2>
           <p>
@@ -91,6 +91,14 @@ export default function PrivacyPage() {
           </ul>
 
           <h2>Appointment requests and analytics</h2>
+          <p>
+            Booking buttons open Dr. Jordan&rsquo;s Zocdoc profile. Zocdoc handles
+            the scheduling information you enter there under its own privacy
+            practices. This website records a booking-button click and its
+            general position, such as the header or footer, in Google Analytics.
+            That event does not include form entries, a visit reason, patient
+            details, or confirmation that an appointment was completed.
+          </p>
           <p>
             Analytics tools are not configured to receive the contents of the
             appointment form. The form sends the information you enter directly

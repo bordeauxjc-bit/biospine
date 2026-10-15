@@ -16,6 +16,7 @@ import {
   serviceSchema,
 } from '@/components/seo/schemas';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { FaqList } from '@/components/ui/FaqList';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
@@ -155,7 +156,7 @@ const faqs = [
   {
     question: 'Can I book a DOT physical at BioSpine?',
     answer:
-      'Yes. Request an appointment online or call the Lake City office. Tell the team that you need a DOT physical and mention any deadline or medical documents you may need to bring.',
+      'Yes. Open Dr. Jordan’s Zocdoc schedule and choose Department of Transportation (DOT) Physical Exam as the visit reason, or call the Lake City office. Mention your certification deadline when speaking with the team.',
   },
 ];
 
@@ -170,8 +171,9 @@ export default function DotPhysicalsPage() {
     <>
       <PageHeader
         eyebrow="Commercial driver exams"
-        title="A DOT physical near Lake City, SC, with a certified Medical Examiner"
+        title="DOT physicals in Lake City, SC"
         description="Complete your FMCSA physical qualification exam at BioSpine’s John Street office with Dr. Chucky Jordan, a certified Medical Examiner listed on the National Registry."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -196,9 +198,9 @@ export default function DotPhysicalsPage() {
               County, and communities across the Pee Dee region.
             </p>
             <p>
-              If you searched for a &ldquo;DOT physical near me,&rdquo; confirm the
-              examiner in the federal registry before scheduling. BioSpine&rsquo;s
-              only exam location is {siteConfig.address.full}.
+              Book your exam at {siteConfig.address.full}. You can verify
+              Dr. Jordan&rsquo;s certification in the federal registry and use
+              the paperwork links below to prepare for your visit.
             </p>
             <a
               href={officialLinks.exam}
@@ -490,9 +492,9 @@ export default function DotPhysicalsPage() {
             deadline when you request the appointment.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <LinkButton href={siteConfig.appointmentUrl} size="lg">
-              <CalendarDays className="h-4 w-4" aria-hidden /> Request an appointment
-            </LinkButton>
+            <BookingButton placement="service" size="lg">
+              <CalendarDays className="h-4 w-4" aria-hidden /> Book on Zocdoc
+            </BookingButton>
             <LinkButton
               href={`tel:${siteConfig.phoneE164}`}
               variant="outline"

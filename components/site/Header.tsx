@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { CalendarDays, Menu, X, Phone } from 'lucide-react';
 import { Logo } from './Logo';
+import { BookingButton } from '@/components/BookingButton';
 import { siteConfig } from '@/lib/site-config';
 
 export function Header() {
@@ -60,11 +61,11 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 w-full border-b transition-colors duration-200 ${
         isScrolled
-          ? 'border-brand-ink/10 bg-brand-cream/92 backdrop-blur-md'
+          ? 'border-brand-ink/10 bg-brand-cream/95 lg:backdrop-blur-md'
           : 'border-transparent bg-brand-cream'
       }`}
     >
-      <div className="container flex h-[4.5rem] sm:h-20 items-center justify-between gap-6">
+      <div className="container flex h-[4.5rem] sm:h-20 items-center justify-between gap-2 sm:gap-6">
         <Link
           href="/"
           className="flex items-center focus-visible:rounded"
@@ -104,22 +105,16 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2.5">
-          <Link
-            href={siteConfig.appointmentUrl}
-            className="hidden items-center gap-2 rounded bg-brand-green px-5 py-2.5 text-[0.9375rem] font-medium text-white transition-colors hover:bg-brand-green-dark focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 sm:inline-flex"
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2.5">
+          <BookingButton
+            placement="header"
+            className="!min-h-11 !px-3 !py-2 sm:!px-5"
+            aria-label="Book an appointment on Zocdoc (opens in a new tab)"
           >
-            <CalendarDays className="h-4 w-4" aria-hidden />
-            <span>Request appointment</span>
-          </Link>
-
-          <a
-            href={`tel:${siteConfig.phoneE164}`}
-            className="inline-flex h-11 w-11 items-center justify-center rounded bg-brand-green text-white sm:hidden"
-            aria-label={`Call ${siteConfig.phone}`}
-          >
-            <Phone className="h-5 w-5" aria-hidden />
-          </a>
+            <CalendarDays className="hidden h-4 w-4 sm:block" aria-hidden />
+            <span className="sm:hidden">Book</span>
+            <span className="hidden sm:inline">Book on Zocdoc</span>
+          </BookingButton>
 
           <button
             ref={menuButtonRef}
@@ -143,7 +138,7 @@ export function Header() {
       <div
         ref={mobileMenuRef}
         id="mobile-menu"
-        className={`fixed inset-x-0 top-[4.5rem] bottom-0 z-40 bg-brand-cream sm:top-20 lg:hidden ${
+        className={`fixed inset-x-0 top-[4.5rem] bottom-0 z-40 overflow-y-auto bg-brand-cream sm:top-20 lg:hidden ${
           isOpen
             ? 'block'
             : 'hidden'
@@ -165,14 +160,16 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href={siteConfig.appointmentUrl}
+          <BookingButton
+            placement="mobile-menu"
             tabIndex={isOpen ? undefined : -1}
-            className="mt-8 inline-flex items-center justify-center gap-2.5 rounded bg-brand-green px-6 py-4 font-medium text-white"
+            onClick={() => setIsOpen(false)}
+            className="mt-6"
+            size="lg"
           >
             <CalendarDays className="h-5 w-5" aria-hidden />
-            Request an appointment
-          </Link>
+            Book on Zocdoc
+          </BookingButton>
           <a
             href={`tel:${siteConfig.phoneE164}`}
             tabIndex={isOpen ? undefined : -1}

@@ -3,6 +3,7 @@ import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
@@ -139,8 +140,9 @@ export default function ServicesPage() {
     <>
       <PageHeader
         eyebrow="Services"
-        title="What Dr. Jordan does at the Lake City office"
+        title="Chiropractic services in Lake City, SC"
         description="BioSpine provides chiropractic care, Class IV laser therapy, focused shockwave therapy, injury care, and FMCSA DOT physicals at 214 John Street."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -196,13 +198,13 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                     <div className="mt-6">
-                      <LinkButton
-                        href="/contact#appointment-form"
+                      <BookingButton
+                        placement="service"
                         variant="outline"
                         size="sm"
                       >
-                        Request an appointment
-                      </LinkButton>
+                        Book on Zocdoc
+                      </BookingButton>
                     </div>
                   </div>
                 </div>
@@ -214,19 +216,13 @@ export default function ServicesPage() {
 
       <Section tone="ink">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="!text-white">Not sure whether this belongs in a chiropractic office?</h2>
+          <h2 className="!text-white">Find the right appointment for you</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Call and describe the problem. The office can tell you whether to
-            schedule with Dr. Jordan or contact another type of provider first.
+            Choose your visit reason and view appointment times on Zocdoc.
+            Call the office if you would like help deciding where to start.
           </p>
           <div className="mt-8">
-            <LinkButton
-              href="/contact#appointment-form"
-              variant="primary"
-              size="lg"
-            >
-              Send a request
-            </LinkButton>
+            <BookingButton placement="service" size="lg" />
           </div>
         </div>
       </Section>

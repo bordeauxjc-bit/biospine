@@ -6,6 +6,7 @@ import { AlertTriangle, CalendarDays, CheckCircle2, Phone } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { FaqList } from '@/components/ui/FaqList';
 import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -62,6 +63,7 @@ export default async function ServiceGuidePage({ params }: Props) {
         eyebrow={service.eyebrow}
         title={service.headline}
         description={service.metaDescription}
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -127,7 +129,7 @@ export default async function ServiceGuidePage({ params }: Props) {
         <SectionHeading
           eyebrow="Your visit"
           title="How the visit is handled"
-          description="The first exam decides whether treatment begins here, needs to wait for more information, or should happen somewhere else."
+          description="Discuss your symptoms, review the examination findings, and agree on the next steps with Dr. Jordan."
         />
         <ol className="grid gap-8 lg:grid-cols-3">
           {service.visitSteps.map((step, index) => (
@@ -230,15 +232,15 @@ export default async function ServiceGuidePage({ params }: Props) {
 
       <Section tone="ink">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="!text-white">Have Dr. Jordan examine the problem</h2>
+          <h2 className="!text-white">Book a visit with Dr. Jordan</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Appointments are at {siteConfig.address.full}. Call first if you want
-            to describe the problem before scheduling.
+            View appointment times on Zocdoc for {siteConfig.address.full}.
+            Call if you need help choosing a visit reason.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <LinkButton href={siteConfig.appointmentUrl} size="lg">
-              <CalendarDays className="h-4 w-4" aria-hidden /> Request an appointment
-            </LinkButton>
+            <BookingButton placement="service" size="lg">
+              <CalendarDays className="h-4 w-4" aria-hidden /> Book on Zocdoc
+            </BookingButton>
             <LinkButton
               href={`tel:${siteConfig.phoneE164}`}
               variant="outline"

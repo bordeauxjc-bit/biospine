@@ -148,7 +148,7 @@ export function ContactForm({ accessKey }: { accessKey: string }) {
         ) : (
           <Send className="h-4 w-4" aria-hidden />
         )}
-        {submitState === 'submitting' ? 'Sending…' : 'Request an appointment'}
+        {submitState === 'submitting' ? 'Sending…' : 'Send appointment request'}
       </button>
     </form>
   );

@@ -26,6 +26,7 @@ export default function ReviewsPage() {
         eyebrow="Public feedback"
         title="What people have said about BioSpine"
         description="The page includes all 12 ratings from BioSpine’s Google listing and separate excerpts that Zocdoc identifies as verified patient reviews."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Reviews', href: '/reviews' },

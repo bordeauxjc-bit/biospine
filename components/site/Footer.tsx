@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Facebook } from 'lucide-react';
 import { Logo } from './Logo';
+import { BookingButton } from '@/components/BookingButton';
 import { siteConfig, directionsUrl, formatHours } from '@/lib/site-config';
 
 export function Footer() {
@@ -24,6 +25,9 @@ export function Footer() {
               Chiropractic care and DOT physicals for Lake City, Florence
               County, and South Carolina&rsquo;s Pee Dee region.
             </p>
+            <div className="mt-5">
+              <BookingButton placement="footer" className="!bg-white !text-brand-green-dark hover:!bg-brand-cream" />
+            </div>
             <a
               href={siteConfig.social.facebook}
               target="_blank"

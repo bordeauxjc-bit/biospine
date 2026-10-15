@@ -9,6 +9,7 @@ import {
   medicalConditionSchema,
 } from '@/components/seo/schemas';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { FaqList } from '@/components/ui/FaqList';
 import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { PageHeader } from '@/components/ui/PageHeader';
@@ -61,6 +62,7 @@ export default async function ConditionGuidePage({ params }: Props) {
         eyebrow="Condition guide"
         title={`${condition.name} in Lake City, SC`}
         description={condition.summary}
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Conditions', href: '/conditions' },
@@ -190,15 +192,15 @@ export default async function ConditionGuidePage({ params }: Props) {
 
       <Section tone="sand">
         <div className="mx-auto max-w-3xl text-center">
-          <h2>Want Dr. Jordan to examine it?</h2>
+          <h2>Book an evaluation with Dr. Jordan</h2>
           <p className="mt-4 text-lg text-slate-600">
-            BioSpine sees patients at {siteConfig.address.full}. Call if you want
-            to describe the symptoms before requesting an appointment.
+            BioSpine sees patients at {siteConfig.address.full}. View appointment
+            times on Zocdoc or call for help choosing a visit.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <LinkButton href={siteConfig.appointmentUrl} size="lg">
-              <CalendarDays className="h-4 w-4" aria-hidden /> Request an appointment
-            </LinkButton>
+            <BookingButton placement="condition" size="lg">
+              <CalendarDays className="h-4 w-4" aria-hidden /> Book on Zocdoc
+            </BookingButton>
             <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg">
               <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
             </LinkButton>

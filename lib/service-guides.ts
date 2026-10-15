@@ -110,7 +110,7 @@ export const serviceGuides: ServiceGuide[] = [
     seoTitle: 'Chiropractic Adjustments in Lake City, SC',
     metaDescription:
       'Hands-on and lower-force chiropractic adjustments selected after an examination by Dr. Chucky S. Jordan at BioSpine in Lake City, SC.',
-    headline: 'Chiropractic adjustments selected for you—not a routine applied to everyone',
+    headline: 'Chiropractic adjustments in Lake City, SC',
     introduction: [
       'A chiropractic adjustment is a hands-on technique intended to improve motion in a joint that is not moving comfortably or normally. Technique, position, and force should vary with the patient, the examination findings, and personal preference.',
       'At BioSpine, Dr. Jordan first listens to what is limiting you, performs an examination, and explains whether an adjustment is a reasonable part of care. Treatment is not performed simply because you booked a chiropractic visit.',
@@ -189,7 +189,7 @@ export const serviceGuides: ServiceGuide[] = [
     headline: 'A chiropractor for neck pain and headaches in Lake City, SC',
     introduction: [
       'People often search for a chiropractor when neck pain and headaches occur together. Some recurring headaches are influenced by the joints and muscles of the neck, sustained positions, or movement. Migraine is a neurological disorder and may require care from a primary-care clinician or specialist, even when neck symptoms occur at the same time.',
-      'BioSpine evaluates musculoskeletal contributors, checks for patterns that need medical attention, and explains where conservative chiropractic care may fit. The goal is appropriate co-management—not a claim that every headache has a spinal cause.',
+      'BioSpine examines the joints and muscles that may be contributing to your symptoms. Dr. Jordan explains whether chiropractic care may help and coordinates with medical care when needed.',
     ],
     commonReasons: [
       'Headache beginning near the base of the skull',

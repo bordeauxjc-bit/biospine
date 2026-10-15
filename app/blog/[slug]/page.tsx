@@ -5,6 +5,7 @@ import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Section } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import {
   articleSchema,
@@ -135,6 +136,12 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                 </Link>
               </span>
             </div>
+            <div className="mt-6">
+              <BookingButton placement="blog" />
+              <p className="mt-3 text-sm text-slate-600">
+                View appointment times with Dr. Jordan at the Lake City office.
+              </p>
+            </div>
           </div>
         </header>
 
@@ -150,26 +157,20 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-green-light mb-3">
             Still have questions?
           </p>
-          <h2 className="!text-white">An article cannot examine the problem</h2>
+          <h2 className="!text-white">Ready to discuss your symptoms?</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Call the Lake City office if you want Dr. Jordan to review your
-            history and findings in person.
+            Book a visit with Dr. Jordan at 214 John Street in Lake City,
+            or call with questions about the right appointment.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <BookingButton placement="blog" size="lg" />
             <LinkButton
               href={`tel:${siteConfig.phoneE164}`}
-              variant="primary"
-              size="lg"
-            >
-              Call {siteConfig.phone}
-            </LinkButton>
-            <LinkButton
-              href="/contact"
               variant="outline"
               size="lg"
               className="!border-white !text-white hover:!bg-white hover:!text-brand-ink"
             >
-              Contact us
+              Call {siteConfig.phone}
             </LinkButton>
           </div>
         </div>

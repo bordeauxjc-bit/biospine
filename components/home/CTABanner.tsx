@@ -1,12 +1,13 @@
 import { CalendarDays, Phone } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { siteConfig } from '@/lib/site-config';
 
 export function CTABanner() {
   return (
     <section
       className="bg-brand-green-dark text-white"
-      aria-label="Request an appointment"
+      aria-label="Book an appointment"
     >
       <div className="container py-16 sm:py-20">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
@@ -15,24 +16,24 @@ export function CTABanner() {
               Lake City appointments
             </p>
             <h2 className="mt-5 !text-white text-balance">
-              Tell the office what is bothering you.
+              Choose a time to see Dr. Jordan.
             </h2>
             <p className="mt-5 text-lg text-white/80 leading-relaxed">
-              Include the body area, how long it has been going on, and the days
-              that work for you. If you need a DOT physical, include your
-              certification deadline.
+              View appointment times on Zocdoc for the Lake City office.
+              Select your visit reason and patient type, or call if you need
+              help choosing an appointment.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-            <LinkButton
-              href={siteConfig.appointmentUrl}
+            <BookingButton
+              placement="home-cta"
               size="lg"
               className="!bg-white !text-brand-green-dark hover:!bg-brand-cream focus-visible:!ring-white"
             >
               <CalendarDays className="h-[1.05rem] w-[1.05rem]" aria-hidden />
-              Request an appointment
-            </LinkButton>
+              Book on Zocdoc
+            </BookingButton>
             <LinkButton
               href={`tel:${siteConfig.phoneE164}`}
               variant="outline"

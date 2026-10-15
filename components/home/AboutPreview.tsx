@@ -12,7 +12,7 @@ export function AboutPreview() {
     },
     {
       title: 'The exam comes first',
-      text: 'An appointment does not automatically mean an adjustment. The findings decide what happens next.',
+      text: 'Your symptoms, health history, and examination findings guide the treatment plan.',
     },
     {
       title: 'Referral when it is needed',

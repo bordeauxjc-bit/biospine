@@ -30,7 +30,7 @@ export function ServicesGrid() {
                   aria-hidden
                 />
               </h3>
-              <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-slate-600">
+              <p className="mt-2.5 text-base leading-relaxed text-slate-600">
                 {service.summary}
               </p>
             </Link>

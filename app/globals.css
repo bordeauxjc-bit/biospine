@@ -62,15 +62,15 @@
 @layer utilities {
   /* Small-caps section label. Used instead of colored "eyebrow" pills. */
   .label {
-    @apply text-[0.6875rem] font-semibold uppercase tracking-label text-brand-green-dark;
+    @apply text-xs font-semibold uppercase tracking-label text-brand-green-dark;
   }
 
   .label-muted {
-    @apply text-[0.6875rem] font-semibold uppercase tracking-label text-slate-600;
+    @apply text-xs font-semibold uppercase tracking-label text-slate-600;
   }
 
   .label-light {
-    @apply text-[0.6875rem] font-semibold uppercase tracking-label text-brand-leaf;
+    @apply text-xs font-semibold uppercase tracking-label text-brand-leaf;
   }
 
   /* Barely-there paper grain. Replaces the dotted "speckle" pattern. */

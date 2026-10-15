@@ -8,7 +8,7 @@ export function TrustBar() {
   const items = [
     {
       label: 'New patients',
-      text: 'Ask the office about current same-week openings.',
+      text: 'View appointment times and book on Zocdoc.',
     },
     {
       label: 'Before your visit',
@@ -34,7 +34,7 @@ export function TrustBar() {
               className="border-t border-white/15 pt-5 first:border-t-0 first:pt-0 sm:border-t-0 sm:pt-0 lg:border-l lg:border-white/15 lg:pl-10 lg:first:border-l-0 lg:first:pl-0"
             >
               <p className="label-light">{item.label}</p>
-              <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-slate-300">
+              <p className="mt-2.5 text-base leading-relaxed text-slate-300">
                 {item.text}
               </p>
             </li>

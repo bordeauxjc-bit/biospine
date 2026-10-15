@@ -4,6 +4,7 @@ import { CalendarDays, CheckCircle2, Phone } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { FaqList } from '@/components/ui/FaqList';
 import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -85,6 +86,7 @@ export default function BackNeckPainPage() {
         eyebrow="Back & neck pain"
         title="Back pain chiropractor serving Lake City and the Pee Dee"
         description="A careful exam, a clear explanation, and conservative care planned around how back or neck pain affects work, driving, sleep, and everyday movement."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -175,9 +177,9 @@ export default function BackNeckPainPage() {
           <h2 className="!text-white">Take the next step</h2>
           <p className="mt-4 text-lg text-slate-300">Visit BioSpine at {siteConfig.address.full}, or contact the office to discuss an appointment.</p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <LinkButton href={siteConfig.appointmentUrl} size="lg">
-              <CalendarDays className="h-4 w-4" aria-hidden /> Request an appointment
-            </LinkButton>
+            <BookingButton placement="service" size="lg">
+              <CalendarDays className="h-4 w-4" aria-hidden /> Book on Zocdoc
+            </BookingButton>
             <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg" className="!border-white/40 !text-white hover:!bg-white/10">
               <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
             </LinkButton>

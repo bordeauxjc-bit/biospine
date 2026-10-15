@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { SectionLabel } from '@/components/ui/SectionLabel';
-import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { FaqList } from '@/components/ui/FaqList';
 import { ClinicalSources } from '@/components/ui/ClinicalSources';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -25,8 +25,8 @@ export const metadata: Metadata = buildMetadata({
 
 const steps = [
   {
-    title: 'We find the exact spot',
-    text: 'A focused unit concentrates its energy at a set depth rather than spreading it across the surface, so where the head sits genuinely matters. Dr. Jordan examines the area and presses around it to find the tissue actually generating your pain before anything is switched on.',
+    title: 'Examine the painful area',
+    text: 'Dr. Jordan reviews your symptoms and examines the area to decide whether shockwave therapy is appropriate. The examination helps guide where treatment is applied.',
   },
   {
     title: 'Gel goes on',
@@ -37,8 +37,8 @@ const steps = [
     text: 'The head is worked over the area for roughly ten to fifteen minutes. You will hear a rapid tapping and feel a deep thumping that builds. We adjust the intensity to what you can tolerate.',
   },
   {
-    title: 'You get up and walk out',
-    text: 'There is no recovery period and no bandage. We go over what to do and what to avoid for the next couple of days, and book the next session about a week out.',
+    title: 'Review your next steps',
+    text: 'Discuss activity, aftercare, and any follow-up visits with Dr. Jordan. Tell the office about soreness or changes in symptoms so the plan can be reassessed.',
   },
 ];
 
@@ -135,8 +135,9 @@ export default function ShockwaveTherapyPage() {
     <>
       <PageHeader
         eyebrow="Shockwave therapy"
-        title="For the injury that has not budged in months"
+        title="Focused shockwave therapy in Lake City, SC"
         description="A non-surgical option for tendon and soft-tissue pain that has outlasted rest, ice, and time. Available at our Lake City office."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
@@ -259,11 +260,11 @@ export default function ShockwaveTherapyPage() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
             <SectionLabel className="mb-5">Screening</SectionLabel>
-            <h2 className="text-balance">When we will not use it</h2>
+            <h2 className="text-balance">Check whether shockwave is right for you</h2>
             <p className="mt-5 text-slate-600 leading-relaxed">
-              Shockwave is safe for most people, but not everyone. We check for
-              all of this before booking you, and we would rather turn a session
-              down than push one that is not appropriate.
+              Tell Dr. Jordan about your medications, health conditions, and
+              recent treatments. These details help determine whether shockwave
+              therapy is appropriate and which precautions are needed.
             </p>
           </div>
           <ul role="list" className="lg:col-span-8">
@@ -285,9 +286,7 @@ export default function ShockwaveTherapyPage() {
             <SectionLabel className="mb-5">Questions</SectionLabel>
             <h2 className="text-balance">Before you book</h2>
             <div className="mt-8">
-              <LinkButton href="/contact#appointment-form" variant="outline">
-                Request an appointment
-              </LinkButton>
+              <BookingButton placement="service" variant="outline" />
             </div>
           </div>
           <div className="lg:col-span-8">

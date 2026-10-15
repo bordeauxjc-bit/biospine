@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { CalendarDays, Phone } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { siteConfig } from '@/lib/site-config';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 
@@ -22,31 +23,29 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="container relative pt-14 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-28">
+      <div className="container relative pt-10 pb-14 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7">
-            <SectionLabel>Chiropractic care · Lake City, South Carolina</SectionLabel>
+            <SectionLabel>BioSpine Health &amp; Wellness</SectionLabel>
 
             <h1 id="hero-heading" className="mt-7 text-balance">
-              Hands-on care for backs, necks, and the days they&rsquo;re
-              ruining.
+              Chiropractic care in Lake City, SC
             </h1>
 
             <p className="mt-7 max-w-xl text-lg sm:text-xl text-slate-700 text-pretty leading-relaxed">
-              {siteConfig.doctor.name} has practiced in Lake City for over a
-              decade. You&rsquo;ll get a real exam, a straight explanation of
-              what&rsquo;s wrong, and a plan you can actually follow.
+              Get an exam and a clear care plan with {siteConfig.doctor.name}.
+              Chiropractic visits and DOT physicals at 214 John Street.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
-              <LinkButton
-                href={siteConfig.appointmentUrl}
+              <BookingButton
+                placement="hero"
                 variant="primary"
                 size="lg"
               >
                 <CalendarDays className="h-[1.05rem] w-[1.05rem]" aria-hidden />
-                Request an appointment
-              </LinkButton>
+                Book on Zocdoc
+              </BookingButton>
               <LinkButton
                 href={`tel:${siteConfig.phoneE164}`}
                 variant="outline"
@@ -58,9 +57,9 @@ export function Hero() {
               </LinkButton>
             </div>
 
-            <p className="mt-8 text-sm text-slate-500 leading-relaxed">
-              New patients are welcome. Ask about same-week openings and call
-              before your visit to confirm any coverage requirements.
+            <p className="mt-5 text-base text-slate-600 leading-relaxed">
+              New and returning patients welcome. View appointment times and
+              choose your visit reason on Zocdoc. Call with insurance questions.
             </p>
           </div>
 

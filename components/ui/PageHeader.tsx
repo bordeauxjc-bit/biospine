@@ -1,5 +1,9 @@
 import Link from 'next/link';
+import { CalendarDays, Phone } from 'lucide-react';
+import { BookingButton } from '@/components/BookingButton';
+import { LinkButton } from '@/components/ui/Button';
 import { SectionLabel } from '@/components/ui/SectionLabel';
+import { siteConfig } from '@/lib/site-config';
 
 type Crumb = {
   label: string;
@@ -11,13 +15,14 @@ type Props = {
   title: string;
   description?: string;
   crumbs?: Crumb[];
+  booking?: boolean;
 };
 
 /**
  * Inner-page masthead. Light and typographic rather than a dark gradient
  * slab, so it reads as the top of a document instead of a hero banner.
  */
-export function PageHeader({ eyebrow, title, description, crumbs }: Props) {
+export function PageHeader({ eyebrow, title, description, crumbs, booking = false }: Props) {
   return (
     <section className="relative overflow-hidden border-b border-brand-ink/10 bg-brand-cream">
       <div
@@ -62,6 +67,21 @@ export function PageHeader({ eyebrow, title, description, crumbs }: Props) {
           <p className="mt-6 max-w-2xl text-lg sm:text-xl text-slate-600 text-pretty leading-relaxed">
             {description}
           </p>
+        )}
+        {booking && (
+          <div className="mt-7">
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <BookingButton placement="page-header" size="lg">
+                <CalendarDays className="h-4 w-4" aria-hidden /> Book on Zocdoc
+              </BookingButton>
+              <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg">
+                <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
+              </LinkButton>
+            </div>
+            <p className="mt-3 text-sm text-slate-600">
+              Choose your visit reason, patient type, and insurance on Zocdoc.
+            </p>
+          </div>
         )}
       </div>
     </section>

@@ -1,3 +1,5 @@
+import { siteConfig } from './site-config';
+
 export type PublishedReview = {
   text: string;
   author: string;
@@ -26,7 +28,7 @@ export const reviewSources = {
     name: 'Zocdoc',
     rating: '5.00',
     count: 6,
-    url: 'https://www.zocdoc.com/practice/biospine-health-and-wellness-75878',
+    url: siteConfig.reviews.zocdoc,
     verification:
       'Zocdoc says these reviews were submitted after patients interacted with the practice.',
   },

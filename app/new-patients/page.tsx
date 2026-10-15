@@ -10,6 +10,7 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { FaqList } from '@/components/ui/FaqList';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { faqSchema, breadcrumbSchema } from '@/components/seo/schemas';
 import { buildMetadata } from '@/lib/seo';
@@ -27,7 +28,7 @@ const steps = [
   {
     icon: FileText,
     title: 'Choose a time',
-    text: `Send a request or call ${siteConfig.phone}. Mention whether the visit is for pain, an injury, shockwave therapy, or a DOT physical.`,
+    text: `Choose a time on Zocdoc and select your visit reason, or call ${siteConfig.phone} for scheduling help.`,
   },
   {
     icon: ClipboardCheck,
@@ -84,7 +85,8 @@ export default function NewPatientsPage() {
       <PageHeader
         eyebrow="New patients"
         title="What happens at your first BioSpine visit"
-        description="Plan on 45–60 minutes for the history, examination, explanation, and—when the findings support it—first treatment."
+        description="Plan on 45–60 minutes to discuss your symptoms, have an exam, and review your care plan. Treatment may begin that day when appropriate."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'New Patients', href: '/new-patients' },
@@ -184,14 +186,12 @@ export default function NewPatientsPage() {
       <Section tone="ink">
         <div className="mx-auto max-w-2xl text-center">
           <SectionLabel className="!text-brand-green-light">First appointment</SectionLabel>
-          <h2 className="mt-5 !text-white">Request your first visit</h2>
+          <h2 className="mt-5 !text-white">Book your first visit</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Send the office a short request or call during office hours.
+            View new patient appointment times on Zocdoc, or call for help scheduling.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <LinkButton href={siteConfig.appointmentUrl} size="lg">
-              Request an appointment
-            </LinkButton>
+            <BookingButton placement="new-patients" size="lg" />
             <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg" className="!border-white/40 !text-white hover:!bg-white/10">
               <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
             </LinkButton>

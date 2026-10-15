@@ -42,8 +42,9 @@ export default function ConditionsPage() {
     <>
       <PageHeader
         eyebrow="Conditions"
-        title="Start with the symptom, not an online diagnosis"
-        description="These guides explain what Dr. Jordan checks for, which problems may respond to care at BioSpine, and which warning signs should not wait for a chiropractic appointment."
+        title="Care for back, neck, and joint pain"
+        description="Explore common reasons to visit BioSpine. Learn what Dr. Jordan examines, how care may help, and when symptoms need urgent medical attention."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Conditions', href: '/conditions' },
@@ -79,13 +80,13 @@ export default function ConditionsPage() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <SectionLabel className="mb-5">How to use these pages</SectionLabel>
-            <h2 className="text-balance">Use the guides to prepare, not self-diagnose</h2>
+            <h2 className="text-balance">Prepare for your first conversation</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-3 lg:col-span-8">
             {[
               [
                 'Compare the pattern',
-                'Use the examples to organize what you have noticed—not to diagnose yourself.',
+                'Note where symptoms occur, when they began, and which activities are affected.',
               ],
               [
                 'Know the warning signs',
@@ -109,9 +110,9 @@ export default function ConditionsPage() {
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-4">
             <SectionLabel className="mb-5">Questions</SectionLabel>
-            <h2 className="text-balance">Before you book the wrong kind of appointment</h2>
+            <h2 className="text-balance">Questions about your first visit?</h2>
             <div className="mt-8">
-              <LinkButton href="/contact#appointment-form" variant="outline">
+              <LinkButton href={siteConfig.appointmentRequestUrl} variant="outline">
                 Ask about an appointment
               </LinkButton>
             </div>

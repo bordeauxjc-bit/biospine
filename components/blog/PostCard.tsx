@@ -32,7 +32,7 @@ export function PostCard({ post }: { post: Post }) {
           {post.title}
         </h2>
 
-        <p className="mt-2.5 flex-1 text-[0.9375rem] leading-relaxed text-slate-600 line-clamp-3">
+        <p className="mt-2.5 flex-1 text-base leading-relaxed text-slate-600 line-clamp-3">
           {post.description}
         </p>
 

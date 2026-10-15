@@ -11,6 +11,7 @@ import {
   locationPageSchema,
 } from '@/components/seo/schemas';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { FaqList } from '@/components/ui/FaqList';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
@@ -111,9 +112,7 @@ export default function LakeCityLocationPage() {
               </div>
             </div>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <LinkButton href={siteConfig.appointmentUrl} size="lg">
-                Request an appointment
-              </LinkButton>
+              <BookingButton placement="location" size="lg" />
               <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg">
                 <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
               </LinkButton>
@@ -128,7 +127,7 @@ export default function LakeCityLocationPage() {
             <SectionHeading
               eyebrow="Local care"
               title="Searching for a chiropractor near Lake City?"
-              description="The useful answer is a real office, a licensed clinician, and a page that tells you what is actually treated. BioSpine is located in Lake City—not a virtual or satellite location."
+              description="Visit Dr. Chucky Jordan at 214 John Street for chiropractic care, laser and shockwave therapy, and DOT physicals. Find the right service and plan your visit below."
             />
           </div>
           <div className="prose-biospine lg:col-span-7">
@@ -306,9 +305,7 @@ export default function LakeCityLocationPage() {
             Call during weekday office hours or send a short appointment request.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <LinkButton href={siteConfig.appointmentUrl} size="lg">
-              Request an appointment
-            </LinkButton>
+            <BookingButton placement="location" size="lg" />
             <LinkButton href={`tel:${siteConfig.phoneE164}`} variant="outline" size="lg" className="!border-white/40 !text-white hover:!bg-white/10">
               <Phone className="h-4 w-4" aria-hidden /> Call {siteConfig.phone}
             </LinkButton>

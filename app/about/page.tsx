@@ -4,6 +4,7 @@ import { Clock, BadgeCheck, MapPin, Heart, Users } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { LinkButton } from '@/components/ui/Button';
+import { BookingButton } from '@/components/BookingButton';
 import { Mission } from '@/components/home/Mission';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { doctorSchema, breadcrumbSchema } from '@/components/seo/schemas';
@@ -22,7 +23,8 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title={`Meet ${siteConfig.doctor.name}, ${siteConfig.doctor.credential}`}
-        description="Dr. Jordan has practiced in Lake City for more than ten years. He examines before treating, explains his findings plainly, and refers out when chiropractic care is not the right fit."
+        description="Get to know Dr. Jordan, a South Carolina chiropractor and certified DOT Medical Examiner who has served Lake City patients for more than ten years."
+        booking
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },
@@ -131,7 +133,7 @@ export default function AboutPage() {
             {
               icon: Users,
               title: 'One local office',
-              text: `Every appointment is at ${siteConfig.address.street} in Lake City—not a rotating or satellite location.`,
+              text: `Visit Dr. Jordan at ${siteConfig.address.street} in Lake City for your examination and follow-up care.`,
             },
           ].map((v) => (
             <li
@@ -172,7 +174,8 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row gap-4">
-          <LinkButton href="/new-patients" variant="primary">
+          <BookingButton placement="new-patients" />
+          <LinkButton href="/new-patients" variant="outline">
             What to expect as a new patient
           </LinkButton>
           <LinkButton href="/contact" variant="outline">

@@ -241,6 +241,7 @@ export function articleSchema(opts: {
   slug: string;
   date: string;
   updated?: string;
+  author?: string;
   image?: string;
 }) {
   return {
@@ -251,11 +252,18 @@ export function articleSchema(opts: {
     image: opts.image ?? `${siteConfig.url}/opengraph-image`,
     datePublished: opts.date,
     dateModified: opts.updated ?? opts.date,
-    author: {
-      '@type': 'Person',
-      name: siteConfig.doctor.fullName,
-      url: `${siteConfig.url}/about`,
-    },
+    author: opts.author === siteConfig.name
+      ? {
+          '@type': 'Organization',
+          '@id': `${siteConfig.url}/#business`,
+          name: siteConfig.name,
+          url: siteConfig.url,
+        }
+      : {
+          '@type': 'Person',
+          name: opts.author ?? siteConfig.doctor.fullName,
+          url: `${siteConfig.url}/about`,
+        },
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,

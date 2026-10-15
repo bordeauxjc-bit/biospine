@@ -208,6 +208,20 @@ export default async function ServiceGuidePage({ params }: Props) {
           </div>
           <div className="lg:col-span-8">
             <FaqList faqs={service.faqs} />
+            {service.relatedArticles && (
+              <div className="mt-8 border-t border-brand-ink/15 pt-6">
+                <h3 className="!text-xl">More about your treatment options</h3>
+                <ul role="list" className="mt-3 space-y-3">
+                  {service.relatedArticles.map((article) => (
+                    <li key={article.href}>
+                      <Link href={article.href} className="inline-flex min-h-11 items-center text-brand-green-dark underline decoration-brand-green/35 underline-offset-4">
+                        {article.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </Section>

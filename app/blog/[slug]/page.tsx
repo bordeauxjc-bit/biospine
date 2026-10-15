@@ -125,7 +125,15 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                   {post.readingTime}
                 </span>
               )}
-              <span>By {post.author ?? siteConfig.doctor.name}</span>
+              <span>
+                By{' '}
+                <Link
+                  href={post.author === siteConfig.name ? '/' : '/about'}
+                  className="underline decoration-brand-green/35 underline-offset-4 hover:text-brand-green-dark"
+                >
+                  {post.author ?? siteConfig.doctor.name}
+                </Link>
+              </span>
             </div>
           </div>
         </header>
@@ -201,6 +209,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           slug: post.slug,
           date: post.date,
           updated: post.updated,
+          author: post.author,
         })}
       />
       <JsonLd

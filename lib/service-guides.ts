@@ -12,6 +12,7 @@ export type ServiceGuide = {
   importantNotes: string[];
   indications: string[];
   relatedConditions: { label: string; href: string }[];
+  relatedArticles?: { label: string; href: string }[];
   faqs: { question: string; answer: string }[];
 };
 
@@ -70,6 +71,9 @@ export const serviceGuides: ServiceGuide[] = [
       { label: 'Joint pain and stiffness', href: '/conditions/arthritis-joint-pain' },
       { label: 'Sports injury evaluation', href: '/services/sports-injury-care' },
       { label: 'How shockwave therapy differs', href: '/services/shockwave-therapy' },
+    ],
+    relatedArticles: [
+      { label: 'Class IV laser versus shockwave therapy: what to ask', href: '/blog/class-iv-laser-vs-shockwave-therapy' },
     ],
     faqs: [
       {

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Section } from '@/components/ui/Section';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -291,6 +292,21 @@ export default function ShockwaveTherapyPage() {
           </div>
           <div className="lg:col-span-8">
             <FaqList faqs={faqs} />
+            <div className="mt-8 border-t border-brand-ink/15 pt-6">
+              <h3 className="!text-xl">More about your treatment options</h3>
+              <ul role="list" className="mt-3 space-y-3">
+                <li>
+                  <Link href="/blog/heel-pain-plantar-fasciitis-shockwave-lake-city" className="inline-flex min-h-11 items-center text-brand-green-dark underline decoration-brand-green/35 underline-offset-4">
+                    Heel pain and when to ask about shockwave therapy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/class-iv-laser-vs-shockwave-therapy" className="inline-flex min-h-11 items-center text-brand-green-dark underline decoration-brand-green/35 underline-offset-4">
+                    Class IV laser versus shockwave therapy
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </Section>

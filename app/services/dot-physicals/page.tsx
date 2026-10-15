@@ -95,6 +95,16 @@ const bringItems = [
 
 const driverGuides = [
   {
+    href: '/blog/dot-physical-blood-pressure-lake-city-sc',
+    title: 'Blood pressure and certification',
+    description: 'How blood pressure and treatment history can affect the exam and records to bring.',
+  },
+  {
+    href: '/blog/dot-physical-urine-test-vs-drug-test',
+    title: 'Urinalysis or a drug test?',
+    description: 'Understand the different requirements before arranging your employer’s appointments.',
+  },
+  {
     href: '/blog/dot-physical-near-lake-city-sc',
     title: 'DOT physical near Lake City',
     description: 'How to verify the examiner, prepare for the visit, and request an appointment.',
